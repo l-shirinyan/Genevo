@@ -23,17 +23,22 @@ const props = defineProps<{
     :slides-per-view="1.2"
     :space-between="20"
     :free-mode="true"
-    :autoplay="{ delay: 2500, disableOnInteraction: false }"
+  
     :pagination="{ clickable: true }"
     :breakpoints="{
-      450: { slidesPerView: 1.5, spaceBetween: 16 },
-      550: { slidesPerView: 1.8, spaceBetween: 16 },
-      730: { slidesPerView: 2.3, spaceBetween: 16 },
-      768: { slidesPerView: 2.5, spaceBetween:20 },
-      992: { slidesPerView: 2.7, spaceBetween:20 },
-      1200: { slidesPerView: 3, spaceBetween: 24 },
-      1600: { slidesPerView: 4, spaceBetween: 24 },
-      2100: { slidesPerView: 5, spaceBetween: 24 }
+      360: { slidesPerView: 1.1},
+      380: { slidesPerView: 1.05},
+      450: { slidesPerView: 1.3},
+      470: { slidesPerView: 1.5},
+      580: { slidesPerView: 1.8},
+      730: { slidesPerView: 2.3},
+      768: { slidesPerView: 2.4},
+      992: { slidesPerView: 2.7},
+      1200: { slidesPerView: 3 },
+      1550: { slidesPerView: 3.5},
+      1650: { slidesPerView: 4},
+      1920: { slidesPerView: 4.5},
+      2300: { slidesPerView: 5.3}
     }"
     class="w-full"
   >
@@ -57,6 +62,9 @@ const props = defineProps<{
 </template>
 
 <style scoped>
+.swiper{
+  padding-inline: 20px;
+}
 .swiper-wrapper{
     padding-bottom: 50px !important;
 }

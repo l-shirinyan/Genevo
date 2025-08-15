@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div class="relative max-w-[344px] lg:max-w-[326px] w-full  rounded-xl shadow-md py-10 lg:py-16 px-4 ">
+  <div class="relative w-full max-w-[fit-content] fill-available  lg:max-w-[326px] rounded-xl shadow-md py-10 lg:py-16 px-4 ">
     <div
       :class="[
         'absolute left-1/2 p-3 lg:p-0 -translate-x-1/2 flex items-center justify-center rounded-full',
@@ -39,3 +39,12 @@ const props = withDefaults(defineProps<Props>(), {
     </div>
   </div>
 </template>
+
+<style scoped>
+@media screen and (max-width:768px){
+  .fill-available {
+  min-width: -webkit-fill-available;
+  min-width: fill-available;
+}
+}
+</style>

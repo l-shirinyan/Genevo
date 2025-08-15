@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <section class="w-full px-3 mt-0 2xl:mt-32"   :style="{
+  <section class="w-full px-3 mb-24 mt-0 2xl:mt-32"   :style="{
     backgroundImage: `url('/images/generation-bg.png')`,
     backgroundSize: 'cover',
     backgroundPosition: 'center'
