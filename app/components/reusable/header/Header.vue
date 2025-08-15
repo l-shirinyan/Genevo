@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/vue";
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
-import Logo from "@/assets/images/logo.png";
+import Logo from "/images/logo.png";
 import { navigation } from "@/constants/data";
 import Button from "@/components/reusable/button/CustomButton.vue";
 

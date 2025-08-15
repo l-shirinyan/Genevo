@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Text from "@/components/reusable/typography/TextField.vue";
 import HeroSection from "@/components/reusable/hero/HeroSection.vue";
-import heroBg from "@/assets/images/hero-bg.png";
+import heroBg from "/images/hero-bg.png";
 import bg from "/images/background.png";
 import teamImg from "/images/team.png";
 import companyImg from "/images/company.png";

@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
 import Button from "@/components/reusable/button/CustomButton.vue";
-import CheckIcon from "@/assets/icons/check.svg";
+import CheckIcon from "/icons/check.svg";
 
 interface Tier {
   id: number | string;
@@ -37,7 +36,10 @@ const hoveredCard = ref<number | string | null>(null);
           >
             {{ tier.price }}
           </span>
-          <span class="text-base font-medium text-gray-purple">/ Leads</span>
+          <span
+            class="text-base font-medium text-gray-purple group-hover:text-white"
+            >/ Leads</span
+          >
         </p>
 
         <div class="flex flex-col gap-10 items-start">
@@ -48,12 +50,14 @@ const hoveredCard = ref<number | string | null>(null);
             >
               {{ tier.name }}
             </h3>
-            <p class="text-base text-lavender-gray">{{ tier.description }}</p>
+            <p class="text-base text-lavender-gray group-hover:text-white">
+              {{ tier.description }}
+            </p>
           </div>
 
           <ul
             role="list"
-            class="space-y-3 text-xs lg:text-base text-lavender-gray"
+            class="space-y-3 text-xs lg:text-base text-lavender-gray group-hover:text-white"
           >
             <li
               v-for="(feature, index) in tier.features"
@@ -63,7 +67,7 @@ const hoveredCard = ref<number | string | null>(null);
               <NuxtImg
                 :src="CheckIcon"
                 alt="Check Icon"
-                class="w-5 h-6 flex-none text-deep-indigo group-hover:fill-white"
+                class="w-5 h-6 flex-none text-deep-indigo group-hover:fill-"
               />
               {{ feature }}
             </li>

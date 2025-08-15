@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { FreeMode, Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import ArrowIcon from "@/assets/icons/arrow-up.svg";
+import ArrowIcon from "/icons/arrow-up.svg";
 
 interface Slide {
   id: number;

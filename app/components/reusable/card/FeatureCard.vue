@@ -56,7 +56,7 @@ const props = withDefaults(defineProps<Props>(), {
 @media screen and (max-width: 778px) {
   .fill-available {
     min-width: -webkit-fill-available;
-    min-width: fill-available;
+    min-width: stretch;
   }
 }
 </style>

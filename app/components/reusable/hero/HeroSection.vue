@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
 import Text from "@/components/reusable/typography/TextField.vue";
 import Button from "@/components/reusable/button/CustomButton.vue";
 import { NuxtImg } from "#components";

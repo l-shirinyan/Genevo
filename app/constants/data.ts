@@ -1,16 +1,16 @@
-import LinkdlnLogo from "@/assets/icons/linkdln.svg";
-import FacebookLogo from "@/assets/icons/facebook.svg";
-import DocumnentLogo from "@/assets/icons/document.svg";
-import SettingsLogo from "@/assets/icons/settings.svg";
-import RepeatLogo from "@/assets/icons/repeat.svg";
-import ProgressLogo from "@/assets/icons/progress.svg";
-import BookIcon from "@/assets/icons/book.svg";
-import Puzzle from "@/assets/icons/puzzle.svg";
-import SnowballIcon from "@/assets/icons/snowball.svg";
-import SellFirstImage from "@/assets/images/sell1.png";
-import SellSecondImage from "@/assets/images/sell2.png";
-import SellThirdImage from "@/assets/images/sell3.png";
-import SellFourthImage from "@/assets/images/sell4.png";
+import LinkdlnLogo from "/icons/linkdln.svg";
+import FacebookLogo from "/icons/facebook.svg";
+import DocumnentLogo from "/icons/document.svg";
+import SettingsLogo from "/icons/settings.svg";
+import RepeatLogo from "/icons/repeat.svg";
+import ProgressLogo from "/icons/progress.svg";
+import BookIcon from "/icons/book.svg";
+import Puzzle from "/icons/puzzle.svg";
+import SnowballIcon from "/icons/snowball.svg";
+import SellFirstImage from "/images/sell1.png";
+import SellSecondImage from "/images/sell2.png";
+import SellThirdImage from "/images/sell3.png";
+import SellFourthImage from "/images/sell4.png";
 
 export const navigation = [
   { name: "Shop", href: "/shop" },

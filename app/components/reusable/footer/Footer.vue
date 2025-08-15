@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Logo from "@/assets/images/logo.png";
+import Logo from "/images/logo.png";
 import { footerNavigation, socialLinks } from "@/constants/data";
 import Button from "@/components/reusable/button/CustomButton.vue";
 const currentYear = new Date().getFullYear();
