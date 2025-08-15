@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center justify-center result-slider w-full py-10">
     <!-- Desktop Slider -->
-    <div class="hidden lg:flex items-start relative w-full max-w-[1130px] gap-8">
+    <div class="hidden overflow-hidden lg:flex items-start relative w-full max-w-[1130px] gap-8 py-1.5">
       <!-- Navigation Buttons -->
       <div class="flex flex-col items-center gap-4 mt-40">
         <button
@@ -25,13 +25,13 @@
         <transition-group
           :name="direction === 'next' ? 'testimonial-next' : 'testimonial-prev'"
           tag="div"
-          class="w-full flex flex-col gap-8 absolute top-0 left-0"
+          class="w-full flex flex-col gap-8 absolute top-0 left-0 mt-2.5"
         >
           <div
             v-for="i in [leftIndex, currentIndex, rightIndex]"
             :key="i"
+            class="max-w-[462px] w-full text-left text-primary bg-white shadow-sm  rounded-xl relative transform transition-all duration-500"
             :class="i === currentIndex ? 'opacity-100 scale-100 z-10' : 'opacity-20 scale-90 z-0'"
-            class="max-w-[462px] w-full text-left text-primary bg-white shadow-sm rounded-xl relative transform transition-all duration-500"
           >
             <NuxtImg
               src="/images/Quotes.png"
