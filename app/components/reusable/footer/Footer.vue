@@ -1,18 +1,26 @@
 <script setup lang="ts">
-import Logo from '~/assets/images/logo.png'
-import { footerNavigation, socialLinks } from '~/constants/data'
-import Button from '~/components/reusable/button/button.vue'
-const currentYear = new Date().getFullYear()
+import Logo from "@/assets/images/logo.png";
+import { footerNavigation, socialLinks } from "@/constants/data";
+import Button from "@/components/reusable/button/CustomButton.vue";
+const currentYear = new Date().getFullYear();
 </script>
 
 <template>
   <footer class="bg-deep-blue">
     <div class="mx-auto max-w-7xl px-5 pt-6 lg:pt-8 pb-4">
-      <div class="flex items-center justify-between flex-col lg:flex-row lg:items-start gap-12 xl:gap-[74px]">
+      <div
+        class="flex items-center justify-between flex-col lg:flex-row lg:items-start gap-12 xl:gap-[74px]"
+      >
         <!-- Logo -->
         <div class="w-20 h-11">
-            <NuxtLink to="/">
-            <img :src="Logo" alt="Company Logo" width="24" height="24" class="w-full h-full" />
+          <NuxtLink to="/">
+            <img
+              :src="Logo"
+              alt="Company Logo"
+              width="24"
+              height="24"
+              class="w-full h-full"
+            />
           </NuxtLink>
         </div>
 
@@ -60,11 +68,7 @@ const currentYear = new Date().getFullYear()
                 :key="link.alt"
                 :to="link.href"
               >
-                <NuxtImg
-                  :src="link.icon"
-                  :alt="link.alt"
-                  class="w-6 h-6"
-                />
+                <NuxtImg :src="link.icon" :alt="link.alt" class="w-6 h-6" />
               </NuxtLink>
             </div>
           </div>
@@ -79,9 +83,7 @@ const currentYear = new Date().getFullYear()
             At latest deals and savings, sent to your inbox weekly.
           </p>
           <form class="mt-8 flex w-full gap-1.5 max-w-full">
-            <label for="email-address" class="sr-only">
-              Email address
-            </label>
+            <label for="email-address" class="sr-only"> Email address </label>
             <input
               id="email-address"
               name="email-address"
@@ -92,9 +94,7 @@ const currentYear = new Date().getFullYear()
               class="w-full min-w-0 rounded-lg lg:w-[232px] bg-light-gray px-3 py-1.5 text-sm text-primary font-medium placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
             />
             <div class="sm:shrink-0">
-               <Button  variant="default">
-                Sign Up
-              </Button>
+              <Button variant="default"> Sign Up </Button>
             </div>
           </form>
         </div>

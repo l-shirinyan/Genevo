@@ -1,22 +1,22 @@
 <script setup lang="ts">
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Autoplay, FreeMode, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/pagination';
-import ToolsFirstImage from '/images/tools1.png'
-import ToolsSecongImage from '/images/tools2.png'
-import ToolsThirdImage from '/images/tools3.png'
-import ToolsLastImage from '/images/tools4.png'
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Autoplay, FreeMode, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+import ToolsFirstImage from "/images/tools1.png";
+import ToolsSecongImage from "/images/tools2.png";
+import ToolsThirdImage from "/images/tools3.png";
+import ToolsLastImage from "/images/tools4.png";
 const toolsImages = [
-ToolsFirstImage,
+  ToolsFirstImage,
   ToolsSecongImage,
   ToolsThirdImage,
   ToolsLastImage,
   ToolsFirstImage,
   ToolsSecongImage,
   ToolsThirdImage,
-  ToolsLastImage
+  ToolsLastImage,
 ];
 </script>
 

@@ -1,7 +1,9 @@
 <template>
   <div class="flex items-center justify-center result-slider w-full py-10">
     <!-- Desktop Slider -->
-    <div class="hidden overflow-hidden lg:flex items-start relative w-full max-w-[1130px] gap-8 py-1.5">
+    <div
+      class="hidden overflow-hidden lg:flex items-start relative w-full max-w-[1130px] gap-8 py-1.5"
+    >
       <!-- Navigation Buttons -->
       <div class="flex flex-col items-center gap-4 mt-40">
         <button
@@ -9,14 +11,22 @@
           @click="prevSlide"
           class="p-4 rounded-full bg-white shadow-sm hover:cursor-pointer transition-transform hover:scale-110"
         >
-          <NuxtImg src="/icons/arrowup.svg" alt="Previous Arrow" class="w-5 h-5" />
+          <NuxtImg
+            src="/icons/arrowup.svg"
+            alt="Previous Arrow"
+            class="w-5 h-5"
+          />
         </button>
         <button
           aria-label="Next testimonial"
           @click="nextSlide"
           class="p-4 rounded-full bg-white shadow-sm hover:cursor-pointer transition-transform hover:scale-110"
         >
-          <NuxtImg src="/icons/arrowdown.svg" alt="Next Arrow" class="w-5 h-5" />
+          <NuxtImg
+            src="/icons/arrowdown.svg"
+            alt="Next Arrow"
+            class="w-5 h-5"
+          />
         </button>
       </div>
 
@@ -30,8 +40,12 @@
           <div
             v-for="i in [leftIndex, currentIndex, rightIndex]"
             :key="i"
-            class="max-w-[462px] w-full text-left text-primary bg-white shadow-sm  rounded-xl relative transform transition-all duration-500"
-            :class="i === currentIndex ? 'opacity-100 scale-100 z-10' : 'opacity-20 scale-90 z-0'"
+            class="max-w-[462px] w-full text-left text-primary bg-white shadow-sm rounded-xl relative"
+            :class="
+              i === currentIndex
+                ? 'opacity-100 scale-100 z-10'
+                : 'opacity-20 scale-90 z-0'
+            "
           >
             <NuxtImg
               src="/images/Quotes.png"
@@ -81,7 +95,9 @@
         class="flex flex-col items-center"
       >
         <!-- Profile Card -->
-        <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center">
+        <div
+          class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center"
+        >
           <div class="w-full h-[260px] overflow-hidden rounded-lg mb-6">
             <NuxtImg
               :src="t.img"
@@ -110,66 +126,79 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Pagination, FreeMode } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/pagination'
+import { ref, computed } from "vue";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Pagination, FreeMode } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const testimonials = ref([
   {
-    text: 'VIP Leads helped us land our biggest contract yet. It’s like having a full-time researcher on our team. Thank You!',
-    img: '/images/user.png',
-    name: 'Jane Doe',
-    title: 'Marketing Specialist',
+    text: "VIP Leads helped us land our biggest contract yet. It’s like having a full-time researcher on our team. Thank You!",
+    img: "/images/user.png",
+    name: "Jane Doe",
+    title: "Marketing Specialist",
   },
   {
-    text: 'VIP Leads helped us land our biggest contract yet. It’s like having a full-time researcher on our team. Thank You!',
-    img: '/images/user.png',
-    name: 'Byron Rolfson',
-    title: 'Regional Solutions Architect',
+    text: "VIP Leads helped us land our biggest contract yet. It’s like having a full-time researcher on our team. Thank You!",
+    img: "/images/user.png",
+    name: "Byron Rolfson",
+    title: "Regional Solutions Architect",
   },
   {
-    text: 'VIP Leads helped us land our biggest contract yet. It’s like having a full-time researcher on our team. Thank You!',
-    img: '/images/user.png',
-    name: 'John Smith',
-    title: 'Product Manager',
+    text: "VIP Leads helped us land our biggest contract yet. It’s like having a full-time researcher on our team. Thank You!",
+    img: "/images/user.png",
+    name: "John Smith",
+    title: "Product Manager",
   },
   {
-    text: 'VIP Leads helped us land our biggest contract yet. It’s like having a full-time researcher on our team. Thank You!',
-    img: '/images/user.png',
-    name: 'Alice Brown',
-    title: 'UI Designer',
+    text: "VIP Leads helped us land our biggest contract yet. It’s like having a full-time researcher on our team. Thank You!",
+    img: "/images/user.png",
+    name: "Alice Brown",
+    title: "UI Designer",
   },
   {
-    text: 'VIP Leads helped us land our biggest contract yet. It’s like having a full-time researcher on our team. Thank You!',
-    img: '/images/user.png',
-    name: 'Tom Wilson',
-    title: 'Backend Developer',
+    text: "VIP Leads helped us land our biggest contract yet. It’s like having a full-time researcher on our team. Thank You!",
+    img: "/images/user.png",
+    name: "Tom Wilson",
+    title: "Backend Developer",
   },
   {
-    text: 'VIP Leads helped us land our biggest contract yet. It’s like having a full-time researcher on our team. Thank You!',
-    img: '/images/user.png',
-    name: 'Sara Miller',
-    title: 'Project Lead',
-  }
-])
+    text: "VIP Leads helped us land our biggest contract yet. It’s like having a full-time researcher on our team. Thank You!",
+    img: "/images/user.png",
+    name: "Sara Miller",
+    title: "Project Lead",
+  },
+]);
 
-const currentIndex = ref(0)
-const direction = ref('next') // Track direction
+const currentIndex = ref(0);
+const direction = ref("next");
+const isAnimating = ref(false);
 
-const getIndex = (i) => (i + testimonials.value.length) % testimonials.value.length
-const leftIndex = computed(() => getIndex(currentIndex.value - 1))
-const rightIndex = computed(() => getIndex(currentIndex.value + 1))
+const getIndex = (i) =>
+  (i + testimonials.value.length) % testimonials.value.length;
+const leftIndex = computed(() => getIndex(currentIndex.value - 1));
+const rightIndex = computed(() => getIndex(currentIndex.value + 1));
 
 const nextSlide = () => {
-  direction.value = 'next'
-  currentIndex.value = getIndex(currentIndex.value + 1)
-}
+  if (isAnimating.value) return;
+  isAnimating.value = true;
+  direction.value = "next";
+  currentIndex.value = getIndex(currentIndex.value + 1);
+  setTimeout(() => {
+    isAnimating.value = false;
+  }, 700);
+};
+
 const prevSlide = () => {
-  direction.value = 'prev'
-  currentIndex.value = getIndex(currentIndex.value - 1)
-}
+  if (isAnimating.value) return;
+  isAnimating.value = true;
+  direction.value = "prev";
+  currentIndex.value = getIndex(currentIndex.value - 1);
+  setTimeout(() => {
+    isAnimating.value = false;
+  }, 700);
+};
 </script>
 
 <style scoped>
@@ -189,23 +218,31 @@ const prevSlide = () => {
 }
 
 .testimonial-next-enter-from {
-  opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(400%);
 }
 
 .testimonial-next-enter-to {
-  opacity: 1;
-  transform: translateY(0);
+  transform: translateY(275%);
+  animation-fill-mode: forwards;
 }
 
 .testimonial-next-leave-from {
-  opacity: 1;
   transform: translateY(0);
 }
 
+.testimonial-next-enter-active,
+.testimonial-next-leave-active {
+  position: absolute;
+  transition: all 0.7s ease-in-out;
+}
+
 .testimonial-next-leave-to {
-  opacity: 0;
-  transform: translateY(-20px);
+  transform: translateY(-100%);
+}
+
+.testimonial-next-move,
+.testimonial-prev-move {
+  transition: all 0.7s ease-in-out;
 }
 
 /* Previous animation: slide down */
@@ -214,19 +251,14 @@ const prevSlide = () => {
   transition: all 0.5s ease;
 }
 .testimonial-prev-enter-from {
-  opacity: 0;
-  transform: translateY(-20px);
+  transform: translateY(-200px);
 }
 .testimonial-prev-enter-to {
-  opacity: 1;
   transform: translateY(0);
 }
-.testimonial-prev-leave-from {
-  opacity: 1;
-  transform: translateY(0);
-}
-.testimonial-prev-leave-to {
-  opacity: 0;
-  transform: translateY(20px);
+
+.testimonial-next-move,
+.testimonial-prev-move {
+  transition: all 0.7s ease-in-out;
 }
 </style>
