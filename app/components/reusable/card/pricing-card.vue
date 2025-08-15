@@ -33,7 +33,7 @@ const hoveredCard = ref<number | string | null>(null)
         >
           <p class="flex items-baseline gap-x-1">
             <span
-              class="text-3xl lg:text-5xl font-bold tracking-tight text-primary transition-colors duration-300 ease-in-out group-hover:text-white"
+              class="md:text-6xl text-5xl font-bold tracking-tight text-primary transition-colors duration-300 ease-in-out group-hover:text-white"
             >
               {{ tier.price }}
             </span>
@@ -44,15 +44,15 @@ const hoveredCard = ref<number | string | null>(null)
             <div class="flex flex-col items-start justify-between gap-4 mt-5">
               <h3
                 :id="`tier-${tier.id}`"
-                class="text-xl lg:text-3xl font-semibold text-primary transition-colors duration-300 ease-in-out group-hover:text-white"
+                class="text-[28px] lg:text-3xl font-semibold text-primary transition-colors duration-300 ease-in-out group-hover:text-white"
               >
                 {{ tier.name }}
               </h3>
-              <p class="text-sm/6 text-lavender-gray">{{ tier.description }}</p>
+              <p class="text-base text-lavender-gray">{{ tier.description }}</p>
             </div>
 
             <ul role="list" class="space-y-3 text-xs lg:text-base text-lavender-gray">
-              <li v-for="(feature, index) in tier.features" :key="`${tier.id}-${index}`" class="flex gap-x-3">
+              <li v-for="(feature, index) in tier.features" :key="`${tier.id}-${index}`" class="flex gap-x-3 text-base">
             <NuxtImg
               :src="CheckIcon"
               alt="Check Icon"
