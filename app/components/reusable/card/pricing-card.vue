@@ -27,7 +27,7 @@ const hoveredCard = ref<number | string | null>(null)
         <div
           v-for="tier in props.tiers"
           :key="tier.id"
-          class="group rounded-3xl lg:w-[340px] h-auto p-5 lg:p-8 ring-1 ring-gray-200 bg-white hover:bg-primary transition-colors duration-300 ease-in-out hover:cursor-pointer"
+          class="group rounded-3xl min-w-[260px] lg:w-[340px] h-auto p-5 lg:p-8 shadow-xl bg-white hover:bg-primary transition-colors duration-300 ease-in-out hover:cursor-pointer"
           @mouseenter="hoveredCard = tier.id"
           @mouseleave="hoveredCard = null"
         >

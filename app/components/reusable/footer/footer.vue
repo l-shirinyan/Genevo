@@ -89,7 +89,7 @@ const currentYear = new Date().getFullYear()
               required
               placeholder="Enter your email"
               autocomplete="email"
-              class="w-full min-w-0 rounded-lg bg-light-gray px-3 py-1.5 text-sm text-primary font-medium placeholder:text-gray-500 focus:outline-none sm:text-sm/6 xl:w-full"
+              class="w-full min-w-0 rounded-lg lg:w-[232px] bg-light-gray px-3 py-1.5 text-sm text-primary font-medium placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
             />
             <div class="sm:shrink-0">
                <Button  variant="default">

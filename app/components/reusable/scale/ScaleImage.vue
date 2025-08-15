@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <section class="w-full px-3"   :style="{
+  <section class="w-full px-3 mt-0 2xl:mt-32"   :style="{
     backgroundImage: `url('/images/generation-bg.png')`,
     backgroundSize: 'cover',
     backgroundPosition: 'center'
@@ -27,7 +27,7 @@ const props = withDefaults(defineProps<Props>(), {
       <div class="flex flex-col items-center lg:items-start gap-12 lg:gap-16 max-w-[353px] lg:max-w-[567px]">
        <div class="flex flex-col items-center text-center lg:items-start lg:text-start gap-6">
         <Text textStyle="title" :value="props.title" class="text-primary" />
-       <Text textStyle="subtitle" :value="props.description" class="text-secondary" />
+       <Text textStyle="subtitle" :value="props.description" class="text-primary" />
        </div>
        
         <div class="w-full max-w-[353px]">

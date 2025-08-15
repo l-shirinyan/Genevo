@@ -49,12 +49,11 @@ function openSidebar() {
                     <li v-for="item in navigation" :key="item.name" class="mb-0">
                       <NuxtLink
                         :to="item.href"
-                        class="relative inline-block text-base font-semibold text-primary group"
+                        class="relative inline-block text-base font-semibold no-underline text-primary group"
                       >
                         {{ item.name }}
-                        <span
-                          class="absolute left-0 bottom-0 h-0.5 bg-primary transition-all duration-300 w-full sm:w-0 sm:group-hover:w-full"
-                        />
+                      <span class="absolute left-0 bottom-0 h-0.5 w-full bg-primary hidden group-hover:block" />
+
                       </NuxtLink>
                     </li>
                   </ul>
