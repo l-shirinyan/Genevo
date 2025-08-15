@@ -25,8 +25,8 @@ const props = defineProps<InfoCardType>();
     </div>
     <div class="w-[1px] self-stretch bg-secondary-light"></div>
     <div class="flex flex-col items-start gap-3">
-      <Text textStyle="cardtitle" :value="props.title" class="text-primary" />
-      <Text textStyle="cardtext" :value="props.text" class="text-secondary" />
+      <Text textStyle="Body2xlBold" :value="props.title" class="text-primary" />
+      <Text textStyle="Body2xlBold" :value="props.text" class="text-secondary" />
     </div>
   </div>
 </template>

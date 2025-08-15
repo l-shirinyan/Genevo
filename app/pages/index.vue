@@ -30,7 +30,7 @@ import TestimonialsSlider from "@/components/reusable/slider/TestimonialsSlider.
   />
   <div class="flex flex-col items-center gap-8 lg:gap-16 mb-24">
     <Text
-      textStyle="title"
+      textStyle="Body6xlBold"
       value="We Help You Sell, Not Search"
       class="text-primary text-center"
     />
@@ -52,12 +52,12 @@ import TestimonialsSlider from "@/components/reusable/slider/TestimonialsSlider.
   <div class="flex flex-col items-center gap-8 lg:gap-16 mb-24 px-5">
     <div class="flex flex-col items-center gap-6">
       <Text
-        textStyle="title"
+        textStyle="Body6xlBold"
         value="Email Outreach That Writes Itself"
         class="text-primary text-center"
       />
       <Text
-        textStyle="subtitle"
+        textStyle="BodyxlMedium"
         value="Once you receive your leads, we keep them warm with smart, automated follow-ups — so you can focus on closing, not chasing."
         class="text-primary text-center max-w-[740px] w-full"
       />
@@ -83,12 +83,12 @@ import TestimonialsSlider from "@/components/reusable/slider/TestimonialsSlider.
     }"
   >
     <Text
-      textStyle="title"
+      textStyle="Body6xlBold"
       value="Built for Medical & Healthcare Teams Too"
       class="text-primary text-center w-full max-w-[927px]"
     />
     <Text
-      textStyle="subtitle"
+      textStyle="BodyxlMedium"
       value="From physician networks to urgent care leads, YMT helps you reach verified medical professionals using filters like NPI, specialty, and facility type."
       class="text-primary text-center max-w-[728px] w-full"
     />
@@ -97,12 +97,12 @@ import TestimonialsSlider from "@/components/reusable/slider/TestimonialsSlider.
   <div class="flex flex-col items-center gap-8 lg:gap-16 px-5 mb-24">
     <div class="flex flex-col items-center gap-6">
       <Text
-        textStyle="title"
+        textStyle="Body6xlBold"
         value="Real Results from Real Teams"
         class="text-primary text-center"
       />
       <Text
-        textStyle="subtitle"
+        textStyle="BodyxlMedium"
         value="From physician networks to urgent care leads, YMT helps you reach verified medical professionals using filters like NPI, specialty, and facility type."
         class="block sm:hidden text-primary text-center max-w-[380px] w-full"
       />
@@ -112,7 +112,7 @@ import TestimonialsSlider from "@/components/reusable/slider/TestimonialsSlider.
 
   <div class="flex flex-col items-center gap-12 px-5 mb-24">
     <Text
-      textStyle="title"
+      textStyle="Body6xlBold"
       value="Why Teams Choose YMT"
       class="text-primary text-center mb-12"
     />
@@ -130,7 +130,7 @@ import TestimonialsSlider from "@/components/reusable/slider/TestimonialsSlider.
 
   <div class="flex flex-col items-center gap-8 lg:gap-16 mb-24">
     <Text
-      textStyle="title"
+      textStyle="Body6xlBold"
       value="Compatible with Your Tools"
       class="text-primary text-center"
     />
@@ -144,12 +144,12 @@ import TestimonialsSlider from "@/components/reusable/slider/TestimonialsSlider.
       class="flex flex-col items-center gap-6 max-w-[600px] xl:max-w-[844px]"
     >
       <Text
-        textStyle="title"
+        textStyle="Body6xlBold"
         value="Pricing That Scales With You"
         class="text-primary text-center"
       />
       <Text
-        textStyle="subtitle"
+        textStyle="BodyxlMedium"
         value="Buy exactly what you need — starting at just $1 per lead. No subscriptions, no long-term contracts."
         class="text-primary text-center w-full line-clamp-2"
       />

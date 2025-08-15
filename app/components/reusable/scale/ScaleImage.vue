@@ -35,9 +35,9 @@ const props = withDefaults(defineProps<Props>(), {
         <div
           class="flex flex-col items-center text-center lg:items-start lg:text-start gap-6"
         >
-          <Text textStyle="title" :value="props.title" class="text-primary" />
+          <Text textStyle="Body6xlBold" :value="props.title" class="text-primary" />
           <Text
-            textStyle="subtitle"
+            textStyle="BodyxlMedium"
             :value="props.description"
             class="text-primary"
           />
