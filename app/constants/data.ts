@@ -11,6 +11,10 @@ import SellFirstImage from "/images/sell1.png";
 import SellSecondImage from "/images/sell2.png";
 import SellThirdImage from "/images/sell3.png";
 import SellFourthImage from "/images/sell4.png";
+import CubeLogo from '/icons/cube.svg'
+import FilterLogo from '/icons/filter.svg'
+import DeliveryLogo from '/icons/delivery.svg'
+import GoalLogo from '/icons/goal.svg'
 
 export const navigation = [
   { name: "Shop", href: "/shop" },
@@ -207,4 +211,101 @@ export const privacyData = [
     title: "Updates",
     text: "We may occasionally update this Privacy Policy to reflect legal or service changes. The most recent version will always be available on this page, along with its last updated date."
   }
+];
+
+export const solutions = [
+  {
+    iconSrc: BookIcon,
+    title: 'Real-time trend tracking',
+    description: 'Get pre-qualified leads delivered for every campaign .',
+  },
+  {
+    iconSrc: Puzzle,
+    title: ' Targeted leads by filters you control',
+    description: 'Close more deals by focusing only on qualified, sales-ready leads.',
+  },
+  {
+    iconSrc: SnowballIcon,
+    title: 'Real-time trend tracking',
+    description: 'Find NPI-verified providers or top talent, filtered by specialty and location.',
+  }
+]
+
+export const success=[
+  {
+    iconSrc: BookIcon,
+    title: 'Personalized Setup',
+    description: 'We tailor every step of onboarding to your goals and workflow.',
+  },
+  {
+    iconSrc: Puzzle,
+    title: 'Ongoing Support',
+    description: 'Get expert guidance and responsive help, whenever you need it.',
+  },
+  {
+    iconSrc: SnowballIcon,
+    title: 'Growth Strategy',
+    description: 'From targeting to outreach, we help you scale with confidence.',
+
+  }
+]
+
+export const timelineItems = [
+  "Designed For High-Performing Teams Across Industries",
+  "Built To Reduce Overhead And Accelerate Outreach",
+  "Flexible For Small Businesses And Enterprise Scale",
+  "Backed By Expert Support And Lead Data Integrity",
+  "Powered By Automation, Strategy, And Personalization"
+];
+
+export const leadCards = [
+  {
+    icon: CubeLogo,
+    title: 'Tailored Packages',
+    text: 'Hand-picked leads shaped by your campaign goals and industry focus.'
+  },
+  {
+    icon:FilterLogo,
+    title: 'Smart Filtering',
+    text: 'Apply filters by specialty, region, role, and other attributes that matter.'
+  },
+  {
+    icon:DeliveryLogo,
+    title: 'Scalable Delivery',
+    text: 'Start small or go enterprise — adjust volume as your pipeline grows.'
+  },
+  {
+    icon:GoalLogo,
+    title: 'Specific Targeting',
+    text: ' Send timely, personalized follow-ups based on each lead’s stage, behavior, and funnel position.'
+  }
+]
+
+
+export const verifiedData=[
+  'Verified contact info — Accurate, up-to-date lead data',
+  'Lower bounce rates — Fewer invalid or outdated emails',
+  'Reliable delivery paths — Emails land where they should',
+]
+export const images = [
+  {
+    src: '/images/matter-1.png',
+    alt: 'Image 1',
+    class: 'rounded-2xl object-cover w-full h-full order-1 md:order-1',
+  },
+  {
+    src: '/images/matter-2.png',
+    alt: 'Image 2',
+    class: 'rounded-2xl object-cover w-full h-full order-2 md:order-2',
+  },
+  {
+    src: '/images/matter-1.png',
+    alt: 'Image 3',
+    class: 'rounded-2xl object-cover w-full h-full order-4 md:order-3',
+  },
+  {
+    src: '/images/matter-2.png',
+    alt: 'Image 4',
+    class: 'rounded-2xl object-cover w-full h-full order-3 md:order-4',
+  },
 ];

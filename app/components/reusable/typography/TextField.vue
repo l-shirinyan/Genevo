@@ -5,6 +5,8 @@ export type TextStyle =
   | "Body6xlBold"
   | "BodyxlMedium"
   | "Body2xlBold"
+  | "Body2xlSemibold"
+  | "Body2xlNormal"
   | "BodyXLNormal"
   | "Body3XlBold"
   | "BodyxlSemibold";
@@ -28,6 +30,12 @@ const styleClass = computed(() => {
       break;
     case "Body2xlBold":
       baseClass += "text-base md:text-lg xl:text-2xl font-bold";
+      break;
+    case "Body2xlSemibold":
+      baseClass +='text-base md:text-sm xl:text-2xl font-semibold';
+      break;
+     case "Body2xlNormal":
+      baseClass += "text-base md:text-lg xl:text-2xl font-normal";
       break;
     case "BodyXLNormal":
       baseClass += "text-sm xl:text-xl font-normal";
