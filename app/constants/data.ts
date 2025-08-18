@@ -245,7 +245,7 @@ export const success=[
   {
     iconSrc: SnowballIcon,
     title: 'Growth Strategy',
-    description: 'From targeting to outreach, we help you scale with confidence.',
+    description: 'From targeting to outreach, we help you to scale with confidence.',
 
   }
 ]
@@ -291,21 +291,21 @@ export const images = [
   {
     src: '/images/matter-1.png',
     alt: 'Image 1',
-    class: 'rounded-2xl object-cover w-full h-full order-1 md:order-1',
+    class: 'rounded-2xl object-contain w-full h-full order-1 md:order-1',
   },
   {
     src: '/images/matter-2.png',
     alt: 'Image 2',
-    class: 'rounded-2xl object-cover w-full h-full order-2 md:order-2',
+    class: 'rounded-2xl object-contain w-full h-full order-2 md:order-2',
   },
   {
-    src: '/images/matter-1.png',
+    src: '/images/matter-3.png',
     alt: 'Image 3',
-    class: 'rounded-2xl object-cover w-full h-full order-4 md:order-3',
+    class: 'rounded-2xl object-contain w-full h-full order-4 md:order-3',
   },
   {
-    src: '/images/matter-2.png',
+    src: '/images/matter-4.png',
     alt: 'Image 4',
-    class: 'rounded-2xl object-cover w-full h-full order-3 md:order-4',
+    class: 'rounded-2xl object-contain w-full h-full order-3 md:order-4',
   },
 ];

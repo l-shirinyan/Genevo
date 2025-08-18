@@ -61,8 +61,11 @@ import VerificationBlock from "~/components/reusable/hero/VerificationBlock.vue"
 </div>
 
   <div class="flex flex-col items-center gap-12 px-5 mb-24">
-    <TextField textStyle="Body6xlBold" value="AI-Powered Lead Generation" class="text-primary text-center mb-12" />
-        <div class="flex flex-wrap justify-center gap-y-20 gap-6 px-5 md:px-0">
+    <div class="flex flex-col items-center text-center gap-6">
+      <TextField textStyle="Body6xlBold" value="AI-Powered Lead Generation" class="text-primary" />
+      <TextField textStyle="BodyxlMedium" value="Use AI to find prospects that match your ideal customer profile." class="text-primary" />
+    </div>
+        <div class="flex flex-wrap justify-center gap-y-20 gap-6 mt-12 px-5 md:px-0">
     <FeatureCard
       v-for="(solution, index) in solutions"
       :key="index"
@@ -91,6 +94,7 @@ import VerificationBlock from "~/components/reusable/hero/VerificationBlock.vue"
       :src="image.src"
       :alt="image.alt"
       :class="image.class"
+      style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;"
     />
 
   </div>
