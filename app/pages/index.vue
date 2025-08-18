@@ -5,7 +5,7 @@ import heroBg from "/images/hero-bg.png";
 import bg from "/images/background.png";
 import teamImg from "/images/team.png";
 import companyImg from "/images/company.png";
-import { infoCards, features, tiers, slides } from "@/constants/data";
+import { infoCards, features, tiers, slides, toolsImages } from "@/constants/data";
 import InfoCard from "@/components/reusable/card/InfoCard.vue";
 import FeatureCard from "@/components/reusable/card/FeatureCard.vue";
 import ToolsSwiper from "@/components/reusable/slider/ToolsSlide.vue";
@@ -135,7 +135,7 @@ import TestimonialsSlider from "@/components/reusable/slider/TestimonialsSlider.
       class="text-primary text-center"
     />
     <div class="w-full">
-      <ToolsSwiper />
+      <ToolsSwiper :images="toolsImages"/>
     </div>
   </div>
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import TextField from "~/components/reusable/typography/TextField.vue";
-import { solutions, leadCards, success, timelineItems, verifiedData, images } from '~/constants/data'
+import { solutions, leadCards, success, timelineItems, verifiedData, images, toolsImages } from '~/constants/data'
 import FeatureCard from '~/components/reusable/card/FeatureCard.vue'
 import ToolsSwiper from '~/components/reusable/slider/ToolsSlide.vue'
 import InfoCard from '~/components/reusable/card/InfoCard.vue'
@@ -126,6 +126,7 @@ import VerificationBlock from "~/components/reusable/hero/VerificationBlock.vue"
   imageAlt="Iphone"
   :points="verifiedData"
   verifiedIcon='/icons/verified.svg'
+  :showIcon="true"
   :showButton="false"
 />
 
@@ -135,7 +136,7 @@ import VerificationBlock from "~/components/reusable/hero/VerificationBlock.vue"
      <TextField textStyle="BodyxlMedium" value="Easily connect your CRM, email, and social tools to keep workflows seamless." class="text-primary text-center" />
     </div>
      <div class="w-full">
-    <ToolsSwiper />
+    <ToolsSwiper :images="toolsImages" />
   </div>
   </div>
 

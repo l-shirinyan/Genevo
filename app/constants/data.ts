@@ -15,6 +15,13 @@ import CubeLogo from '/icons/cube.svg'
 import FilterLogo from '/icons/filter.svg'
 import DeliveryLogo from '/icons/delivery.svg'
 import GoalLogo from '/icons/goal.svg'
+import ToolsFirstImage from "/images/tools1.png";
+import ToolsSecongImage from "/images/tools2.png";
+import ToolsThirdImage from "/images/tools3.png";
+import ToolsLastImage from "/images/tools4.png";
+import ResourcesToolsFirstImage from '/images/semrush.png';
+import ResourcesToolsSecondImage from  '/images/marketer.png';
+import ResourcesToolsThirdImage from '/images/hootsuite.png';
 
 export const navigation = [
   { name: "Shop", href: "/shop" },
@@ -309,3 +316,52 @@ export const images = [
     class: 'rounded-2xl object-contain w-full h-full order-3 md:order-4',
   },
 ];
+
+export const resourcesData=[
+  'Tips for improving lead conversion rates',
+  'The latest trends in AI and lead generation',
+  'Case studies and success stories',
+];
+
+export const tools = [
+  {
+    iconSrc: BookIcon,
+    title: "Lead Tracking Spreadsheets",
+    description: "Close more deals by focusing only on qualified, sales-ready leads.",
+  },
+  {
+    iconSrc: Puzzle,
+    title: "Sales Email Templates",
+    description: "Get pre-qualified leads delivered for every campaign .",
+  },
+  {
+    iconSrc: SnowballIcon,
+    title: "Campaign Planning Calendars",
+    description: "Find NPI-verified providers or top talent, filtered by specialty and location.",
+  },
+];
+
+
+export const toolsImages = [
+  ToolsFirstImage,
+  ToolsSecongImage,
+  ToolsThirdImage,
+  ToolsLastImage,
+  ToolsFirstImage,
+  ToolsSecongImage,
+  ToolsThirdImage,
+  ToolsLastImage,
+];
+
+
+export const resourcesImages=[
+  ResourcesToolsFirstImage,
+  ResourcesToolsSecondImage,
+  ResourcesToolsThirdImage,
+  ResourcesToolsFirstImage,
+  ResourcesToolsSecondImage,
+  ResourcesToolsThirdImage,
+  ResourcesToolsFirstImage,
+  ResourcesToolsSecondImage,
+  ResourcesToolsThirdImage,
+]

@@ -4,20 +4,11 @@ import { Autoplay, FreeMode, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-import ToolsFirstImage from "/images/tools1.png";
-import ToolsSecongImage from "/images/tools2.png";
-import ToolsThirdImage from "/images/tools3.png";
-import ToolsLastImage from "/images/tools4.png";
-const toolsImages = [
-  ToolsFirstImage,
-  ToolsSecongImage,
-  ToolsThirdImage,
-  ToolsLastImage,
-  ToolsFirstImage,
-  ToolsSecongImage,
-  ToolsThirdImage,
-  ToolsLastImage,
-];
+import { defineProps } from "vue";
+
+const props = defineProps<{
+  images: string[];
+}>();
 </script>
 
 <template>
@@ -38,7 +29,7 @@ const toolsImages = [
     }"
   >
     <SwiperSlide
-      v-for="(src, idx) in toolsImages"
+      v-for="(src, idx) in props.images"
       :key="idx"
       class="flex justify-center items-center cursor-pointer"
     >

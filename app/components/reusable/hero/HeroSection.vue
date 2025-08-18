@@ -15,6 +15,7 @@ interface Props {
   backgroundPosition?: string;
   extraClasses?: string;
   textClasses?: string;
+  contentClasses?:string
 }
 
 const props = defineProps<Props>();
@@ -33,7 +34,7 @@ const props = defineProps<Props>();
       :class="`flex flex-col items-start gap-16 ${props.extraClasses || ''}`"
     >
       <div
-        class="max-w-[590px] mx-auto lg:mx-0 flex flex-col items-center text-center gap-6 lg:text-start lg:items-start"
+        :class="`max-w-[590px] mx-auto lg:mx-0 flex flex-col items-center text-center gap-6 lg:text-start lg:items-start ${contentClasses}`"
       >
         <Text textStyle="Body6xlBold" :value="props.title" class="text-primary" />
         <Text

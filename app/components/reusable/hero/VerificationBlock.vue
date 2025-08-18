@@ -4,10 +4,11 @@ import Button from '../button/CustomButton.vue';
 interface Props {
   title: string;
   backgroundImage: string;
+  showIcon?: boolean;
   imageSrc: string;
   imageAlt: string;
   points: string[];
-  verifiedIcon: string;
+  verifiedIcon?: string;
   showButton: boolean;
   buttonText?: string;
 }
@@ -49,24 +50,29 @@ const props = defineProps<Props>();
         class="text-primary text-center md:text-start"
       />
 
-      <div class="flex flex-col items-start gap-6">
-        <div
+      <ul  class="flex flex-col items-start gap-6">
+        <li
           v-for="(point, index) in points"
           :key="index"
-          class="flex items-center gap-6"
+          class="flex items-center gap-4"
         >
+         <template v-if="props.showIcon">
           <NuxtImg
             :src="verifiedIcon"
             alt="Verify Check Icon"
             class="w-6 h-6"
           />
+        </template>
+        <template v-else>
+        <span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+      </template>
           <TextField
             textStyle="BodyxlMedium"
             :value="point"
             class="text-primary"
           />
-        </div>
-      </div>
+      </li>
+    </ul>
 
       <Button
         v-if="showButton"
