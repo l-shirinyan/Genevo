@@ -6,7 +6,11 @@ interface Props {
   iconAlt?: string;
   title: string;
   description: string;
+  titleClass?:string;
   iconBgClass?: string;
+  linkText?: string;
+  linkHref?: string;
+  visible?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -17,7 +21,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 <template>
   <div
-    class="relative w-full max-w-[fit-content] fill-available lg:max-w-[326px] rounded-xl shadow-md py-10 lg:py-16 px-4"
+    class="relative w-full max-w-[fit-content] fill-available fill-xl-available lg:max-w-[326px] rounded-xl shadow-md py-10 lg:py-16 px-4"
   >
     <div
       :class="[
@@ -34,20 +38,20 @@ const props = withDefaults(defineProps<Props>(), {
         class="lg:w-[50px] lg:h-[50px]"
       />
     </div>
-
     <div
       class="flex flex-col items-center text-center gap-8 sm:gap-5 mt-5 lg:mt-7"
     >
       <Text
         textStyle="Body3XlBold"
         :value="props.title"
-        class="text-primary text-nowrap"
+        :class="`text-primary text-nowrap ${titleClass}`"
       />
       <Text
         textStyle="BodyxlSemibold"
         :value="props.description"
         class="text-secondary"
       />
+
     </div>
   </div>
 </template>
@@ -58,5 +62,10 @@ const props = withDefaults(defineProps<Props>(), {
     min-width: -webkit-fill-available;
     min-width: stretch;
   }
+}
+@media screen and (max-width:992px){
+  .fill-xl-available {
+  min-width: -webkit-fill-available !important;
+}
 }
 </style>
