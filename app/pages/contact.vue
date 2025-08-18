@@ -42,7 +42,10 @@ const onSubmit = handleSubmit(values => {
 
 <template>
   <div
-    class="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-center lg:gap-8 mb-24 px-5 lg:px-20 py-30"
+    class="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-center lg:gap-8 mb-24 px-5 lg:px-20 py-30 bg-[url('/images/contact-mob-bg.png')]    
+    md:bg-[url('/images/contact-tablet-bg.png')] 
+    lg:bg-[url('/images/contact-bg.png')]       
+    bg-cover bg-center"
   >
     <div
       class="flex flex-col items-center text-center gap-8 lg:text-start lg:items-start lg:gap-16"
@@ -60,7 +63,7 @@ const onSubmit = handleSubmit(values => {
     </div>
 
     <div
-      class="w-full max-w-[658px] flex flex-col p-4 gap-4 md:p-6 md:gap-8 rounded-4xl border border-secondary"
+      class="w-full max-w-[658px] flex flex-col p-4 gap-4 md:p-6 md:gap-8 rounded-4xl" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;"
     >
       <div class="flex flex-col items-start gap-4 lg:gap-6">
         <div
@@ -111,7 +114,7 @@ const onSubmit = handleSubmit(values => {
         @click="onSubmit"
         :disabled="!meta.valid || isSubmitting"
         :class="{
-          'opacity-50 cursor-not-allowed': !meta.valid || isSubmitting,
+          'opacity-35 cursor-not-allowed': !meta.valid || isSubmitting,
           'w-full': true,
         }"
       >
@@ -121,10 +124,13 @@ const onSubmit = handleSubmit(values => {
   </div>
 
   <div
-    class="flex flex-col-reverse items-center justify-center gap-8 lg:flex-row lg:items-center lg:gap-21 px-5 lg:px-30 py-25"
+    class="flex flex-col-reverse items-center justify-center gap-8 lg:flex-row lg:items-center lg:gap-21 px-5 lg:px-30 py-25 bg-[url('/images/contact-mob-bg.png')]    
+    md:bg-[url('/images/contact-tablet-bg.png')] 
+    lg:bg-[url('/images/contact-bg.png')]       
+    bg-cover bg-center"
   >
-    <div class="lg:max-w-[689px] w-full flex flex-col items-center gap-8">
-      <div class="w-full rounded-4xl overflow-hidden">
+    <div class="max-w-[658px] lg:max-w-[689px] w-full flex flex-col items-center gap-8">
+      <div class="w-full rounded-4xl overflow-hidden" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
         <iframe
           class="w-full h-[400px] rounded-4xl border-0"
           src="https://www.google.com/maps?q=Philadelphia,USA&output=embed"

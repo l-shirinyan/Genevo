@@ -12,7 +12,7 @@
       :id="inputId"
       :placeholder="placeholder"
       :class="[
-        'w-full border border-secondary bg-white text-sm text-primary placeholder:text-secondary placeholder:text-sm rounded-xl p-4 focus:outline-0',
+        'w-full border border-cloud-silver bg-white text-sm text-primary placeholder:text-secondary placeholder:text-sm rounded-xl p-4 focus:outline-0',
         inputClass
       ]"
       :value="modelValue"

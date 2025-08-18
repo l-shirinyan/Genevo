@@ -1,4 +1,5 @@
 <template>
+  <div class="w-full flex flex-col items-start gap-1">
   <div class="w-full flex flex-col items-start gap-3">
     <label
       v-if="label"
@@ -13,14 +14,15 @@
       :type="type"
       :placeholder="placeholder"
       :class="[
-        'w-full border border-secondary bg-white text-sm text-primary placeholder:text-secondary placeholder:text-sm rounded-xl p-4 focus:outline-0',
-        inputClass
+        'w-full border bg-white text-sm text-primary placeholder:text-secondary placeholder:text-sm rounded-xl p-4 focus:outline-0',
+        inputClass,
+        error ? 'border-red-600' : 'border-cloud-silver'
       ]"
       :value="modelValue"
       @input="onInput"
     />
-
-    <p v-if="error" class="text-red-600 text-sm">{{ error }}</p>
+  </div>
+  <p v-if="error" class="text-red-600 text-sm">{{ error }}</p>
   </div>
 </template>
 
