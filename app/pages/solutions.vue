@@ -60,12 +60,12 @@ import VerificationBlock from "~/components/reusable/hero/VerificationBlock.vue"
     </div>
 </div>
 
-  <div class="flex flex-col items-center gap-12 px-5 mb-24">
+  <div class="flex flex-col items-center gap-12 px-5 md:px-20 mb-24">
     <div class="flex flex-col items-center text-center gap-6">
       <TextField textStyle="Body6xlBold" value="AI-Powered Lead Generation" class="text-primary" />
       <TextField textStyle="BodyxlMedium" value="Use AI to find prospects that match your ideal customer profile." class="text-primary" />
     </div>
-        <div class="flex flex-wrap justify-center gap-y-20 gap-6 mt-12 px-5 md:px-0">
+        <div class="flex flex-wrap justify-center gap-y-20 gap-6 mt-12 px-10 md:px-0">
     <FeatureCard
       v-for="(solution, index) in solutions"
       :key="index"
@@ -87,7 +87,7 @@ import VerificationBlock from "~/components/reusable/hero/VerificationBlock.vue"
     </div>
     <Button variant="primary" class="w-full hidden lg:block">View Product Catalog</Button>
    </div>
-   <div class="grid grid-cols-1 max-w-fit w-full [min-width:-webkit-fill-available] lg:min-w-0 lg:max-w-[751px] md:grid-cols-2 gap-6">
+   <div class="grid grid-cols-1 max-w-fit w-full [min-width:-webkit-fill-available] lg:min-w-0 lg:max-w-[751px] sm:grid-cols-2 gap-6">
     <NuxtImg
       v-for="(image, index) in images"
       :key="index"

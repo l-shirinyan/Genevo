@@ -25,7 +25,7 @@ import ResourcesToolsThirdImage from '/images/hootsuite.png';
 
 export const navigation = [
   { name: "Shop", href: "/shop" },
-  { name: "Solutions", href: "solution" },
+  { name: "Solutions", href: "solutions" },
   { name: "Resources", href: "resources" },
   { name: "About Us", href: "/about" },
   { name: "Contact Us", href: "/contact" },
@@ -298,22 +298,22 @@ export const images = [
   {
     src: '/images/matter-1.png',
     alt: 'Image 1',
-    class: 'rounded-2xl object-contain w-full h-full order-1 md:order-1',
+    class: 'rounded-2xl object-cover max-h-[250px] sm:object-cover w-full sm:h-full order-1 md:order-1',
   },
   {
     src: '/images/matter-2.png',
     alt: 'Image 2',
-    class: 'rounded-2xl object-contain w-full h-full order-2 md:order-2',
+    class: 'rounded-2xl  max-h-[250px] object-contain w-full sm:h-full order-2 md:order-2',
   },
   {
     src: '/images/matter-3.png',
     alt: 'Image 3',
-    class: 'rounded-2xl object-contain w-full h-full order-4 md:order-3',
+    class: 'rounded-2xl  max-h-[250px] object-contain w-full sm:h-full order-4 md:order-3',
   },
   {
     src: '/images/matter-4.png',
     alt: 'Image 4',
-    class: 'rounded-2xl object-contain w-full h-full order-3 md:order-4',
+    class: 'rounded-2xl object-cover max-h-[250px] sm:object-cover w-full sm:h-full order-3 md:order-4',
   },
 ];
 

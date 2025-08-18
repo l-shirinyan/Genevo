@@ -63,7 +63,7 @@ const props = withDefaults(defineProps<Props>(), {
     min-width: stretch;
   }
 }
-@media screen and (max-width:992px){
+@media screen and (max-width:1024px){
   .fill-xl-available {
   min-width: -webkit-fill-available !important;
 }
