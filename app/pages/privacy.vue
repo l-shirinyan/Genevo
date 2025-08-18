@@ -31,12 +31,10 @@ import { privacyData } from "~/constants/data";
   </div>
 
   <div
-    class="flex flex-col items-center gap-16 py-10 px-5 md:px-20 lg:gap-24"
-       :style="{
-            backgroundImage: `url('/images/policy-bg.png')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-        }"
+    class="flex flex-col items-center gap-16 py-10 px-5 md:px-20 lg:gap-24 bg-[url('/images/policy-mobile-bg.png')]    
+    md:bg-[url('/images/policy-tablet-bg.png')] 
+    lg:bg-[url('/images/policy-bg.png')]       
+    bg-cover bg-center"
   >
     <div
       v-for="(item, index) in privacyData"
