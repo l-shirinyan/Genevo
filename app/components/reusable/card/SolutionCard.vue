@@ -45,7 +45,7 @@ const props = withDefaults(defineProps<Props>(), {
         :class="`text-primary text-nowrap ${titleClass}`"
       />
       <TextField
-        textStyle="BodyxlSemibold"
+        textStyle="BodyXLNormal"
         :value="props.description"
         class="text-secondary"
       />
