@@ -18,8 +18,8 @@ import GoalLogo from '/icons/goal.svg'
 
 export const navigation = [
   { name: "Shop", href: "/shop" },
-  { name: "Solutions", href: "/solutions" },
-  { name: "Resources", href: "/resources" },
+  { name: "Solutions", href: "solution" },
+  { name: "Resources", href: "resources" },
   { name: "About Us", href: "/about" },
   { name: "Contact Us", href: "/contact" },
 ];
@@ -31,7 +31,7 @@ export const footerNavigation = {
   ],
   services: [
     { name: "Fulfillment Policies", href: "#" },
-    { name: "Privacy Policy", href: "#" },
+    { name: "Privacy Policy", href: "privacy" },
     { name: "KYC Policies", href: "#" },
   ],
 };
