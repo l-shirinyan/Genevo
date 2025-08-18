@@ -9,7 +9,8 @@ export type TextStyle =
   | "Body2xlNormal"
   | "BodyXLNormal"
   | "Body3XlBold"
-  | "BodyxlSemibold";
+  | "BodyxlSemibold"
+  | "BodyLgNormal";
 
 
 const props = defineProps<{
@@ -46,6 +47,9 @@ const styleClass = computed(() => {
       break;
     case "BodyxlSemibold":
       baseClass += "text-base lg:text-xl font-semibold";
+      break;
+    case "BodyLgNormal":
+      baseClass += "text-base lg:text-lg font-normal";
       break;
   }
   return baseClass;
