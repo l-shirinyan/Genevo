@@ -29,9 +29,9 @@ function openSidebar() {
       />
 
       <!-- Sidebar Panel -->
-      <div class="fixed inset-0 flex">
+      <div class="fixed inset-0 flex justify-end">
         <DialogPanel
-          class="relative flex w-full md:max-w-xs flex-1 transform transition duration-300 ease-in-out"
+          class="relative flex w-full md:max-w-xs flex-1 transform transition duration-300 ease-in-out mt-[54px]"
         >
           <!-- Sidebar content -->
           <div
@@ -76,7 +76,7 @@ function openSidebar() {
                     >
                       <NuxtLink
                         :to="item.href"
-                        class="relative inline-block text-base font-semibold no-underline text-primary group"
+                        class="relative inline-block text-lg font-semibold no-underline text-primary group"
                       >
                         {{ item.name }}
                         <span

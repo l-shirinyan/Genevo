@@ -19,7 +19,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 <template>
   <section
-    class="w-full px-3 mb-24 mt-0 2xl:mt-32"
+    class="w-full px-5 lg:px-20 mb-24 mt-0 2xl:mt-32"
     :style="{
       backgroundImage: `url('/images/generation-bg.png')`,
       backgroundSize: 'cover',
@@ -51,7 +51,7 @@ const props = withDefaults(defineProps<Props>(), {
       </div>
 
       <div
-        class="mt-4 lg:mt-0 origin-bottom 2xl:scale-[1.5] max-w-full scale-100"
+        class="mt-4 lg:mt-0 origin-bottom max-w-full scale-100"
       >
         <NuxtImg :src="imageSrc" :alt="imageAlt" class="max-w-full h-auto" />
       </div>
