@@ -2,7 +2,7 @@
   <div class="flex items-center justify-center result-slider w-full">
     <!-- Desktop Slider -->
     <div
-      class="hidden overflow-hidden resources-desk items-start relative w-full gap-8"
+      class="hidden overflow-hidden resources-desk justify-center items-start relative w-full gap-8"
     >
     <!-- Profile Card -->
         <div
@@ -15,7 +15,7 @@
           />
         </div>
       <!-- Testimonials Column -->
-      <div class="flex flex-col gap-8 flex-1 items-center relative h-[250px]">
+      <div class="flex flex-col justify-center gap-10 flex-1 items-center relative max-w-[600px] h-[250px]">
         <transition-group
           :name="direction === 'next' ? 'testimonial-next' : 'testimonial-prev'"
           tag="div"
@@ -67,9 +67,9 @@
     <Swiper
       class="resourcesSwiper"
       :modules="[Pagination, FreeMode]"
-      :slides-per-view="1.2"
+      :slides-per-view="1.3"
       :space-between="16"
-      :pagination="{ clickable: true }"
+      :pagination="{ clickable: true }"    
     >
       <SwiperSlide
         v-for="(t, i) in testimonials"
@@ -113,7 +113,7 @@ const testimonials = ref([
   },
   {
     title:"Lead Management & Tracking",
-    text: "Track lead activity, source, and conversion outcomes in real time.",
+    text: "Track lead activity, source, and conversions in real time.",
     img: "/images/structure.png",
   },
   {
@@ -128,7 +128,7 @@ const testimonials = ref([
   },
   {
     title:"Lead Management & Tracking",
-    text: "Track lead activity, source, and conversion outcomes in real time.",
+    text: "Track lead activity, source, and conversions in real time.",
     img: "/images/structure.png",
   },
   {

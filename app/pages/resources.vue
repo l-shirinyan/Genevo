@@ -22,9 +22,9 @@ import ResourcesSlider from "~/components/reusable/slider/ResourcesSlider.vue";
     contentClasses="max-w-[716px]"
   />
 
-   <div class="flex flex-col items-center gap-12 px-5 mb-24">
-    <TextField textStyle="Body6xlBold" value="Tools & Templates" class="text-primary text-center mb-12" />
-    <div class="flex flex-wrap justify-center gap-y-20 gap-6 px-5 mt-10 md:px-0">
+   <div class="flex flex-col items-center gap-12 px-5 md:px-20 mb-24">
+    <TextField textStyle="Body6xlBold" value="Tools & Templates" class="text-primary text-center" />
+    <div class="flex flex-wrap justify-center gap-y-20 gap-6 px-10 mt-12 md:px-0">
     <FeatureCard
       v-for="(tool, index) in tools"
       :key="index"
@@ -61,7 +61,7 @@ import ResourcesSlider from "~/components/reusable/slider/ResourcesSlider.vue";
   </div>
 
 
-  <div class="flex flex-col items-center gap-8 lg:gap-16 mb-24 px-5 lg:px-20 py-8">
+  <div class="flex flex-col items-center gap-8 lg:gap-16 mb-24 px-5 pr-small lg:px-20 py-8">
     <div class="flex flex-col items-center text-center gap-6">
         <TextField textStyle="Body6xlBold" value="Smarter CRM for Growing Teams" class="text-primary" />
         <TextField textStyle="BodyxlMedium" value="An all-in-one platform to manage sales, support, and automation." class="text-primary" />
@@ -77,3 +77,11 @@ import ResourcesSlider from "~/components/reusable/slider/ResourcesSlider.vue";
     <Button variant="white" class="w-full max-w-90">Explore Resourses </Button>
 </div>
 </template>
+
+<style scoped>
+@media screen and (max-width:1220px){
+  .pr-small{
+  padding-right: 20px !important;
+}
+}
+</style>

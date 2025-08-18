@@ -110,13 +110,13 @@ import TestimonialsSlider from "@/components/reusable/slider/TestimonialsSlider.
     <TestimonialsSlider />
   </div>
 
-  <div class="flex flex-col items-center gap-12 px-5 mb-24">
+  <div class="flex flex-col items-center gap-12 px-5 md:px-20 mb-24">
     <Text
       textStyle="Body6xlBold"
       value="Why Teams Choose YMT"
       class="text-primary text-center mb-12"
     />
-    <div class="flex flex-wrap justify-center gap-y-20 gap-6 px-10 md:px-0">
+    <div class="w-full flex flex-wrap justify-center gap-y-20 gap-6 px-10 md:px-0">
       <FeatureCard
         v-for="(feature, index) in features"
         :key="index"
