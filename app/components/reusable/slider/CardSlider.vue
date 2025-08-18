@@ -15,6 +15,7 @@ import PricingCard from "@/components/reusable/card/PricingCard.vue";
     :space-between="24"
     :free-mode="true"
     :pagination="{ clickable: true }"
+    :auto-height="true"
     :breakpoints="{
       360: { slidesPerView: 1.2 },
       530: { slidesPerView: 1.2 },
@@ -39,4 +40,17 @@ import PricingCard from "@/components/reusable/card/PricingCard.vue";
 .swiper-slide {
   padding: 10px 0px !important;
 }
+.pricingSwiper {
+  height: 100%; 
+}
+
+.pricingSwiper .swiper-slide {
+  display: flex;
+  height: 100% !important;
+}
+
+.pricingSwiper .swiper-slide > * {
+  flex: 1;
+}
+
 </style>
