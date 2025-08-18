@@ -11,6 +11,7 @@ export type TextStyle =
   | "Body3XlBold"
   | "BodyxlSemibold";
 
+
 const props = defineProps<{
   textStyle: TextStyle;
   value: string | number;
@@ -32,13 +33,13 @@ const styleClass = computed(() => {
       baseClass += "text-base md:text-lg xl:text-2xl font-bold";
       break;
     case "Body2xlSemibold":
-      baseClass +='text-base md:text-sm xl:text-2xl font-semibold';
+      baseClass +='text-base xl:text-2xl font-semibold';
       break;
      case "Body2xlNormal":
       baseClass += "text-base md:text-lg xl:text-2xl font-normal";
       break;
     case "BodyXLNormal":
-      baseClass += "text-sm xl:text-xl font-normal";
+      baseClass += "text-base xl:text-xl font-normal";
       break;
     case "Body3XlBold":
       baseClass += "text-xl md:text-2xl xl:text-3xl font-bold";
