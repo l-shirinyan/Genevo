@@ -35,9 +35,9 @@ const props = defineProps<Props>();
       <div
         class="max-w-[590px] mx-auto lg:mx-0 flex flex-col items-center text-center gap-6 lg:text-start lg:items-start"
       >
-        <Text textStyle="title" :value="props.title" class="text-primary" />
+        <Text textStyle="Body6xlBold" :value="props.title" class="text-primary" />
         <Text
-          textStyle="subtitle"
+          textStyle="BodyxlMedium"
           :value="props.subtitle"
           :class="`text-primary ${props.textClasses}`"
         />

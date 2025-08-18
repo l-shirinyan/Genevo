@@ -39,12 +39,12 @@ const props = withDefaults(defineProps<Props>(), {
       class="flex flex-col items-center text-center gap-8 sm:gap-5 mt-5 lg:mt-7"
     >
       <Text
-        textStyle="featuretitle"
+        textStyle="Body3XlBold"
         :value="props.title"
         class="text-primary text-nowrap"
       />
       <Text
-        textStyle="featuretext"
+        textStyle="BodyxlSemibold"
         :value="props.description"
         class="text-secondary"
       />
