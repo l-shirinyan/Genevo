@@ -21,15 +21,17 @@ const hoveredCard = ref<number | string | null>(null);
 </script>
 
 <template>
-  <form class="bg-white">
-    <div class="mx-auto max-w-7xl px-6">
+  <form>
+    <div class="mx-auto max-w-7xl px-6 h-full">
       <div
         v-for="tier in props.tiers"
         :key="tier.id"
-        class="group rounded-3xl min-w-[260px] lg:w-[340px] h-auto p-5 lg:p-8 shadow-xl bg-white hover:bg-primary transition-colors duration-300 ease-in-out hover:cursor-pointer"
+        class="group rounded-3xl min-w-[260px] lg:w-[340px] h-full p-5 lg:p-8 shadow-xl bg-white hover:bg-primary transition-colors duration-300 ease-in-out hover:cursor-pointer
+               flex flex-col justify-between"
         @mouseenter="hoveredCard = tier.id"
         @mouseleave="hoveredCard = null"
       >
+        <!-- Price -->
         <p class="flex items-baseline gap-x-1">
           <span
             class="md:text-6xl text-5xl font-bold tracking-tight text-primary transition-colors duration-300 ease-in-out group-hover:text-white"
@@ -38,11 +40,13 @@ const hoveredCard = ref<number | string | null>(null);
           </span>
           <span
             class="text-base font-medium text-gray-purple group-hover:text-white"
-            >/ Leads</span
           >
+            / Leads
+          </span>
         </p>
 
-        <div class="flex flex-col gap-10 items-start">
+        <!-- Content (flex-grow so it pushes button down) -->
+        <div class="flex flex-col gap-10 items-start flex-grow">
           <div class="flex flex-col items-start justify-between gap-4 mt-5">
             <h3
               :id="`tier-${tier.id}`"
@@ -67,19 +71,20 @@ const hoveredCard = ref<number | string | null>(null);
               <NuxtImg
                 :src="CheckIcon"
                 alt="Check Icon"
-                class="w-5 h-6 flex-none text-deep-indigo group-hover:fill-"
+                class="w-5 h-6 flex-none"
               />
               {{ feature }}
             </li>
           </ul>
-
-          <Button
-            :variant="hoveredCard === tier.id ? 'white' : 'primary'"
-            class="w-full"
-          >
-            {{ props.buttonText || "Choose Plan" }}
-          </Button>
         </div>
+
+        <!-- Button always bottom -->
+        <Button
+          :variant="hoveredCard === tier.id ? 'white' : 'primary'"
+          class="w-full mt-6"
+        >
+          {{ props.buttonText || "Choose Plan" }}
+        </Button>
       </div>
     </div>
   </form>
