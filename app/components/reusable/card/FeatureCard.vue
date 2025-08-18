@@ -21,7 +21,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 <template>
   <div
-    class="relative w-full max-w-[fit-content] fill-available fill-xl-available lg:max-w-[326px] rounded-xl shadow-md py-10 lg:py-16 px-4"
+    class="relative w-full max-w-[fit-content] fill-available fill-xl-available lg:max-w-[450px] rounded-xl shadow-md py-10 lg:py-16 px-8"
   >
     <div
       :class="[
@@ -63,7 +63,7 @@ const props = withDefaults(defineProps<Props>(), {
     min-width: stretch;
   }
 }
-@media screen and (max-width:1024px){
+@media screen and (max-width:1083px){
   .fill-xl-available {
   min-width: -webkit-fill-available !important;
 }

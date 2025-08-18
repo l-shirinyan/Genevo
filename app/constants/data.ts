@@ -223,7 +223,7 @@ export const privacyData = [
 export const solutions = [
   {
     iconSrc: BookIcon,
-    title: 'Real-time trend tracking',
+    title: 'Real-time trend tracking system',
     description: 'Get pre-qualified leads delivered for every campaign .',
   },
   {
@@ -233,7 +233,7 @@ export const solutions = [
   },
   {
     iconSrc: SnowballIcon,
-    title: 'Real-time trend tracking',
+    title: 'Healthcare & Recruiting Solutions',
     description: 'Find NPI-verified providers or top talent, filtered by specialty and location.',
   }
 ]
@@ -331,7 +331,7 @@ export const tools = [
   },
   {
     iconSrc: Puzzle,
-    title: "Sales Email Templates",
+    title: "Sales Email Templates Set Pack",
     description: "Get pre-qualified leads delivered for every campaign .",
   },
   {

@@ -46,7 +46,7 @@ const styleClass = computed(() => {
       baseClass += "text-xl md:text-2xl xl:text-3xl font-bold";
       break;
     case "BodyxlSemibold":
-      baseClass += "text-base lg:text-xl font-semibold";
+      baseClass += "text-base font-semibold";
       break;
     case "BodyLgNormal":
       baseClass += "text-base lg:text-lg font-normal";

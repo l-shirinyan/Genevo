@@ -52,5 +52,4 @@ import PricingCard from "@/components/reusable/card/PricingCard.vue";
 .pricingSwiper .swiper-slide > * {
   flex: 1;
 }
-
 </style>
