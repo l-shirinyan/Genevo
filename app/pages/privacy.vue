@@ -6,7 +6,7 @@ import { privacyData } from "~/constants/data";
 
 <template>
   <div
-    class="flex flex-col items-center justify-center gap-12 mb-24 py-48 md:py-40 lg:py-50 px-5"
+    class="flex flex-col items-center justify-center gap-12 py-48 md:py-40 lg:py-50 px-5"
     :style="{
             backgroundImage: `url('/images/privacy-bg.png')`,
             backgroundSize: 'cover',
@@ -31,7 +31,12 @@ import { privacyData } from "~/constants/data";
   </div>
 
   <div
-    class="flex flex-col items-center gap-16 px-5 md:px-20 lg:gap-24 mb-24"
+    class="flex flex-col items-center gap-16 py-10 px-5 md:px-20 lg:gap-24"
+       :style="{
+            backgroundImage: `url('/images/policy-bg.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+        }"
   >
     <div
       v-for="(item, index) in privacyData"
