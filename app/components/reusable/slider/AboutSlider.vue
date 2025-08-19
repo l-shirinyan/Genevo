@@ -41,7 +41,7 @@ import TextField from "../typography/TextField.vue";
           class="w-full max-w-[326px] min-w-fit shadow-md md:max-w-fit flex flex-col gap-4 lg:gap-8 rounded-xl py-5 px-4"
         >
           <div
-            class="flex items-center justify-center rounded-full w-16 h-16 bg-yellow-100"
+            class="flex items-center justify-center rounded-full min-w-16 w-16 min-h-16 bg-yellow-100"
           >
             <NuxtImg
               :src="item.iconSrc"

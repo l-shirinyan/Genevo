@@ -95,7 +95,7 @@ import AboutSlider from '~/components/reusable/slider/AboutSlider.vue'
     }"
   >
     <div
-      class="flex flex-col lg:flex-row bg-cloud-white rounded-4xl overflow-hidden p-6 lg:p-8 gap-8 lg:gap-12"
+      class="flex flex-col lg:flex-row items-center bg-cloud-white rounded-4xl overflow-hidden p-6 lg:p-8 gap-8 lg:gap-12"
       style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;"
     >
       <div class="hidden flex-1 lg:block lg:w-1/2 w-full">
@@ -106,7 +106,7 @@ import AboutSlider from '~/components/reusable/slider/AboutSlider.vue'
         />
       </div>
 
-      <div class="flex flex-col flex-1 gap-7 lg:justify-between lg:w-1/2 w-full">
+      <div class="flex flex-col flex-1 gap-7 xl:gap-20 lg:justify-between lg:w-1/2 w-full">
         <div class="flex flex-col items-center text-center lg:items-start lg:text-start gap-9">
           <TextField textStyle="Body6xlBold" value="Our Story" class="text-primary" />
           <TextField
@@ -167,7 +167,7 @@ import AboutSlider from '~/components/reusable/slider/AboutSlider.vue'
         class="text-primary max-w-[735px]"
       />
     </div>
-    <div class="flex flex-col-reverse items-start gap-10 lg:flex-row lg:gap-6">
+    <div class="flex flex-col-reverse items-center gap-10 lg:flex-row lg:gap-6">
       <div class="flex flex-col items-start gap-10">
         <div class="flex flex-col gap-8">
           <div

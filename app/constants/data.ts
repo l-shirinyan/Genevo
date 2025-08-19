@@ -430,51 +430,51 @@ export const aboutSlider=[
   {
     iconSrc: SnowballIcon,
     title: 'Built Around Your Workflow',
-    description: 'Our platform molds to your sales process — not the other way around.',
+    description: 'We provide tailored solutions carefully designed around your unique industry, team structure, and long-term business goals—ensuring that every strategy we deliver is practical, scalable, and aligned with the way you work.',
   },
   {
     iconSrc: SnowballIcon,
     title: 'Industry-Focused Fit',
-    description: 'Tailored solutions built for your vertical, team structure, and goals.',
+    description: 'We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.',
   },
-    {
+  {
     iconSrc: SnowballIcon,
     title: 'Built Around Your Workflow',
-    description: 'Our platform molds to your sales process — not the other way around.',
+    description: 'We provide tailored solutions carefully designed around your unique industry, team structure, and long-term business goals—ensuring that every strategy we deliver is practical, scalable, and aligned with the way you work.',
   },
   {
     iconSrc: SnowballIcon,
     title: 'Industry-Focused Fit',
-    description: 'Tailored solutions built for your vertical, team structure, and goals.',
+    description: 'We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.',
   },
-    {
+   {
     iconSrc: SnowballIcon,
     title: 'Built Around Your Workflow',
-    description: 'Our platform molds to your sales process — not the other way around.',
+    description: 'We provide tailored solutions carefully designed around your unique industry, team structure, and long-term business goals—ensuring that every strategy we deliver is practical, scalable, and aligned with the way you work.',
   },
   {
     iconSrc: SnowballIcon,
     title: 'Industry-Focused Fit',
-    description: 'Tailored solutions built for your vertical, team structure, and goals.',
+    description: 'We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.',
   },
-    {
+   {
     iconSrc: SnowballIcon,
     title: 'Built Around Your Workflow',
-    description: 'Our platform molds to your sales process — not the other way around.',
+    description: 'We provide tailored solutions carefully designed around your unique industry, team structure, and long-term business goals—ensuring that every strategy we deliver is practical, scalable, and aligned with the way you work.',
   },
   {
     iconSrc: SnowballIcon,
     title: 'Industry-Focused Fit',
-    description: 'Tailored solutions built for your vertical, team structure, and goals.',
+    description: 'We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.',
   },
-    {
+  {
     iconSrc: SnowballIcon,
     title: 'Built Around Your Workflow',
-    description: 'Our platform molds to your sales process — not the other way around.',
+    description: 'We provide tailored solutions carefully designed around your unique industry, team structure, and long-term business goals—ensuring that every strategy we deliver is practical, scalable, and aligned with the way you work.',
   },
   {
     iconSrc: SnowballIcon,
     title: 'Industry-Focused Fit',
-    description: 'Tailored solutions built for your vertical, team structure, and goals.',
+    description: 'We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.',
   },
 ]
