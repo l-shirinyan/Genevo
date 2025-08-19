@@ -13,4 +13,6 @@ export const contactFormSchema = Yup.object({
   message: Yup.string()
     .max(250, 'Message must be at most 250 characters')
     .required('Message is required'),
+  password: Yup.string()
+    .required('Message is required'),
 });
