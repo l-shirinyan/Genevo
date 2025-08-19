@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
-
 export type TextStyle =
   | "Body6xlBold"
   | "BodyxlMedium"
@@ -10,9 +9,8 @@ export type TextStyle =
   | "BodyXLNormal"
   | "Body3XlBold"
   | "BodyxlSemibold"
-  | "BodyLgNormal";
-
-
+  | "BodyLgNormal"
+  | "BodyLgSemiBold"
 const props = defineProps<{
   textStyle: TextStyle;
   value: string | number;
@@ -50,6 +48,9 @@ const styleClass = computed(() => {
       break;
     case "BodyLgNormal":
       baseClass += "text-base lg:text-lg font-normal";
+      break;
+  case "BodyLgSemiBold":
+      baseClass += "text-base lg:text-lg font-semibold";
       break;
   }
   return baseClass;

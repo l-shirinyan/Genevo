@@ -26,7 +26,7 @@ const props = withDefaults(defineProps<Props>(), {
     <div
       :class="[
         'absolute left-1/2 p-3 lg:p-0 -translate-x-1/2 flex items-center justify-center rounded-full',
-        'lg:w-[103px] lg:h-[103px] -top-[20%] :w-[61px] h-[61px]',
+        'lg:w-[103px] lg:h-[103px] -top-[10%] sm:-top-[20%] :w-[61px] h-[61px]',
         iconBgClass,
       ]"
     >
