@@ -365,3 +365,116 @@ export const resourcesImages=[
   ResourcesToolsSecondImage,
   ResourcesToolsThirdImage,
 ]
+
+export const about=[
+  {
+    iconSrc: BookIcon,
+    title: 'AI-Driven Matching',
+    description: 'Deliver leads that match by intent, specialty, and location — powered by smart automation.',
+  },
+  {
+    iconSrc: Puzzle,
+    title: 'Faster Conversions',
+    description: 'Get prospects who are pre-qualified and sales-ready, cutting time to close.',
+  },
+  {
+    iconSrc: SnowballIcon,
+    title: 'Custom Lead Strategies',
+    description: 'Tailored campaigns to your industry, goals, and team size — not one-size-fits-all.',
+  },
+    {
+    iconSrc: SnowballIcon,
+    title: 'Verified for Accuracy',
+    description: 'Phone-verified, updated, and cross-checked leads for better reach and engagement.',
+  },
+]
+export const values = [
+  {
+    icon: '/icons/focus.svg',
+    alt: 'Customer Focus',
+    title: 'Customer Focus',
+    description: 'We put your success first — every solution is built with your goals in mind.',
+  },
+  {
+    icon: '/icons/innovation.svg',
+    alt: 'Innovation',
+    title: 'Innovation',
+    description: 'We constantly evolve and adopt the latest technologies to stay ahead.',
+  },
+  {
+    icon: '/icons/integrity.svg',
+    alt: 'Integrity',
+    title: 'Integrity',
+    description: 'We value transparency, honesty, and trust in every interaction.',
+  },
+  {
+    icon: '/icons/excellence.svg',
+    alt: 'Excellence',
+    title: 'Excellence',
+    description: 'We strive for top-tier results and never settle for “good enough”.',
+  },
+]
+
+export const tags = [
+  'Customization',
+  'Growth',
+  'Impact',
+  'Trust',
+  'Scalability',
+  'Lead Intelligence',
+  'Integration',
+]
+
+
+export const aboutSlider=[
+  {
+    iconSrc: SnowballIcon,
+    title: 'Built Around Your Workflow',
+    description: 'Our platform molds to your sales process — not the other way around.',
+  },
+  {
+    iconSrc: SnowballIcon,
+    title: 'Industry-Focused Fit',
+    description: 'Tailored solutions built for your vertical, team structure, and goals.',
+  },
+    {
+    iconSrc: SnowballIcon,
+    title: 'Built Around Your Workflow',
+    description: 'Our platform molds to your sales process — not the other way around.',
+  },
+  {
+    iconSrc: SnowballIcon,
+    title: 'Industry-Focused Fit',
+    description: 'Tailored solutions built for your vertical, team structure, and goals.',
+  },
+    {
+    iconSrc: SnowballIcon,
+    title: 'Built Around Your Workflow',
+    description: 'Our platform molds to your sales process — not the other way around.',
+  },
+  {
+    iconSrc: SnowballIcon,
+    title: 'Industry-Focused Fit',
+    description: 'Tailored solutions built for your vertical, team structure, and goals.',
+  },
+    {
+    iconSrc: SnowballIcon,
+    title: 'Built Around Your Workflow',
+    description: 'Our platform molds to your sales process — not the other way around.',
+  },
+  {
+    iconSrc: SnowballIcon,
+    title: 'Industry-Focused Fit',
+    description: 'Tailored solutions built for your vertical, team structure, and goals.',
+  },
+    {
+    iconSrc: SnowballIcon,
+    title: 'Built Around Your Workflow',
+    description: 'Our platform molds to your sales process — not the other way around.',
+  },
+  {
+    iconSrc: SnowballIcon,
+    title: 'Industry-Focused Fit',
+    description: 'Tailored solutions built for your vertical, team structure, and goals.',
+  },
+]
