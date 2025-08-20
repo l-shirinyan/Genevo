@@ -77,6 +77,7 @@ function openSidebar() {
                       <NuxtLink
                         :to="item.href"
                         class="relative inline-block text-lg font-semibold no-underline text-primary group"
+                        @click="sidebarOpen = false"
                       >
                         {{ item.name }}
                         <span
@@ -87,7 +88,9 @@ function openSidebar() {
                   </ul>
                 </li>
                 <li class="mt-auto">
+                <NuxtLink to="/login">
                   <Button variant="primary" class="w-full">Login</Button>
+                  </NuxtLink>
                 </li>
               </ul>
             </nav>
@@ -139,7 +142,9 @@ function openSidebar() {
           </li>
         </nav>
 
-        <Button variant="primary" class="hidden lg:block">Login</Button>
+       <NuxtLink to="/login" class="hidden lg:block">
+          <Button variant="primary" class="hidden lg:block">Login</Button>
+      </NuxtLink>
       </div>
     </div>
   </div>
