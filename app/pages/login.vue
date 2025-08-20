@@ -37,7 +37,7 @@ const onSubmit = handleSubmit((values) => {
 <template>
   <div class="min-h-screen overflow-hidden flex flex-col md:flex-row">
 
-    <div class="w-full xl:w-1/2 h-screen flex items-center justify-center  px-6 xl:px-12">
+    <div class="w-full xl:w-1/2 h-screen flex items-center xl:bg-white justify-center  px-6 xl:px-12">
       <div class="w-full max-w-xl flex flex-col gap-10">
         <div class="flex flex-col items-center text-center gap-6">
           <TextField
@@ -78,7 +78,7 @@ const onSubmit = handleSubmit((values) => {
             <label class="flex items-center gap-2 cursor-pointer text-base text-secondary">
               <input
                 type="checkbox"
-                class="w-5 h-5 text-primary border-secondary rounded focus:ring-primary hover:cursor-pointer"
+                class="w-5 h-5 text-primary border-secondary rounded focus:ring-primary hover:cursor-pointer  checked:bg-primary checked:border-primary"
                 v-model="rememberMe"
               />
               Save login

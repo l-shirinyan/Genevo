@@ -94,7 +94,7 @@ const onSubmit = handleSubmit((values) => {
         <label class="flex items-center gap-2 cursor-pointer text-base text-secondary">
           <input
             type="checkbox"
-            class="w-5 h-5 text-primary border-secondary rounded focus:ring-primary hover:cursor-pointer"
+            class="w-5 h-5 text-primary border-secondary rounded focus:ring-primary hover:cursor-pointer  checked:bg-primary checked:border-primary"
             v-model="rememberMe"
           />
             I agree to receive SMS messages from VIP Services.
@@ -132,7 +132,7 @@ const onSubmit = handleSubmit((values) => {
       <NuxtImg
         src="/images/MacBook-Pro.png"
         alt="Dashboard Preview"
-        class="w-full h-auto object-contain"
+        class="w-full h-auto relative left-[25%] scale-[1.9] object-contain"
       />
     </div>
   </div>
