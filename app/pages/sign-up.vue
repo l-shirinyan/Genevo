@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import TextField from '~/components/reusable/typography/TextField.vue';
 import Input from '~/components/reusable/input/InputField.vue';
+import PhoneField from '~/components/reusable/input/PhoneField.vue';
 import Button from '~/components/reusable/button/CustomButton.vue';
 import { contactFormSchema } from '~/composables/validation';
 import { useField, useForm } from 'vee-validate';
@@ -41,7 +42,10 @@ const onSubmit = handleSubmit((values) => {
 </script>
 
 <template>
-  <div class="md:max-w-[700px] w-full flex flex-col items-center gap-12 py-16 px-5 mx-auto">
+  <div class="min-h-screen overflow-hidden flex flex-col md:flex-row">
+
+    <div class="w-full xl:w-1/2 h-screen flex items-center justify-center  px-6 xl:px-12">
+      <div class="md:max-w-[700px] w-full flex flex-col items-center gap-12 py-16 px-5 mx-auto">
     <div class="flex flex-col items-center text-center gap-6">
       <TextField
         textStyle="Body6xlBold"
@@ -84,6 +88,7 @@ const onSubmit = handleSubmit((values) => {
         type="password"
         placeholder="Create Password"
       />
+      <PhoneField />
 
       <div class="w-full">
         <label class="flex items-center gap-2 cursor-pointer text-base text-secondary">
@@ -119,4 +124,16 @@ const onSubmit = handleSubmit((values) => {
       </div>
     </div>
   </div>
-</template>
+    </div>
+
+    <div
+      class="hidden xl:flex xl:w-1/2 h-screen bg-cover bg-center bg-[url('/images/login-desktop-bg.png')] relative items-center justify-center"
+    >
+      <NuxtImg
+        src="/images/MacBook-Pro.png"
+        alt="Dashboard Preview"
+        class="w-full h-auto object-contain"
+      />
+    </div>
+  </div>
+</template> 

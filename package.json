@@ -26,5 +26,8 @@
     "vue-tel-input": "^9.5.0",
     "vue3-google-map": "^0.23.1",
     "yup": "^1.7.0"
+  },
+  "devDependencies": {
+    "@types/vue-tel-input": "^2.1.7"
   }
 }

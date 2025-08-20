@@ -139,7 +139,9 @@ function openSidebar() {
           </li>
         </nav>
 
-        <Button variant="primary" class="hidden lg:block">Login</Button>
+       <NuxtLink to="/login">
+          <Button variant="primary" class="hidden lg:block">Login</Button>
+      </NuxtLink>
       </div>
     </div>
   </div>

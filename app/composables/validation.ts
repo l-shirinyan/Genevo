@@ -1,6 +1,9 @@
 import * as Yup from 'yup';
 
 export const contactFormSchema = Yup.object({
+  fullName: Yup.string()
+    .max(50, 'First name must be at most 50 characters')
+    .required('First name is required'),
   firstName: Yup.string()
     .max(50, 'First name must be at most 50 characters')
     .required('First name is required'),
