@@ -478,3 +478,168 @@ export const aboutSlider=[
     description: 'We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.',
   },
 ]
+
+
+export const productData = [
+  {
+    iconSrc: BookIcon,
+    title: "Sales Teams",
+    description: "Close more deals by focusing only on qualified, sales-ready leads.",
+  },
+  {
+    iconSrc: Puzzle,
+    title: "Agencies & Consultants",
+    description: "Get pre-qualified leads delivered for every campaign —  no guessing.",
+  },
+  {
+    iconSrc: SnowballIcon,
+    title: "Healthcare & Recruiting",
+    description: "Find NPI-verified providers or top talent, filtered by specialty and location.",
+  },
+];
+
+
+export const faqData=[
+      { title: 'AI-Generated Lead Sets', description: 'Leads generated using AI models trained on ideal customer criteria, tailored by vertical and intent.', price: '$1.00 – $9.00' },
+      { title: 'Phone Verified Leads', description: 'Leads generated using AI models trained on ideal customer criteria, tailored by vertical and intent.', price: '$1.00 – $9.00' },
+      { title: 'Industry-Specific Lead Packs', description: 'Leads generated using AI models trained on ideal customer criteria, tailored by vertical and intent.', price: '$1.00 – $9.00'},
+    { title: 'Lead Exclusivity Upgrade', description: 'Leads generated using AI models trained on ideal customer criteria, tailored by vertical and intent.', price: '$1.00 – $9.00'},
+    { title: 'Custom Lead Campaign Deployment', description: 'Leads generated using AI models trained on ideal customer criteria, tailored by vertical and intent.', price: '$1.00 – $9.00'},
+    { title: 'CRM / API Integration Support', description: 'Leads generated using AI models trained on ideal customer criteria, tailored by vertical and intent.', price: '$1.00 – $9.00'}
+]
+
+export const mockTestimonials = [
+  {
+    testimonialText:
+      "I’ve tried 5+ lead platforms. This is the only one that gave us usable data and real conversion.",
+    userImage: "/images/user-img-1.png",
+    userName: "Avery Smith",
+    userHandle: "@jaded_butterfly1",
+  },
+  {
+    testimonialText:
+     "I’ve tried 5+ lead platforms. This is the only one that gave us usable data and real conversion.",
+    userImage: "/images/user-img-2.png",
+    userName: "Avery Smith",
+    userHandle: "@jaded_butterfly1",
+  },
+   {
+    testimonialText:
+      "I’ve tried 5+ lead platforms. This is the only one that gave us usable data and real conversion.",
+    userImage: "/images/user-img-1.png",
+    userName: "Avery Smith",
+    userHandle: "@jaded_butterfly1",
+  },
+  {
+    testimonialText:
+      "I’ve tried 5+ lead platforms. This is the only one that gave us usable data and real conversion.",
+    userImage: "/images/user-img-2.png",
+    userName: "Avery Smith",
+    userHandle: "@jaded_butterfly1",
+  },
+   {
+    testimonialText:
+      "I’ve tried 5+ lead platforms. This is the only one that gave us usable data and real conversion.",
+    userImage: "/images/user-img-1.png",
+    userName: "Avery Smith",
+    userHandle: "@jaded_butterfly1",
+  },
+  {
+    testimonialText:
+      "I’ve tried 5+ lead platforms. This is the only one that gave us usable data and real conversion.",
+    userImage: "/images/user-img-2.png",
+    userName: "Avery Smith",
+    userHandle: "@jaded_butterfly1",
+  },
+   {
+    testimonialText:
+      "I’ve tried 5+ lead platforms. This is the only one that gave us usable data and real conversion.",
+    userImage: "/images/user-img-1.png",
+    userName: "Avery Smith",
+    userHandle: "@jaded_butterfly1",
+  },
+  {
+    testimonialText:
+      "I’ve tried 5+ lead platforms. This is the only one that gave us usable data and real conversion.",
+    userImage: "/images/user-img-2.png",
+    userName: "Avery Smith",
+    userHandle: "@jaded_butterfly1",
+  },
+   {
+    testimonialText:
+     "I’ve tried 5+ lead platforms. This is the only one that gave us usable data and real conversion.",
+    userImage: "/images/user-img-1.png",
+    userName: "Avery Smith",
+    userHandle: "@jaded_butterfly1",
+  },
+  {
+    testimonialText:
+     "I’ve tried 5+ lead platforms. This is the only one that gave us usable data and real conversion.",
+    userImage: "/images/user-img-2.png",
+    userName: "Avery Smith",
+    userHandle: "@jaded_butterfly1",
+  }];
+
+
+  export const leadData=[
+  {
+    image: '/images/leads.png',
+    title: 'Solar Leads',
+    text: 'Reach homeowners and businesses actively seeking solar solutions. These leads are geo-targeted and ideal for installers, consultants, or green energy marketers looking to close fast.',
+  },
+  {
+    image: '/images/leads.png',
+    title: 'Solar Leads',
+    text: 'Reach homeowners and businesses actively seeking solar solutions. These leads are geo-targeted and ideal for installers, consultants, or green energy marketers looking to close fast.',
+  },
+  {
+    image: '/images/leads.png',
+    title: 'Solar Leads',
+    text: 'Reach homeowners and businesses actively seeking solar solutions. These leads are geo-targeted and ideal for installers, consultants, or green energy marketers looking to close fast.',
+  },
+   {
+    image: '/images/leads.png',
+    title: 'Solar Leads',
+    text: 'Reach homeowners and businesses actively seeking solar solutions. These leads are geo-targeted and ideal for installers, consultants, or green energy marketers looking to close fast.',
+  },
+  {
+    image: '/images/leads.png',
+    title: 'Solar Leads',
+    text: 'Reach homeowners and businesses actively seeking solar solutions. These leads are geo-targeted and ideal for installers, consultants, or green energy marketers looking to close fast.',
+  },
+  {
+    image: '/images/leads.png',
+    title: 'Solar Leads',
+    text: 'Reach homeowners and businesses actively seeking solar solutions. These leads are geo-targeted and ideal for installers, consultants, or green energy marketers looking to close fast.',
+  },
+   {
+    image: '/images/leads.png',
+    title: 'Solar Leads',
+    text: 'Reach homeowners and businesses actively seeking solar solutions. These leads are geo-targeted and ideal for installers, consultants, or green energy marketers looking to close fast.',
+  },
+  {
+    image: '/images/leads.png',
+    title: 'Solar Leads',
+    text: 'Reach homeowners and businesses actively seeking solar solutions. These leads are geo-targeted and ideal for installers, consultants, or green energy marketers looking to close fast.',
+  },
+  {
+    image: '/images/leads.png',
+    title: 'Solar Leads',
+    text: 'Reach homeowners and businesses actively seeking solar solutions. These leads are geo-targeted and ideal for installers, consultants, or green energy marketers looking to close fast.',
+  },
+   {
+    image: '/images/leads.png',
+    title: 'Solar Leads',
+    text: 'Reach homeowners and businesses actively seeking solar solutions. These leads are geo-targeted and ideal for installers, consultants, or green energy marketers looking to close fast.',
+  },
+  {
+    image: '/images/leads.png',
+    title: 'Solar Leads',
+    text: 'Reach homeowners and businesses actively seeking solar solutions. These leads are geo-targeted and ideal for installers, consultants, or green energy marketers looking to close fast.',
+  },
+  {
+    image: '/images/leads.png',
+    title: 'Solar Leads',
+    text: 'Reach homeowners and businesses actively seeking solar solutions. These leads are geo-targeted and ideal for installers, consultants, or green energy marketers looking to close fast.',
+  }
+  ]

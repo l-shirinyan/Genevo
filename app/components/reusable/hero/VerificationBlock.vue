@@ -4,13 +4,16 @@ import Button from '../button/CustomButton.vue';
 interface Props {
   title: string;
   backgroundImage: string;
+  titleClassName?:string;
   showIcon?: boolean;
   imageSrc: string;
   imageAlt: string;
-  points: string[];
+  points?: string[];
   verifiedIcon?: string;
   showButton: boolean;
   buttonText?: string;
+  description?: string; 
+  useList?: boolean;
 }
 
 const props = defineProps<Props>();
@@ -47,10 +50,11 @@ const props = defineProps<Props>();
       <TextField
         textStyle="Body6xlBold"
         :value="title"
-        class="text-primary text-center md:text-start"
+        :class="`text-primary text-center md:text-start ${titleClassName}`"
       />
 
-      <ul  class="flex flex-col items-start gap-6">
+      <ul v-if="useList && points?.length"
+    class="flex flex-col items-start gap-6">
         <li
           v-for="(point, index) in points"
           :key="index"
@@ -73,6 +77,13 @@ const props = defineProps<Props>();
           />
       </li>
     </ul>
+
+      <TextField
+    v-else-if="description"
+    textStyle="BodyxlMedium"
+    :value="description"
+    class="text-primary text-center max-w-[540px] w-full md:text-start"
+  />
 
       <Button
         v-if="showButton"
