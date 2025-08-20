@@ -11,21 +11,32 @@
            'w-full bg-white text-sm text-primary placeholder:text-secondary placeholder:text-sm p-4 focus:outline-0 rounded-xl border border-cloud-silver'
       }"
        @keypress="onlyNumbers"
+      @update:modelValue="onInput"
     />
  
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { defineProps, defineEmits } from 'vue';
 
-const phone = ref('')
+const props = defineProps<{
+  modelValue: string;
+}>();
+
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: string): void;
+}>();
+
+function onInput(value: string) {
+  emit('update:modelValue', value);
+}
 
 function onlyNumbers(event: KeyboardEvent) {
-     if (!/[0-9]/.test(event.key)) { 
-        event.preventDefault() 
-    } 
-    }
+  if (!/[0-9]/.test(event.key)) {
+    event.preventDefault();
+  }
+}
 </script>
 
 <style>

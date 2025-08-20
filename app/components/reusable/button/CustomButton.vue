@@ -27,6 +27,8 @@ const variants: Record<string, string> = {
 const buttonClass = computed(
   () => `${baseStyles} ${variants[props.variant]} ${props.className}`
 );
+
+
 </script>
 
 <template>
