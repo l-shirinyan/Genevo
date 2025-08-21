@@ -33,7 +33,7 @@ const toggle = (index: number) => {
         :class="openIndex === index ? 'bg-[#E5EBF0] rounded-t-xl' : 'bg-white rounded-xl'"
         @click="toggle(index)"
       >
-        <TextField textStyle="Body2xlSemibold" :value="item.title" class="text-primary" />
+        <TextField textStyle="Body3XlSemiBold" :value="item.title" class="text-primary" />
          <NuxtImg
         src="/icons/arrowup.svg"
         alt="Arrow Up"
@@ -63,7 +63,7 @@ const toggle = (index: number) => {
          :class="openIndex === index ? 'shadow-xl' : 'shadow-none'"
           >
           <TextField textStyle="BodyxlMedium" :value="item.description" class="text-secondary max-w-[660px] w-full" />
-          <TextField textStyle="BodyxlMedium" :value="item.price" class="text-primary text-nowrap self-end" />
+          <TextField textStyle="Body2xlBold" :value="item.price" class="text-primary text-nowrap self-end" />
         </div>
       </transition>
     </div>

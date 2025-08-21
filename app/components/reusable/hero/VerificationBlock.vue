@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import TextField from '../typography/TextField.vue';
-import Button from '../button/CustomButton.vue';
+import TextField from "../typography/TextField.vue";
+import Button from "../button/CustomButton.vue";
 interface Props {
   title: string;
   backgroundImage: string;
-  titleClassName?:string;
+  titleClassName?: string;
   showIcon?: boolean;
   imageSrc: string;
   imageAlt: string;
@@ -12,7 +12,7 @@ interface Props {
   verifiedIcon?: string;
   showButton: boolean;
   buttonText?: string;
-  description?: string; 
+  description?: string;
   useList?: boolean;
 }
 
@@ -27,15 +27,11 @@ const props = defineProps<Props>();
       backgroundPosition: 'center',
     }"
   >
-    <!-- Left: Image + Button -->
-    <div class="flex flex-col items-center gap-8 max-w-[775px] max-h-[499px] w-full h-full">
-      <NuxtImg
-        :src="imageSrc"
-        :alt="imageAlt"
-        class="w-full h-full"
-      />
+    <div
+      class="flex flex-col items-center gap-8 max-w-[775px] max-h-[499px] w-full h-full"
+    >
+      <NuxtImg :src="imageSrc" :alt="imageAlt" class="w-full h-full" />
 
-      <!-- Button for mobile only -->
       <Button
         v-if="showButton"
         variant="primary"
@@ -45,7 +41,6 @@ const props = defineProps<Props>();
       </Button>
     </div>
 
-    <!-- Right: Text + Features + Desktop Button -->
     <div class="flex flex-col items-center gap-6 md:items-start">
       <TextField
         textStyle="Body6xlBold"
@@ -53,37 +48,41 @@ const props = defineProps<Props>();
         :class="`text-primary text-center md:text-start ${titleClassName}`"
       />
 
-      <ul v-if="useList && points?.length"
-    class="flex flex-col items-start gap-6">
+      <ul
+        v-if="useList && points?.length"
+        class="flex flex-col items-start gap-6"
+      >
         <li
           v-for="(point, index) in points"
           :key="index"
           class="flex items-center gap-4"
         >
-         <template v-if="props.showIcon">
-          <NuxtImg
-            :src="verifiedIcon"
-            alt="Verify Check Icon"
-            class="w-6 h-6"
-          />
-        </template>
-        <template v-else>
-        <span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-      </template>
+          <template v-if="props.showIcon">
+            <NuxtImg
+              :src="verifiedIcon"
+              alt="Verify Check Icon"
+              class="w-6 h-6"
+            />
+          </template>
+          <template v-else>
+            <span
+              class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"
+            ></span>
+          </template>
           <TextField
             textStyle="BodyxlMedium"
             :value="point"
             class="text-primary"
           />
-      </li>
-    </ul>
+        </li>
+      </ul>
 
       <TextField
-    v-else-if="description"
-    textStyle="BodyxlMedium"
-    :value="description"
-    class="text-primary text-center max-w-[540px] w-full md:text-start"
-  />
+        v-else-if="description"
+        textStyle="BodyxlMedium"
+        :value="description"
+        class="text-primary text-center max-w-[540px] w-full md:text-start"
+      />
 
       <Button
         v-if="showButton"

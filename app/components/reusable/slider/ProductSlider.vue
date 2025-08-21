@@ -20,7 +20,7 @@ import TestimonialCard from "../card/TestimonialCard.vue";
     :pagination="{ clickable: true }"
     :breakpoints="{
     400: {
-      slidesPerView: 1.7,
+      slidesPerView: 1.5,
     },
     769: {
       slidesPerView: 2,

@@ -9,6 +9,7 @@ export type TextStyle =
   | "Body2xlMedium"
   | "BodyXLNormal"
   | "Body3XlBold"
+  | "Body3XlSemiBold"
   | "BodyxlSemibold"
   | "BodyLgNormal"
   | "BodyLgBold"
@@ -48,6 +49,9 @@ const styleClass = computed(() => {
       break;
     case "Body3XlBold":
       baseClass += "text-xl md:text-2xl xl:text-3xl font-bold";
+      break;
+    case "Body3XlSemiBold":
+      baseClass += "text-xl md:text-2xl xl:text-3xl font-semibold";
       break;
     case "BodyxlSemibold":
       baseClass += "text-base font-semibold";

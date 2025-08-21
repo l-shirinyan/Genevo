@@ -6,11 +6,13 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { defineProps, ref } from 'vue';
-import { Dialog, DialogPanel, DialogOverlay } from '@headlessui/vue';
-import { XMarkIcon } from '@heroicons/vue/24/outline';
-import { NuxtImg } from '#components';
-import TextField from '../typography/TextField.vue';
+import { defineProps, ref } from "vue";
+import { Dialog, DialogPanel, DialogOverlay } from "@headlessui/vue";
+import { XMarkIcon } from "@heroicons/vue/24/outline";
+import { CheckIcon } from "@heroicons/vue/24/solid";
+import { NuxtImg } from "#components";
+import TextField from "../typography/TextField.vue";
+import Button from "../button/CustomButton.vue";
 
 interface CardItem {
   image: string;
@@ -54,7 +56,7 @@ const closeModal = () => {
       400: { slidesPerView: 1.7 },
       768: { slidesPerView: 2, spaceBetween: 24 },
       1200: { slidesPerView: 3, spaceBetween: 24 },
-      1400: { slidesPerView: 4, spaceBetween: 24 }
+      1400: { slidesPerView: 4, spaceBetween: 24 },
     }"
     class="leadsSwiper w-full"
   >
@@ -64,15 +66,25 @@ const closeModal = () => {
       class="flex justify-center items-center cursor-pointer"
       @click="openModal(item)"
     >
-      <div class="w-full max-w-[387px] flex flex-col items-start p-4 bg-white shadow-xl rounded-xl">
+      <div
+        class="w-full max-w-[387px] flex flex-col items-start p-4 bg-white shadow-xl rounded-xl"
+      >
         <NuxtImg
           :src="item.image"
           :alt="item.title"
           class="w-full h-full max-w-[351px] max-h-[251px] rounded-xl"
         />
         <div class="flex flex-col items-start gap-4 mt-4">
-          <TextField textStyle="BodyLgBold" :value="item.title" class="text-primary" />
-          <TextField textStyle="BodyBaseNormal" :value="item.text" class="text-primary" />
+          <TextField
+            textStyle="Body3XlBold"
+            :value="item.title"
+            class="text-primary"
+          />
+          <TextField
+            textStyle="BodyBaseNormal"
+            :value="item.text"
+            class="text-primary"
+          />
         </div>
       </div>
     </SwiperSlide>
@@ -80,15 +92,11 @@ const closeModal = () => {
 
   <!-- Modal -->
   <Dialog :open="isModalOpen" @close="closeModal" class="relative z-50">
-    <!-- Backdrop -->
     <DialogOverlay class="fixed inset-0 bg-black/50 transition-opacity" />
-
-    <!-- Content -->
     <div class="fixed inset-0 z-50 flex items-center justify-center p-4">
       <DialogPanel
-        class="relative w-full max-w-4xl transform rounded-xl bg-white p-6 text-left shadow-xl transition-all"
+        class="relative w-full max-w-[1327px] transform rounded-xl bg-white p-8 md:p-12 text-left shadow-xl transition-all"
       >
-        <!-- Close -->
         <button
           type="button"
           @click="closeModal"
@@ -97,48 +105,75 @@ const closeModal = () => {
           <XMarkIcon class="w-6 h-6" />
         </button>
 
-        <!-- Card content -->
-        <div v-if="selectedItem" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Left -->
-          <div class="flex flex-col gap-4">
-            <h2 class="text-2xl font-bold text-primary">{{ selectedItem.title }}</h2>
-            <p class="text-gray-600">{{ selectedItem.text }}</p>
+        <div
+          v-if="selectedItem"
+          class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center"
+        >
+          <!-- Left (Text) -->
+          <div class="flex flex-col gap-6 order-2 lg:order-1">
+            <TextField
+              textStyle="Body6xlBold"
+              :value="selectedItem.title"
+              class="text-primary"
+            />
+            <TextField
+              textStyle="BodyXLNormal"
+              :value="selectedItem.text"
+              class="text-primary"
+            />
 
-            <div class="flex items-baseline gap-2">
-              <span class="text-3xl font-bold text-primary">{{ selectedItem.price }}</span>
-              <span class="text-gray-500">/ Per Lead</span>
+            <div class="flex flex-col items- justify-center gap-6">
+              <div class="flex flex-row items-center justify-between">
+                <div class="flex items-baseline gap-2">
+                  <TextField
+                    textStyle="Body6xlBold"
+                    value="$1.00"
+                    class="text-primary"
+                  />
+                  <TextField
+                    textStyle="BodyLgNormal"
+                    value="/ Per Lead"
+                    class="text-secondary"
+                  />
+                </div>
+                <span
+                  v-if="true"
+                  class="px-3 py-1 flex items-center gap-2 text-sm font-medium text-[#0A8138] bg-[#DAECE1] rounded-full"
+                >
+                  <CheckIcon class="w-4 h-4" />
+                  In Stock
+                </span>
+              </div>
+
+              <div class="flex flex-row items-center justify-between">
+                <span
+                  class="px-3 py-1 text-sm font-medium text-yellow text-nowrap bg-[#F9F3E1] rounded-full"
+                >
+                  Min Order 10 Leads
+                </span>
+                <div>
+                  <span class="text-[#F9F3E1]">⭐</span>
+                  <span class="text-base text-[#4B5563] text-nowrap"
+                    >(1,588 reviews)</span
+                  >
+                </div>
+              </div>
             </div>
 
-            <div class="flex items-center gap-3">
-              <span
-                v-if="selectedItem.inStock"
-                class="px-3 py-1 text-sm font-medium text-green-700 bg-green-100 rounded-full"
-              >
-                In Stock
-              </span>
-              <span v-else class="px-3 py-1 text-sm font-medium text-red-700 bg-red-100 rounded-full">
-                Out of Stock
-              </span>
-              <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
-              <span class="text-sm text-gray-500">({{ selectedItem.reviews }} reviews)</span>
-            </div>
-
-            <div class="flex gap-3 mt-4">
-           
-              <button
-                class="px-6 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90"
-              >
-                Login
-              </button>
-            </div>
+            <Button
+              variant="primary"
+              class="w-full px-6 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90"
+            >
+              Login
+            </Button>
           </div>
 
-          <!-- Right -->
-          <div>
+          <!-- Right (Image) -->
+          <div class="w-full h-full order-1 lg:order-2">
             <NuxtImg
               :src="selectedItem.image"
               :alt="selectedItem.title"
-              class="w-full rounded-xl"
+              class="w-full h-full rounded-xl"
             />
           </div>
         </div>
@@ -151,19 +186,24 @@ const closeModal = () => {
 .swiper-wrapper {
   height: 100% !important;
 }
+
 .swiper-slide {
   padding: 10px 0 !important;
 }
+
 .leadsSwiper {
   height: 100%;
 }
+
 .leadsSwiper .swiper-slide {
   display: flex;
   height: 100% !important;
 }
+
 .leadsSwiper .swiper-slide > * {
   flex: 1;
 }
+
 .swiper-button-next,
 .swiper-button-prev {
   background-color: #ffffff;
@@ -176,25 +216,35 @@ const closeModal = () => {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
+
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
   background-color: #003968;
   color: #ffffff;
   transform: scale(1.05);
 }
+
 .swiper-button-next:focus,
 .swiper-button-prev:focus {
   outline: none;
   background-color: #003968;
   color: #ffffff;
 }
+
 .swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 24px;
   color: #003968;
 }
+
 .swiper-button-next:hover::after,
 .swiper-button-prev:hover::after {
   color: #ffffff;
+}
+@media (max-width: 772px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
 }
 </style>

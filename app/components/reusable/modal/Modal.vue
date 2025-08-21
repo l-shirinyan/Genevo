@@ -13,24 +13,16 @@ const close = () => emit('update:modelValue', false)
 
 <template>
   <Dialog :open="props.modelValue" @close="close" class="relative z-50">
-    <!-- Backdrop -->
     <DialogOverlay class="fixed inset-0 bg-black/50 transition-opacity" />
 
-    <!-- Modal content -->
     <div class="fixed inset-0 z-50 flex items-center justify-center p-4">
       <DialogPanel
-        class="relative w-full max-w-3xl transform rounded-xl bg-white p-6 text-left shadow-xl transition-all"
-      >
-        <!-- Close button -->
-        <button
-          type="button"
-          @click="close"
-          class="absolute right-3 top-3 rounded-full p-1 text-gray-400 hover:text-gray-600"
-        >
+        class="relative w-full max-w-3xl transform rounded-xl bg-white p-6 text-left shadow-xl transition-all">
+        <button type="button" @click="close"
+         class="absolute right-3 top-3 rounded-full p-1 text-gray-400 hover:text-gray-600 focus:outline-none focus-visible:outline-none">
           <XMarkIcon class="w-6 h-6" />
         </button>
 
-        <!-- Slot content -->
         <slot />
       </DialogPanel>
     </div>

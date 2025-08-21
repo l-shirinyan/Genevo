@@ -23,7 +23,7 @@ import TestimonialsSlider from "@/components/reusable/slider/TestimonialsSlider.
     subtitle="Why chase leads when AI can bring them to you — ready, verified, and matched to your exact filters."
     :buttonTexts="['Become an Affiliate', 'Purchase Leads']"
     :backgroundImage="heroBg"
-    button2Class="border-0 w-[216px]"
+    button2Class="w-[216px]"
     :imageSrc="teamImg"
     imageAlt="Team Image"
     textClasses="max-w-[470px] md:max-w-[550px] lg:max-w-none"

@@ -136,7 +136,7 @@ const onSubmit =handleSubmit(async (values) => {
       <NuxtImg
         src="/images/login-diagrams.png"
         alt="Dashboard Preview"
-        class="w-[80%] h-auto object-contain"
+        class="w-[80%] h-auto object-cover"
       />
     </div>
   </div>

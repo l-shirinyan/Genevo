@@ -53,6 +53,7 @@ import ResourcesSlider from "~/components/reusable/slider/ResourcesSlider.vue";
     verifiedIcon="/icons/check.svg"
     :showButton="true"
     buttonText="Explore Resourses"
+    :useList="true"
   />
 
   <div class="flex flex-col items-center gap-8 lg:gap-16 mb-24">

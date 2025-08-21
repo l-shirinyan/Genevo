@@ -13,7 +13,7 @@ import TextField from "../typography/TextField.vue";
     :slides-per-view="1.2"
     :space-between="24"
     :free-mode="true"
-     :auto-height="true"
+    :auto-height="true"
     :pagination="{ clickable: true }"
     class="aboutSwiper w-full"
        :breakpoints="{
@@ -35,10 +35,11 @@ import TextField from "../typography/TextField.vue";
     <SwiperSlide
       v-for="(item, index) in aboutSlider"
       :key="index"
+      class="h-full"
     >
       <div class="flex justify-center w-full">
         <div
-          class="w-full max-w-[326px] min-w-fit shadow-md md:max-w-fit flex flex-col gap-4 lg:gap-8 rounded-xl py-5 px-4"
+          class="w-full max-w-[326px] min-w-fit min-h-fit shadow-md md:max-w-fit flex flex-col gap-4 lg:gap-8 rounded-xl py-5 px-4"
         >
           <div
             class="flex items-center justify-center rounded-full min-w-16 w-16 min-h-16 bg-yellow-100"
@@ -69,14 +70,21 @@ import TextField from "../typography/TextField.vue";
   </Swiper>
 </template>
 
-<style>
+<style scoped>
 
-
-.swiper-slide {
-  display: flex;
+.swiper-wrapper{
   height: 100% !important;
 }
+.swiper-slide {
+  padding: 10px 0px !important;
+}
+.aboutSwiper .swiper-slide {
+  height: 100% !important;
+}
+.aboutSwiper .swiper-slide {
+  display: flex;
 
+}
 .aboutSwiper .swiper-slide > * {
   flex: 1;
 }

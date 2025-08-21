@@ -22,7 +22,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 <template>
   <div
-    :class="`w-full max-w-[fit-content] fill-available flex flex-col gap-4 lg:gap-8 lg:max-w-[326px] rounded-xl shadow-md py-5 px-4 ${featureCard}`"
+    :class="`w-full max-w-[fit-content] fill-available flex flex-col gap-4 lg:gap-8 lg:max-w-[450px] rounded-xl shadow-md py-5 px-4 ${featureCard}`"
   >
     <div
       :class="[
@@ -69,6 +69,11 @@ const props = withDefaults(defineProps<Props>(), {
 </template>
 
 <style scoped>
+@media screen and (max-width: 1107px) {
+  .fill-xl-available {
+    min-width: -webkit-fill-available;
+  }
+}
 @media screen and (max-width: 768px) {
   .fill-available {
     min-width: -webkit-fill-available;

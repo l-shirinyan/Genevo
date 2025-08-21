@@ -29,7 +29,7 @@ import LeadsSwiper from "~/components/reusable/slider/IndustriesSlider.vue";
 
             <div class="hidden xl:flex xl:flex-row xl:items-center xl:justify-center gap-4">
                 <Button variant="primary">Become an Affiliate</Button>
-                <Button variant="white" class-name="border-0 w-[216px]">Purchase Leads</Button>
+                <Button variant="white" class-name="w-[216px]">Purchase Leads</Button>
             </div>
 
         </div>
@@ -38,7 +38,7 @@ import LeadsSwiper from "~/components/reusable/slider/IndustriesSlider.vue";
 
         <div class="flex gap-3 flex-row items-center xs-col xl:hidden">
             <Button variant="primary">Become an Affiliate</Button>
-            <Button variant="white" class-name="border-0 w-[216px]">Purchase Leads</Button>
+            <Button variant="white" class-name="w-[216px]">Purchase Leads</Button>
 
         </div>
     </div>
@@ -59,21 +59,26 @@ import LeadsSwiper from "~/components/reusable/slider/IndustriesSlider.vue";
 
     <div class="flex flex-col items-center gap-12 px-5 mb-24">
         <div class="flex flex-col items-center text-center gap-6">
-              <TextField textStyle="Body6xlBold" value="Industries We Serve" class="text-primary" />
+            <TextField textStyle="Body6xlBold" value="Industries We Serve" class="text-primary" />
             <TextField textStyle="BodyxlMedium"
                 value="From solar to healthcare to legal — we offer targeted leads across 12+ verticals. Pick what fits your business and start closing."
                 class="text-primary w-full max-w-[716px]" />
         </div>
         <LeadsSwiper :items="leadData" />
-
     </div>
 
-    <VerificationBlock title="Every Lead Is Verified and Scored" titleClassName="max-w-[630px] w-full"
-        backgroundImage="/images/verification-bg.png" imageSrc="/images/iPhone.png" imageAlt="Iphone"
+    <VerificationBlock 
+        title="Every Lead Is Verified and Scored" 
+        titleClassName="max-w-[630px] w-full"
+        backgroundImage="/images/verification-bg.png" 
+        imageSrc="/images/iPhone.png" 
+        imageAlt="Iphone"
         description="From contact verification to intent scoring, we ensure every lead is worth your time."
-        verifiedIcon='/icons/verified.svg' :showButton="false" :useList="false" />
+        verifiedIcon='/icons/verified.svg' 
+        :showButton="false" 
+        :useList="false" />
 
-     <div class="flex flex-col items-center gap-12 px-5 md:px-20 mb-24">
+    <div class="flex flex-col items-center gap-12 px-5 md:px-20 mb-24">
         <div class="flex flex-col items-center text-center gap-6">
             <TextField textStyle="Body6xlBold" value="Explore Our Lead Product Catalog" class="text-primary" />
             <TextField textStyle="BodyxlMedium"
@@ -81,11 +86,11 @@ import LeadsSwiper from "~/components/reusable/slider/IndustriesSlider.vue";
                 class="text-primary w-full " />
         </div>
 
-        <Accordion     :items="faqData"/>
+        <Accordion :items="faqData" />
     </div>
 
 
-     <div class="flex flex-col items-center text-center gap-12 px-5 mb-24">
+    <div class="flex flex-col items-center text-center gap-12 px-5 mb-24">
         <div class="flex flex-row items-start justify-center text-center">
             <NuxtImg src="/images/quote-filled.png" alt="Quotes"
                 class="w-full h-full max-w-8 max-h-8 md:max-w-[51px] md:max-h-[51px] lg:max-w-[67px] lg:max-h-[67px]" />
@@ -108,5 +113,5 @@ import LeadsSwiper from "~/components/reusable/slider/IndustriesSlider.vue";
 
     <ScaleImage title="See It in Action"
         description="From filtering to outreach — here's how your team will use YMT, step by step."
-        button-text="Become an Affiliate" button-link="/affiliate" :image-src="LaptopLogo" /> 
+        button-text="Become an Affiliate" button-link="/affiliate" :image-src="LaptopLogo" />
 </template>
