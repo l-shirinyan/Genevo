@@ -76,14 +76,14 @@ const props = defineProps<{
   padding-bottom: 50px !important;
 }
 .sell-card {
-  width: 302px;
+  width: 100%;
   height: 393px;
   background-size: cover;
   background-position: center;
 }
 @media screen and (min-width: 1120px) {
   .sell-card {
-    width: 400px;
+    width:100%;
     height: 450px;
     background-size: cover;
     background-position: center;
