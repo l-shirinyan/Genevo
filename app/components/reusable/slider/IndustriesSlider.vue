@@ -57,6 +57,7 @@ const closeModal = () => {
       768: { slidesPerView: 2, spaceBetween: 24 },
       1200: { slidesPerView: 3, spaceBetween: 24 },
       1400: { slidesPerView: 4, spaceBetween: 24 },
+      1920: { slidesPerView: 5, spaceBetween: 24 },
     }"
     class="leadsSwiper w-full"
   >
