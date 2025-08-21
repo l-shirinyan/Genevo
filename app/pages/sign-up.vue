@@ -6,7 +6,7 @@ import Button from '~/components/reusable/button/CustomButton.vue';
 import { signupFormSchema } from '~/composables/signupvalidation';
 import { useField, useForm } from 'vee-validate';
 import { toTypedSchema } from '@vee-validate/yup';
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { registerUser, type RegisterPayload } from '~/composables/api/register';
 
 definePageMeta({
@@ -31,7 +31,6 @@ const referralCode = ref<string | null>(null);
 
 const loading = ref(false);
 const error = ref('');
-
 
 const onSubmit = handleSubmit(async (values) => {
   error.value = '';
@@ -68,8 +67,9 @@ const onSubmit = handleSubmit(async (values) => {
 </script>
 
 <template>
-  <div class="min-h-screen overflow-hidden flex flex-col md:flex-row">
-    <div class="w-full xl:w-1/2 h-screen flex items-center justify-center px-6 xl:px-12">
+  <div class="min-h-screen flex flex-col md:flex-row overflow-x-hidden">
+    <!-- Left Form Section -->
+    <div class="w-full xl:w-1/2 min-h-screen overflow-y-auto flex items-center justify-center px-6 xl:px-12">
       <div class="md:max-w-[700px] w-full flex flex-col items-center gap-12 py-16 px-5 mx-auto">
         <div class="flex flex-col items-center text-center gap-6">
           <TextField
@@ -112,8 +112,7 @@ const onSubmit = handleSubmit(async (values) => {
             type="password"
             placeholder="Create Password"
           />
-
-              <Input
+          <Input
             label="Confirm Password"
             input-id="confirmpassword"
             v-model="password"
@@ -172,8 +171,9 @@ const onSubmit = handleSubmit(async (values) => {
       </div>
     </div>
 
+    <!-- Right Image Section -->
     <div
-      class="hidden xl:flex xl:w-1/2 h-screen bg-cover bg-center bg-[url('/images/login-desktop-bg.png')] relative items-center justify-center"
+      class="hidden xl:flex xl:w-1/2 min-h-screen bg-cover bg-center bg-[url('/images/login-desktop-bg.png')] relative items-center justify-center"
     >
       <NuxtImg
         src="/images/MacBook-Pro.png"
