@@ -16,20 +16,13 @@ import TextField from "../typography/TextField.vue";
     :auto-height="true"
     :pagination="{ clickable: true }"
     class="aboutSwiper w-full"
-       :breakpoints="{
-      360: { slidesPerView: 1.1 },
-      380: { slidesPerView: 1.05 },
-      450: { slidesPerView: 1.3 },
-      470: { slidesPerView: 1.5 },
-      580: { slidesPerView: 1.8 },
-      730: { slidesPerView: 2.3 },
-      768: { slidesPerView: 2.1 },
-      992: { slidesPerView: 2.7 },
-      1200: { slidesPerView: 3 },
-      1550: { slidesPerView: 3.5 },
-      1650: { slidesPerView: 4 },
-      1920: { slidesPerView: 4.5 },
-      2300: { slidesPerView: 5.3 },
+           :breakpoints="{
+       400: { slidesPerView: 1.2 },
+      768: { slidesPerView: 2.1, spaceBetween: 24 },
+      992: { slidesPerView: 2.5, spaceBetween: 24 },
+      1200: { slidesPerView: 3, spaceBetween: 24 },
+      1600: { slidesPerView: 3.5, spaceBetween: 24 },
+      1920: { slidesPerView: 4, spaceBetween: 24 },
     }"
   >
     <SwiperSlide
@@ -83,12 +76,16 @@ import TextField from "../typography/TextField.vue";
 }
 .aboutSwiper .swiper-slide {
   display: flex;
-
 }
 .aboutSwiper .swiper-slide > * {
   flex: 1;
 }
 .aboutSwiper .swiper-wrapper{
     padding-block: 10px !important;
+}
+@media (max-width:580px){
+  .aboutSwiper .swiper {
+    padding-bottom: 80px !important;
+}
 }
 </style>

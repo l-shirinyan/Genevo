@@ -449,11 +449,11 @@ export const tags = [
 ];
 
 export const aboutSlider = [
-  {
+{
     iconSrc: SnowballIcon,
-    title: "Built Around Your Workflow",
+    title: "Industry-Focused Fit",
     description:
-      "We provide tailored solutions carefully designed around your unique industry, team structure, and long-term business goals—ensuring that every strategy we deliver is practical, scalable, and aligned with the way you work.",
+      "We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.",
   },
   {
     iconSrc: SnowballIcon,
@@ -463,9 +463,9 @@ export const aboutSlider = [
   },
   {
     iconSrc: SnowballIcon,
-    title: "Built Around Your Workflow",
+    title: "Industry-Focused Fit",
     description:
-      "We provide tailored solutions carefully designed around your unique industry, team structure, and long-term business goals—ensuring that every strategy we deliver is practical, scalable, and aligned with the way you work.",
+      "We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.",
   },
   {
     iconSrc: SnowballIcon,
@@ -475,9 +475,9 @@ export const aboutSlider = [
   },
   {
     iconSrc: SnowballIcon,
-    title: "Built Around Your Workflow",
+    title: "Industry-Focused Fit",
     description:
-      "We provide tailored solutions carefully designed around your unique industry, team structure, and long-term business goals—ensuring that every strategy we deliver is practical, scalable, and aligned with the way you work.",
+      "We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.",
   },
   {
     iconSrc: SnowballIcon,
@@ -487,9 +487,9 @@ export const aboutSlider = [
   },
   {
     iconSrc: SnowballIcon,
-    title: "Built Around Your Workflow",
+    title: "Industry-Focused Fit",
     description:
-      "We provide tailored solutions carefully designed around your unique industry, team structure, and long-term business goals—ensuring that every strategy we deliver is practical, scalable, and aligned with the way you work.",
+      "We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.",
   },
   {
     iconSrc: SnowballIcon,
@@ -499,16 +499,16 @@ export const aboutSlider = [
   },
   {
     iconSrc: SnowballIcon,
-    title: "Built Around Your Workflow",
+    title: "Industry-Focused Fit",
     description:
-      "We provide tailored solutions carefully designed around your unique industry, team structure, and long-term business goals—ensuring that every strategy we deliver is practical, scalable, and aligned with the way you work.",
+      "We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.",
   },
   {
     iconSrc: SnowballIcon,
     title: "Industry-Focused Fit",
     description:
       "We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.",
-  },
+  }
 ];
 
 export const productData = [
