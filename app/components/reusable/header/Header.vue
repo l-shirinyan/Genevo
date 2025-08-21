@@ -31,7 +31,7 @@ function openSidebar() {
       <!-- Sidebar Panel -->
       <div class="fixed inset-0 flex justify-end">
         <DialogPanel
-          class="relative flex w-full md:max-w-xs flex-1 transform transition duration-300 ease-in-out mt-[54px]"
+          class="relative flex w-full max-w-xs flex-1 transform transition duration-300 ease-in-out mt-[54px]"
         >
           <!-- Sidebar content -->
           <div

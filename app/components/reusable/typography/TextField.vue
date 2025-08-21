@@ -6,11 +6,15 @@ export type TextStyle =
   | "Body2xlBold"
   | "Body2xlSemibold"
   | "Body2xlNormal"
+  | "Body2xlMedium"
   | "BodyXLNormal"
   | "Body3XlBold"
+  | "Body3XlSemiBold"
   | "BodyxlSemibold"
   | "BodyLgNormal"
+  | "BodyLgBold"
   | "BodyLgSemiBold"
+  | "BodyBaseNormal"
 const props = defineProps<{
   textStyle: TextStyle;
   value: string | number;
@@ -37,11 +41,17 @@ const styleClass = computed(() => {
      case "Body2xlNormal":
       baseClass += "text-base md:text-lg xl:text-2xl font-normal";
       break;
+    case "Body2xlMedium":
+      baseClass +='text-base xl:text-2xl font-medium';
+      break;
     case "BodyXLNormal":
       baseClass += "text-base xl:text-xl font-normal";
       break;
     case "Body3XlBold":
       baseClass += "text-xl md:text-2xl xl:text-3xl font-bold";
+      break;
+    case "Body3XlSemiBold":
+      baseClass += "text-xl md:text-2xl xl:text-3xl font-semibold";
       break;
     case "BodyxlSemibold":
       baseClass += "text-base font-semibold";
@@ -49,8 +59,14 @@ const styleClass = computed(() => {
     case "BodyLgNormal":
       baseClass += "text-base lg:text-lg font-normal";
       break;
-  case "BodyLgSemiBold":
+    case "BodyLgBold":
+      baseClass += "text-base lg:text-lg font-bold";
+      break;
+    case "BodyLgSemiBold":
       baseClass += "text-base lg:text-lg font-semibold";
+      break;
+    case "BodyBaseNormal":
+      baseClass += "text-base  font-normal";
       break;
   }
   return baseClass;

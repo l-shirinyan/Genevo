@@ -1,10 +1,8 @@
 <template>
   <div class="flex items-center justify-center result-slider w-full py-10">
-    <!-- Desktop Slider -->
     <div
       class="hidden overflow-hidden lg:flex items-start relative w-full max-w-[1130px] gap-8 py-1.5"
     >
-      <!-- Navigation Buttons -->
       <div class="flex flex-col items-center gap-4 mt-40">
         <button
           aria-label="Previous testimonial"
@@ -30,7 +28,6 @@
         </button>
       </div>
 
-      <!-- Testimonials Column -->
       <div class="flex flex-col gap-8 flex-1 items-center relative h-[250px]">
         <transition-group
           :name="direction === 'next' ? 'testimonial-next' : 'testimonial-prev'"
@@ -57,7 +54,6 @@
         </transition-group>
       </div>
 
-      <!-- Profile Card -->
       <div
         class="w-[540px] h-auto flex flex-col items-center text-center p-8 bg-white rounded-xl shadow-md transform transition-all duration-700"
       >
@@ -81,24 +77,26 @@
       </div>
     </div>
 
-    <!-- Mobile Swiper -->
     <Swiper
       class="resultsSwiper"
       :modules="[Pagination, FreeMode]"
       :slides-per-view="1.2"
       :space-between="16"
       :pagination="{ clickable: true }"
+      :breakpoints="{
+        640: { slidesPerView: 1.7 },
+        992: { slidesPerView: 1.6 },
+      }"
     >
       <SwiperSlide
         v-for="(t, i) in testimonials"
         :key="i"
         class="flex flex-col items-center"
       >
-        <!-- Profile Card -->
         <div
           class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center"
         >
-          <div class="w-full h-[260px] overflow-hidden rounded-lg mb-6">
+          <div class="w-full h-[330px] overflow-hidden rounded-lg mb-6">
             <NuxtImg
               :src="t.img"
               alt="Profile Image"
@@ -109,7 +107,6 @@
           <p class="text-primary text-sm">{{ t.title }}</p>
         </div>
 
-        <!-- Testimonial Quote -->
         <div class="bg-white rounded-xl shadow-md p-6 mt-6 relative">
           <NuxtImg
             src="/images/Quotes.png"
@@ -205,13 +202,13 @@ const prevSlide = () => {
 .resultsSwiper {
   display: none;
 }
-@media screen and (max-width: 1024px) {
+
+@media screen and (max-width: 1023px) {
   .resultsSwiper {
     display: block;
   }
 }
-/* Next animation: slide up */
-/* Next animation: smooth slide up */
+
 .testimonial-next-enter-active,
 .testimonial-next-leave-active {
   transition: all 0.5s ease;
@@ -245,14 +242,15 @@ const prevSlide = () => {
   transition: all 0.7s ease-in-out;
 }
 
-/* Previous animation: slide down */
 .testimonial-prev-enter-active,
 .testimonial-prev-leave-active {
   transition: all 0.5s ease;
 }
+
 .testimonial-prev-enter-from {
   transform: translateY(-200px);
 }
+
 .testimonial-prev-enter-to {
   transform: translateY(0);
 }

@@ -128,6 +128,7 @@ import VerificationBlock from "~/components/reusable/hero/VerificationBlock.vue"
   verifiedIcon='/icons/verified.svg'
   :showIcon="true"
   :showButton="false"
+   :useList="true"
 />
 
   <div class="flex flex-col items-center gap-8 lg:gap-16 mb-24">
@@ -163,7 +164,7 @@ import VerificationBlock from "~/components/reusable/hero/VerificationBlock.vue"
      <TextField textStyle="BodyxlMedium" value="Every business is unique — that’s why we tailor services to your growth goals, from day one through ongoing support." class="text-primary text-center" />
     </div>
 
-    <div class="w-full flex flex-col items-center gap-7 md:flex-row md:justify-center md:gap-12">
+    <div class="w-full flex flex-col items-center flex-wrap gap-7 px-10 md:px-0 md:flex-row md:justify-center md:gap-12">
     <SolutionCard
       v-for="(item, index) in success"
       :key="index"
@@ -171,6 +172,7 @@ import VerificationBlock from "~/components/reusable/hero/VerificationBlock.vue"
       :icon-alt="item.title"
       :title="item.title"
       :description="item.description"
+      featureCard="fill-xl-available"
     />
     </div>
   </div>

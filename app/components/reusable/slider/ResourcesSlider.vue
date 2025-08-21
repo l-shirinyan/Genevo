@@ -1,10 +1,8 @@
 <template>
   <div class="flex items-center justify-center result-slider w-full">
-    <!-- Desktop Slider -->
     <div
       class="hidden overflow-hidden resources-desk justify-center items-start relative w-full gap-8"
     >
-    <!-- Profile Card -->
         <div
           class="w-full h-full max-w-[578px] max-h-[570px] transform transition-all duration-700"
         >
@@ -14,7 +12,6 @@
             alt="Resources Image"
           />
         </div>
-      <!-- Testimonials Column -->
       <div class="flex flex-col justify-center gap-10 flex-1 items-center relative max-w-[600px] h-[250px]">
         <transition-group
           :name="direction === 'next' ? 'testimonial-next' : 'testimonial-prev'"
@@ -36,7 +33,6 @@
           </div>
         </transition-group>
       </div>
-           <!-- Navigation Buttons -->
       <div class="flex flex-col items-center gap-4 mt-40">
         <button
           aria-label="Previous testimonial"
@@ -182,8 +178,7 @@ const prevSlide = () => {
     display: flex;
   }
 }
-/* Next animation: slide up */
-/* Next animation: smooth slide up */
+
 .testimonial-next-enter-active,
 .testimonial-next-leave-active {
   transition: all 0.5s ease;
@@ -217,7 +212,6 @@ const prevSlide = () => {
   transition: all 0.7s ease-in-out;
 }
 
-/* Previous animation: slide down */
 .testimonial-prev-enter-active,
 .testimonial-prev-leave-active {
   transition: all 0.5s ease;

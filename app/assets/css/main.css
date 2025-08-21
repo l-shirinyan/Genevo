@@ -26,7 +26,13 @@
   height: 8px !important;
   border-radius: 26px !important;
 }
-
+@media (max-width:490px){
+   .xs-col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  } 
+}
 @media (max-width: 499px) {
   .xs-display {
     width: 100%;
