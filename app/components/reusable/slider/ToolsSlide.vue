@@ -33,7 +33,15 @@ const props = defineProps<{
       :key="idx"
       class="flex justify-center items-center cursor-pointer"
     >
-      <NuxtImg :src="src" alt="Tools Icon" class="object-cover" />
+      <NuxtImg :src="src" alt="Tools Icon" class="object-cover tools-image" />
     </SwiperSlide>
   </Swiper>
 </template>
+<style>
+@media screen and (min-width:1920px){
+  .tools-image{
+    width: 80%;
+    height: 80%;
+  }
+}
+</style>
