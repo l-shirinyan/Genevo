@@ -12,9 +12,9 @@
                         enter-from="translate-x-full" enter-to="translate-x-0"
                         leave="transition ease-in-out duration-300 transform" leave-from="translate-x-0"
                         leave-to="translate-x-full">
-                        <DialogPanel class="relative flex w-full max-w-xs flex-1 mt-[63px] ml-auto">
+                        <DialogPanel class="relative flex w-full max-w-xs flex-1 ml-auto">
 
-                            <div class="relative flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-2" :style="{
+                            <div class="relative flex grow flex-col gap-y-22 overflow-y-auto bg-white px-9 py-15" :style="{
                                 backgroundImage: `url('/images/sidebar-bg.png')`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
@@ -98,7 +98,7 @@
                     <img :src="Logo" alt="Company Logo" width="24" height="24" class="w-full h-full" />
                 </NuxtLink>
             </div>
-            <button type="button" class="-m-2.5 p-2.5 text-gray-700 hover:text-gray-900 lg:hiddene"
+            <button type="button" class="-m-2.5 text-gray-700 hover:text-gray-900 hover:cursor-pointer lg:hiddene"
                 @click="sidebarOpen = true">
                 <span class="sr-only">Open sidebar</span>
                 <Bars3Icon class="size-6" aria-hidden="true" />
