@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import Button from "@/components/reusable/button/CustomButton.vue";
-import CheckIcon from "/icons/check.svg";
 
 interface Tier {
   id: number | string;
@@ -26,12 +25,10 @@ const hoveredCard = ref<number | string | null>(null);
       <div
         v-for="tier in props.tiers"
         :key="tier.id"
-        class="group rounded-3xl min-w-[260px] lg:w-[340px] h-full p-5 lg:p-8 shadow-xl bg-white hover:bg-primary transition-colors duration-300 ease-in-out hover:cursor-pointer
-               flex flex-col justify-between"
+        class="group rounded-3xl min-w-[260px] lg:w-[340px] h-full p-5 lg:p-8 shadow-xl bg-white hover:bg-primary transition-colors duration-300 ease-in-out hover:cursor-pointer flex flex-col justify-between"
         @mouseenter="hoveredCard = tier.id"
         @mouseleave="hoveredCard = null"
       >
-        <!-- Price -->
         <p class="flex items-baseline gap-x-1">
           <span
             class="md:text-6xl text-5xl font-bold tracking-tight text-primary transition-colors duration-300 ease-in-out group-hover:text-white"
@@ -45,7 +42,6 @@ const hoveredCard = ref<number | string | null>(null);
           </span>
         </p>
 
-        <!-- Content (flex-grow so it pushes button down) -->
         <div class="flex flex-col gap-10 items-start flex-grow">
           <div class="flex flex-col items-start justify-between gap-4 mt-5">
             <h3
@@ -69,16 +65,19 @@ const hoveredCard = ref<number | string | null>(null);
               class="flex gap-x-3 text-base"
             >
               <NuxtImg
-                :src="CheckIcon"
+                :src="
+                  hoveredCard === tier.id
+                    ? '/icons/check-white.svg'
+                    : '/icons/check.svg'
+                "
                 alt="Check Icon"
-                class="w-5 h-6 flex-none"
+                class="w-5 h-6 flex-none transition-colors duration-300"
               />
               {{ feature }}
             </li>
           </ul>
         </div>
 
-        <!-- Button always bottom -->
         <Button
           :variant="hoveredCard === tier.id ? 'white' : 'primary'"
           class="w-full mt-6"

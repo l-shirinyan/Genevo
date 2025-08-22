@@ -63,11 +63,11 @@ import AboutSlider from '~/components/reusable/slider/AboutSlider.vue'
         </div>
         <Button variant="primary" class="w-full hidden lg:block"> Start Now </Button>
       </div>
-      <div class="max-h-[340px] lg:max-h-none">
+      <div class="lg:w-1/2 w-full">
         <NuxtImg
           src="/images/MacBook.png"
           alt="Notebook"
-          class="w-full h-full"
+          class="w-full h-full max-h-[340px] lg:max-h-none"
         />
       </div>
       <Button variant="primary" class="w-full block lg:hidden"> Start Now </Button>
