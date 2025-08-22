@@ -124,9 +124,9 @@ const onSubmit = handleSubmit(values => {
   </div>
 
   <div
-    class="flex flex-col-reverse items-center justify-center gap-8 lg:flex-row lg:items-center lg:gap-21 px-5 lg:px-30 py-25 bg-[url('/images/contact-mob-bg.png')]    
+    class="flex flex-col-reverse items-center justify-center gap-8 lg:flex-row lg:items-center lg:gap-21 px-5 lg:px-30 py-25 bg-[url('/images/contact-map-mob-bg.png')]    
     md:bg-[url('/images/contact-tablet-bg.png')] 
-    lg:bg-[url('/images/contact-bg.png')]       
+    lg:bg-[url('/images/contact-map-bg.png')]       
     bg-cover bg-center"
   >
     <div class="max-w-[658px] lg:max-w-[689px] w-full flex flex-col items-center gap-8">
