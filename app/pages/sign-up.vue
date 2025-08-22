@@ -67,8 +67,7 @@ const onSubmit = handleSubmit(async (values) => {
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col md:flex-row overflow-x-hidden">
-    <!-- Left Form Section -->
+  <div class="min-h-screen flex flex-col md:flex-row overflow-x-hidden scrollbar-hidden">
     <div class="w-full xl:w-1/2 min-h-screen overflow-y-auto flex items-center justify-center px-6 xl:px-12">
       <div class="md:max-w-[700px] w-full flex flex-col items-center gap-12 py-16 px-5 mx-auto">
         <div class="flex flex-col items-center text-center gap-6">
@@ -171,14 +170,13 @@ const onSubmit = handleSubmit(async (values) => {
       </div>
     </div>
 
-    <!-- Right Image Section -->
     <div
       class="hidden xl:flex xl:w-1/2 min-h-screen bg-cover bg-center bg-[url('/images/login-desktop-bg.png')] relative items-center justify-center"
     >
       <NuxtImg
         src="/images/MacBook-Pro.png"
         alt="Dashboard Preview"
-        class="w-full h-auto relative left-[25%] scale-[1.9] object-contain"
+        class="w-full h-auto relative left-[25%] scale-[1.5] object-contain "
       />
     </div>
   </div>

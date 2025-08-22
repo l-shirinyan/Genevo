@@ -26,6 +26,16 @@
   height: 8px !important;
   border-radius: 26px !important;
 }
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;    
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; 
+}
+
 @media (max-width:490px){
    .xs-col{
     display: flex;
