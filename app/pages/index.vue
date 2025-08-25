@@ -101,11 +101,6 @@ import TestimonialsSlider from "@/components/reusable/slider/TestimonialsSlider.
         value="Real Results from Real Teams"
         class="text-primary text-center"
       />
-      <Text
-        textStyle="BodyxlMedium"
-        value="From physician networks to urgent care leads, YMT helps you reach verified medical professionals using filters like NPI, specialty, and facility type."
-        class="block sm:hidden text-primary text-center max-w-[380px] w-full"
-      />
     </div>
     <TestimonialsSlider />
   </div>

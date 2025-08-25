@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-center result-slider w-full py-10">
+  <div class="flex items-center justify-center result-slider w-full py-0 lg:py-10">
     <div
       class="hidden overflow-hidden lg:flex items-start relative w-full max-w-[1130px] gap-8 py-1.5"
     >
