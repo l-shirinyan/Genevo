@@ -1,7 +1,8 @@
+import { getCsrfCookie } from "./csrf";
 export interface LoginPayload {
   email: string;
   password: string;
-  remember: string; 
+  remember: string;
 }
 
 export interface LoginResponse {
@@ -10,18 +11,26 @@ export interface LoginResponse {
 }
 
 export async function loginUser(payload: LoginPayload): Promise<LoginResponse> {
-  console.log('[API] loginUser called with payload:', payload);
-
   try {
-    const response = await $fetch<LoginResponse>('https://leads.vipservices.biz/login', {
-      method: 'POST',
+    await getCsrfCookie();
+
+    const hasCsrfCookie = document.cookie.includes("XSRF-TOKEN");
+    if (!hasCsrfCookie) {
+      console.warn("[API] No CSRF cookie found - request may fail");
+    }
+
+    const response = await $fetch<LoginResponse>("https://leads.vipservices.biz/login", {
+      method: "POST",
       body: payload,
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
 
-    console.log('[API] loginUser success:', response);
     return response;
   } catch (error: any) {
-    console.error('[API] loginUser error:', error);
+    console.error("[API] loginUser error:", error);
     throw error;
   }
 }
