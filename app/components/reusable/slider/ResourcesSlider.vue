@@ -72,7 +72,6 @@
         :key="i"
         class="flex flex-col items-center"
       >
-        <!-- Profile Card -->
       <div
           class="w-full h-full max-w-[578px] max-h-[570px] transform transition-all duration-700"
         >
@@ -83,8 +82,7 @@
           />
         </div>
 
-        <!-- Testimonial Quote -->
-      <div class="max-w-max flex flex-col items-start gap-6 w-full text-left border-l border-l-primary text-primary p-8 bg-white shadow-sm rounded-2xl relative" >
+      <div class="max-w-max h-full max-h-[216px]  sm:h-auto flex flex-col items-start gap-6 w-full text-left border-l border-l-primary text-primary p-8 bg-white shadow-sm rounded-2xl relative" >
             <TextField textStyle="Body3XlBold" :value="testimonials[i].title" class="text-primary w-full" />
             <TextField textStyle="BodyLgNormal" :value="testimonials[i].text" class="text-primary w-full" />
         </div>
@@ -103,13 +101,13 @@ import TextField from "../typography/TextField.vue";
 
 const testimonials = ref([
   {
-    title:"Workflow Automation ",
+    title:"Smart Workflow Automation ",
     text: "Build zero-code marketing flows that scale with your team.",
     img: "/images/structure.png",
   },
   {
     title:"Lead Management & Tracking",
-    text: "Track lead activity, source, and conversions in real time.",
+    text: "Track activity, source, and conversions in real time.",
     img: "/images/structure.png",
   },
   {
@@ -118,13 +116,13 @@ const testimonials = ref([
     img: "/images/structure.png",
   },
   {
-    title:"Workflow Automation ",
+    title:"Smart Workflow Automation ",
     text: "Build zero-code marketing flows that scale with your team.",
     img: "/images/structure.png",
   },
   {
     title:"Lead Management & Tracking",
-    text: "Track lead activity, source, and conversions in real time.",
+    text: "Track activity, source, and conversions in real time.",
     img: "/images/structure.png",
   },
   {

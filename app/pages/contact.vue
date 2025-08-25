@@ -42,7 +42,7 @@ const onSubmit = handleSubmit(values => {
 
 <template>
   <div
-    class="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-center lg:gap-8 mb-24 px-5 lg:px-20 py-30 bg-[url('/images/contact-mob-bg.png')]    
+    class="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-center lg:gap-8 px-5 lg:px-20 py-30 bg-[url('/images/contact-mob-bg.png')]    
     md:bg-[url('/images/contact-tablet-bg.png')] 
     lg:bg-[url('/images/contact-bg.png')]       
     bg-cover bg-center"
@@ -125,7 +125,7 @@ const onSubmit = handleSubmit(values => {
 
   <div
     class="flex flex-col-reverse items-center justify-center gap-8 lg:flex-row lg:items-center lg:gap-21 px-5 lg:px-30 py-25 bg-[url('/images/contact-map-mob-bg.png')]    
-    md:bg-[url('/images/contact-tablet-bg.png')] 
+    md:bg-[url('/images/contact-map-tablet-bg.png')] 
     lg:bg-[url('/images/contact-map-bg.png')]       
     bg-cover bg-center"
   >

@@ -12,7 +12,6 @@ import PricingCard from "@/components/reusable/card/PricingCard.vue";
   <Swiper
     :modules="[Autoplay, FreeMode, Pagination]"
     :slides-per-view="1.2"
-    :space-between="24"
     :free-mode="true"
     :pagination="{ clickable: true }"
     :auto-height="true"

@@ -90,19 +90,27 @@ import LeadsSwiper from "~/components/reusable/slider/IndustriesSlider.vue";
     </div>
 
 
+
+
     <div class="flex flex-col items-center text-center gap-12 px-5 mb-24">
-        <div class="flex flex-row items-start justify-center text-center">
-            <NuxtImg src="/images/quote-filled.png" alt="Quotes"
-                class="w-full h-full max-w-8 max-h-8 md:max-w-[51px] md:max-h-[51px] lg:max-w-[67px] lg:max-h-[67px]" />
-            <TextField textStyle="Body6xlBold" value="Hear from Teams Like Yours,See how we’ve made an impact."
-                class="text-primary w-full max-w-[983px]" />
+  <div class="flex items-start justify-center max-w-[983px]">
+    <NuxtImg
+      src="/images/quote-filled.png"
+      alt="Quotes"
+      class="w-8 h-8 md:w-[51px] md:h-[51px] lg:w-[67px] lg:h-[67px] shrink-0"
+    />
+    <TextField
+      textStyle="Body6xlBold"
+      value="Hear from Teams Like Yours, See how we’ve made an impact."
+      class="text-primary text-center"
+    />
+  </div>
 
-        </div>
+  <div class="w-full">
+    <ProductSlider />
+  </div>
+</div>
 
-        <div class="w-full">
-            <ProductSlider />
-        </div>
-    </div>
 
     <div class="flex flex-col items-center gap-8 lg:gap-16 mb-24">
         <TextField textStyle="Body6xlBold" value="Compatible with Your Tools" class="text-primary text-center" />
@@ -112,6 +120,7 @@ import LeadsSwiper from "~/components/reusable/slider/IndustriesSlider.vue";
     </div>
 
     <ScaleImage title="See It in Action"
+        extraClassName="pt-10"
         description="From filtering to outreach — here's how your team will use YMT, step by step."
         button-text="Become an Affiliate" button-link="/affiliate" :image-src="LaptopLogo" />
 </template>

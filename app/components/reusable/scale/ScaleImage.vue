@@ -9,6 +9,7 @@ interface Props {
   buttonLink?: string;
   imageSrc: string;
   imageAlt?: string;
+  extraClassName?:string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -19,7 +20,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 <template>
   <section
-    class="w-full px-5 lg:px-20 mb-24 mt-0 2xl:mt-32"
+    :class="`w-full px-5 lg:px-20 mb-24 mt-0 2xl:mt-32 ${extraClassName}`"
     :style="{
       backgroundImage: `url('/images/generation-bg.png')`,
       backgroundSize: 'cover',

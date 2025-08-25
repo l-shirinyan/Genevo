@@ -49,7 +49,7 @@ import AboutSlider from '~/components/reusable/slider/AboutSlider.vue'
   </div>
 
   <div class="flex flex-col items-center justify-center gap-12 px-5 md:px-20 mb-24">
-    <div class="w-full flex flex-col items-center gap-12 lg:flex-row lg:justify-center lg:gap-12">
+    <div class="w-full flex flex-col items-center gap-12 xl:flex-row xl:justify-center xl:gap-12">
       <div class="flex flex-col items-center lg:items-start lg:gap-14">
         <div
           class="flex flex-col items-center text-center pl-4 border-l border-yellow lg:text-start lg:items-start gap-6"
@@ -61,16 +61,16 @@ import AboutSlider from '~/components/reusable/slider/AboutSlider.vue'
             class="text-primary max-w-[586px]"
           />
         </div>
-        <Button variant="primary" class="w-full hidden lg:block"> Start Now </Button>
+        <Button variant="primary" class="w-full hidden xl:block"> Start Now </Button>
       </div>
       <div class="lg:w-1/2 w-full">
         <NuxtImg
           src="/images/MacBook.png"
           alt="Notebook"
-          class="w-full h-full max-h-[340px] lg:max-h-none"
+          class="w-full h-full max-w-max m-auto max-h-[340px] xl:max-h-none"
         />
       </div>
-      <Button variant="primary" class="w-full block lg:hidden"> Start Now </Button>
+      <Button variant="primary" class="w-full block xl:hidden"> Start Now </Button>
     </div>
   </div>
 
