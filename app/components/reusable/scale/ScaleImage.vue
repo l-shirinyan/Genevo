@@ -20,7 +20,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 <template>
   <section
-    :class="`w-full px-5 lg:px-20 mb-24 mt-0 2xl:mt-32 ${extraClassName}`"
+    :class="`w-full px-5 lg:px-20 pt-5 mb-24 mt-0 2xl:mt-32 ${extraClassName}`"
     :style="{
       backgroundImage: `url('/images/generation-bg.png')`,
       backgroundSize: 'cover',
@@ -59,4 +59,3 @@ const props = withDefaults(defineProps<Props>(), {
     </div>
   </section>
 </template>
-<style scoped></style>
