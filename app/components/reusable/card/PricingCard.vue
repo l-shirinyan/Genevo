@@ -23,7 +23,7 @@ const hoveredCard = ref<number | string | null>(null);
   <form class="w-full">
     <div class="mx-auto w-full px-6 h-full">
       <div v-for="tier in props.tiers" :key="tier.id"
-        class="group rounded-3xl w-full min-w-[260px] h-full p-5 lg:p-8 shadow-xl bg-white hover:bg-primary transition-colors duration-300 ease-in-out hover:cursor-pointer flex flex-col justify-between"
+        class="group card rounded-3xl w-full min-w-[260px] h-full p-5 lg:p-8  bg-white hover:bg-primary transition-colors duration-300 ease-in-out hover:cursor-pointer flex flex-col justify-between" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"
         :class="{ '!bg-primary': hoveredCard === tier.id }" @mouseenter="hoveredCard = tier.id"
         @mouseleave="hoveredCard = null" @touchend="hoveredCard = null" @touchstart="hoveredCard = tier.id">
         <p class="flex items-baseline gap-x-1">
@@ -70,3 +70,21 @@ const hoveredCard = ref<number | string | null>(null);
     </div>
   </form>
 </template>
+
+<style>
+@media (min-width:807px) and (max-width:842px){
+.card{
+min-height: 507px;
+}
+}
+@media  (max-width:765px){
+.card{
+min-height: 492px;
+}
+}
+@media  (max-width:522px){
+.card{
+min-height: 516px;
+}
+}
+</style>

@@ -8,10 +8,8 @@ import "swiper/css/navigation";
 import { Autoplay, FreeMode, Pagination } from "swiper/modules";
 import PricingCard from "@/components/reusable/card/PricingCard.vue";
 
-// Ref for swiper instance
-const swiperRef = ref<any>(null);
 
-// Update Swiper height on resize
+const swiperRef = ref<any>(null);
 const updateSwiper = () => {
   nextTick(() => {
     swiperRef.value?.swiper?.update();
@@ -20,7 +18,6 @@ const updateSwiper = () => {
 
 onMounted(() => {
   window.addEventListener('resize', updateSwiper);
-  // Also trigger update once on mount to fix SSR/initial height issues
   updateSwiper();
 });
 
@@ -61,6 +58,9 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
+.swiper{
+  padding-block: 24px;
+} 
 .pricingSwiper .swiper-slide {
   display: flex;
   flex-direction: column; 
@@ -70,5 +70,11 @@ onBeforeUnmount(() => {
 .pricingSwiper .swiper-slide > * {
   flex: none; 
   width: 100%;
+}
+@media (max-width:1330px){
+  .swiper{
+  padding-top: 24px;
+  padding-bottom: 80px;
+} 
 }
 </style>

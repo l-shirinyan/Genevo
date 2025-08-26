@@ -159,7 +159,7 @@ import TestimonialsSlider from "@/components/reusable/slider/TestimonialsSlider.
       />
     </div>
 
-    <div class="block xl:hidden w-full mt-8">
+    <div class="block xl:hidden w-full">
       <CardSlider />
     </div>
   </div>
