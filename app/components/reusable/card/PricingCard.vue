@@ -20,7 +20,7 @@ const hoveredCard = ref<number | string | null>(null);
 </script>
 
 <template>
-  <form>
+  <form class="w-full">
     <div class="mx-auto w-full px-6 h-full">
       <div v-for="tier in props.tiers" :key="tier.id"
         class="group rounded-3xl w-full min-w-[260px] h-full p-5 lg:p-8 shadow-xl bg-white hover:bg-primary transition-colors duration-300 ease-in-out hover:cursor-pointer flex flex-col justify-between"

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue';
 import { tiers } from "@/constants/data";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
@@ -6,22 +7,46 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, FreeMode, Pagination } from "swiper/modules";
 import PricingCard from "@/components/reusable/card/PricingCard.vue";
+
+// Ref for swiper instance
+const swiperRef = ref<any>(null);
+
+// Update Swiper height on resize
+const updateSwiper = () => {
+  nextTick(() => {
+    swiperRef.value?.swiper?.update();
+  });
+};
+
+onMounted(() => {
+  window.addEventListener('resize', updateSwiper);
+  // Also trigger update once on mount to fix SSR/initial height issues
+  updateSwiper();
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', updateSwiper);
+});
 </script>
 
 <template>
   <Swiper
+    ref="swiperRef"
     :modules="[Autoplay, FreeMode, Pagination]"
     :slides-per-view="1.2"
     :free-mode="true"
     :pagination="{ clickable: true }"
     :auto-height="true"
+    :observer="true"
+    :observe-parents="true"
+    :observe-slide-children="true"
     :breakpoints="{
       360: { slidesPerView: 1.2 },
       530: { slidesPerView: 1.2 },
       650: { slidesPerView: 1.7 },
       768: { slidesPerView: 2 },
       992: { slidesPerView: 2.3 },
-      1200: { slidesPerView: 3 },
+      1200: { slidesPerView: 3 }
     }"
     class="pricingSwiper w-full"
   >
@@ -36,19 +61,14 @@ import PricingCard from "@/components/reusable/card/PricingCard.vue";
 </template>
 
 <style scoped>
-.swiper-slide {
-  padding: 10px 0px !important;
-}
-.pricingSwiper {
-  height: 100%; 
-}
-
 .pricingSwiper .swiper-slide {
   display: flex;
-  height: 100% !important;
+  flex-direction: column; 
+  height: 100%;
 }
 
 .pricingSwiper .swiper-slide > * {
-  flex: 1;
+  flex: none; 
+  width: 100%;
 }
 </style>
