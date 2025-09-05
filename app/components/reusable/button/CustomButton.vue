@@ -27,12 +27,19 @@ const variants: Record<string, string> = {
 const buttonClass = computed(
   () => `${baseStyles} ${variants[props.variant]} ${props.className}`
 );
-
+  
+const emit = defineEmits<{
+  (e: "click", event: MouseEvent | TouchEvent): void;
+}>();
 
 </script>
 
 <template>
-  <button :type="props.type" :class="buttonClass">
+  <button :type="props.type" :class="buttonClass" 
+    
+    @click="emit('click', $event)"
+    @touchend.prevent="emit('click', $event)" >
     <slot />
   </button>
 </template>
+
