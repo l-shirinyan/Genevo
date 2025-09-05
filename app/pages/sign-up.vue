@@ -191,7 +191,7 @@ const onSubmit = handleSubmit(async (values) => {
             variant="primary"
             class="w-full"
             @click="onSubmit"
-            @touch="onSubmit"
+            @touchend="onSubmit"
             :disabled="loading"
           >
             Sign Up
@@ -218,3 +218,4 @@ const onSubmit = handleSubmit(async (values) => {
     </div>
   </div>
 </template>
+
