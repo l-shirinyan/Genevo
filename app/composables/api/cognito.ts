@@ -59,12 +59,20 @@ export async function cognitoStartVerification(
     );
 
     const data = await response.json();
+    let popup: Window | null = window.open("", "_blank");
 
+    const isSafari =
+        /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+      
     if (data.session_url) {
-      const popup = window.open(
-        data.session_url,
-        "_blank",
-      );
+      if (popup) {
+        popup.location.href = data.session_url;
+      } else if (isSafari) {
+        window.location.href = data.session_url;
+      } else {
+        window.open(data.session_url, "_blank");
+      }
 
       const interval = setInterval(async () => {
         const check = await fetch(
