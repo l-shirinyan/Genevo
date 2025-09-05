@@ -94,7 +94,7 @@ export async function cognitoStartVerification(
           });
           resetForm();
         }
-        if (popup && popup.closed) {
+        else if (popup && popup.closed) {
           clearInterval(interval);
           toast.error({
             title: "Verification Cancelled",
