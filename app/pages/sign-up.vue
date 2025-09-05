@@ -1,46 +1,61 @@
 <script setup lang="ts">
-import TextField from '~/components/reusable/typography/TextField.vue';
-import Input from '~/components/reusable/input/InputField.vue';
-import PhoneField from '~/components/reusable/input/PhoneField.vue';
-import Button from '~/components/reusable/button/CustomButton.vue';
-import { signupFormSchema } from '~/composables/signupvalidation';
-import { useField, useForm } from 'vee-validate';
-import { toTypedSchema } from '@vee-validate/yup';
-import { ref, watch } from 'vue';
-import { registerUser, type RegisterPayload } from '~/composables/api/register';
+import TextField from "~/components/reusable/typography/TextField.vue";
+import Input from "~/components/reusable/input/InputField.vue";
+import PhoneField from "~/components/reusable/input/PhoneField.vue";
+import Button from "~/components/reusable/button/CustomButton.vue";
+import { signupFormSchema } from "~/composables/signupvalidation";
+import { useField, useForm } from "vee-validate";
+import { toTypedSchema } from "@vee-validate/yup";
+import { ref, watch } from "vue";
+import { registerUser, type RegisterPayload } from "~/composables/api/register";
+import { cognitoStartVerification } from "~/composables/api/cognito";
 
 definePageMeta({
-  layout: 'auth',
+  layout: "auth",
 });
 
-const { handleSubmit, errors } = useForm({
+const { handleSubmit, errors, resetForm } = useForm({
   validationSchema: toTypedSchema(signupFormSchema),
 });
 
-watch(() => errors.value, () => {
-  console.log(errors.value);
-});
+watch(
+  () => errors.value,
+  () => {
+    console.log(errors.value);
+  }
+);
 
-const { value: fullName, errorMessage: fullNameError, handleBlur: fullNameBlur } = useField<string>('fullName');
-const { value: email, errorMessage: emailError, handleBlur: emailBlur } = useField<string>('email');
-const { value: password, errorMessage: passwordError, handleBlur: passwordBlur } = useField<string>('password');
-const phone = ref('');
+const {
+  value: fullName,
+  errorMessage: fullNameError,
+  handleBlur: fullNameBlur,
+} = useField<string>("fullName");
+const {
+  value: email,
+  errorMessage: emailError,
+  handleBlur: emailBlur,
+} = useField<string>("email");
+const {
+  value: password,
+  errorMessage: passwordError,
+  handleBlur: passwordBlur,
+} = useField<string>("password");
+const phone = ref("");
 const smsOptIn = ref(true);
 const termsAccepted = ref(false);
 const referralCode = ref<string | null>(null);
-
 const loading = ref(false);
-const error = ref('');
+const error = ref("");
 
 const onSubmit = handleSubmit(async (values) => {
-  error.value = '';
+  error.value = "";
   loading.value = true;
 
   const payload: RegisterPayload = {
     name: values.fullName,
     email: values.email,
     password: values.password,
-    password_confirmation: values.password, 
+    password_confirmation: values.password,
     terms: termsAccepted.value,
     sms_opt_in: smsOptIn.value,
     phone: phone.value,
@@ -48,18 +63,29 @@ const onSubmit = handleSubmit(async (values) => {
   };
 
   try {
-    console.log('[SIGNUP] Sending payload:', payload);
+    console.log("[SIGNUP] Sending payload:", payload);
     const response = await registerUser(payload);
-
+    const cognitoReqData = {
+      first_name: payload.name,
+      last_name: payload.name,
+      phone: payload.phone,
+      country: "US",
+      redirect_url: "localhost:3000",
+    };
     if (response.success) {
-      console.log('[SIGNUP] Registration successful:', response.data);
+      await cognitoStartVerification(
+        response.data.token,
+        cognitoReqData,
+        resetForm
+      );
+      console.log("[SIGNUP] Registration successful:", response.data);
     } else {
-      error.value = response.message || 'Registration failed';
-      console.error('[SIGNUP] Registration error:', response.message);
+      error.value = response.message || "Registration failed";
+      console.error("[SIGNUP] Registration error:", response.message);
     }
   } catch (err: any) {
-    error.value = err?.data?.message || err.message || 'Registration failed';
-    console.error('[SIGNUP] API error:', err);
+    error.value = err?.data?.message || err.message || "Registration failed";
+    console.error("[SIGNUP] API error:", err);
   } finally {
     loading.value = false;
   }
@@ -67,9 +93,15 @@ const onSubmit = handleSubmit(async (values) => {
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col md:flex-row overflow-x-hidden scrollbar-hidden">
-    <div class="w-full xl:w-1/2 min-h-screen overflow-y-auto flex items-center justify-center px-6 xl:px-12">
-      <div class="md:max-w-[700px] w-full flex flex-col items-center gap-12 py-16 px-5 mx-auto">
+  <div
+    class="min-h-screen flex flex-col md:flex-row overflow-x-hidden scrollbar-hidden"
+  >
+    <div
+      class="w-full xl:w-1/2 min-h-screen overflow-y-auto flex items-center justify-center px-6 xl:px-12"
+    >
+      <div
+        class="md:max-w-[700px] w-full flex flex-col items-center gap-12 py-16 px-5 mx-auto"
+      >
         <div class="flex flex-col items-center text-center gap-6">
           <TextField
             textStyle="Body6xlBold"
@@ -123,7 +155,9 @@ const onSubmit = handleSubmit(async (values) => {
           <PhoneField v-model="phone" />
 
           <div class="w-full">
-            <label class="flex items-center gap-2 cursor-pointer text-base text-secondary">
+            <label
+              class="flex items-center gap-2 cursor-pointer text-base text-secondary"
+            >
               <input
                 type="checkbox"
                 class="w-5 h-5 text-primary border-secondary rounded focus:ring-primary hover:cursor-pointer checked:bg-primary checked:border-primary"
@@ -134,7 +168,9 @@ const onSubmit = handleSubmit(async (values) => {
           </div>
 
           <div class="w-full">
-            <label class="flex items-center gap-2 cursor-pointer text-base text-secondary">
+            <label
+              class="flex items-center gap-2 cursor-pointer text-base text-secondary"
+            >
               <input
                 type="checkbox"
                 class="w-5 h-5 text-primary border-secondary rounded focus:ring-primary hover:cursor-pointer checked:bg-primary checked:border-primary"
@@ -159,12 +195,7 @@ const onSubmit = handleSubmit(async (values) => {
             <p class="text-base font-normal text-secondary text-nowrap">
               Already Have an Account?
             </p>
-            <NuxtLink
-              href="/login"
-              class="text-primary"
-            >
-              Log In
-            </NuxtLink>
+            <NuxtLink href="/login" class="text-primary"> Log In </NuxtLink>
           </div>
         </div>
       </div>
@@ -176,7 +207,7 @@ const onSubmit = handleSubmit(async (values) => {
       <NuxtImg
         src="/images/MacBook-Pro.png"
         alt="Dashboard Preview"
-        class="w-full h-auto relative left-[25%] scale-[1.5] object-contain "
+        class="w-full h-auto relative left-[25%] scale-[1.5] object-contain"
       />
     </div>
   </div>

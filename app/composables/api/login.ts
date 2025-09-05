@@ -11,6 +11,7 @@ export interface LoginResponse {
 }
 
 export async function loginUser(payload: LoginPayload): Promise<LoginResponse> {
+  const runtimeConfig = useRuntimeConfig()
   try {
     await getCsrfCookie();
 
@@ -19,7 +20,7 @@ export async function loginUser(payload: LoginPayload): Promise<LoginResponse> {
       console.warn("[API] No CSRF cookie found - request may fail");
     }
 
-    const response = await $fetch<LoginResponse>("https://leads.vipservices.biz/login", {
+    const response = await $fetch<LoginResponse>(`${runtimeConfig.public.apiBase}/api/login`, {
       method: "POST",
       body: payload,
       credentials: "include",

@@ -17,6 +17,7 @@ export interface RegisterResponse {
 }
 
 export async function registerUser(payload: RegisterPayload): Promise<RegisterResponse> {
+  const runtimeConfig = useRuntimeConfig()
   try {
     await getCsrfCookie();
 
@@ -25,7 +26,7 @@ export async function registerUser(payload: RegisterPayload): Promise<RegisterRe
       console.warn("[API] No CSRF cookie found - request may fail");
     }
 
-    const response = await $fetch("https://leads.vipservices.biz/register", {
+    const response = await $fetch(`${runtimeConfig.public.apiBase}/api/register`, {
       method: "POST",
       body: payload,
       headers: {
