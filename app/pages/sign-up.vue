@@ -40,6 +40,11 @@ const {
   errorMessage: passwordError,
   handleBlur: passwordBlur,
 } = useField<string>("password");
+const {
+  value: confirmPassword,
+  errorMessage: confirmPasswordError,
+  handleBlur: confirmPasswordBlur,
+} = useField<string>("confirmPassword");
 const phone = ref("");
 const smsOptIn = ref(true);
 const termsAccepted = ref(false);
@@ -55,7 +60,7 @@ const onSubmit = handleSubmit(async (values) => {
     name: values.fullName,
     email: values.email,
     password: values.password,
-    password_confirmation: values.password,
+    password_confirmation: values.confirmPassword,
     terms: termsAccepted.value,
     sms_opt_in: smsOptIn.value,
     phone: phone.value,
@@ -146,9 +151,9 @@ const onSubmit = handleSubmit(async (values) => {
           <Input
             label="Confirm Password"
             input-id="confirmpassword"
-            v-model="password"
-            @blur="passwordBlur"
-            :error="passwordError"
+            v-model="confirmPassword"
+            @blur="confirmPasswordBlur"
+            :error="confirmPasswordError"
             type="password"
             placeholder="Confirm Password"
           />
@@ -186,6 +191,7 @@ const onSubmit = handleSubmit(async (values) => {
             variant="primary"
             class="w-full"
             @click="onSubmit"
+            @touch="onSubmit"
             :disabled="loading"
           >
             Sign Up

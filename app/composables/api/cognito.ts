@@ -64,10 +64,8 @@ export async function cognitoStartVerification(
       const popup = window.open(
         data.session_url,
         "_blank",
-        "width=400,height=600"
       );
 
-      // window.open(data.session_url, "_blank");
       const interval = setInterval(async () => {
         const check = await fetch(
           `${runtimeConfig.public.apiBase}/api/verification/status`,
