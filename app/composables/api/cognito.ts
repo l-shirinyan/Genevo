@@ -33,8 +33,6 @@ export async function cognitoStartVerification(
   userData: userDataForm,
   resetForm: resetFormFunc
 ): Promise<RegisterResponse> {
-  resetForm()
-  return
   const runtimeConfig = useRuntimeConfig();
   const toast = useToast();
   const router = useRouter();
