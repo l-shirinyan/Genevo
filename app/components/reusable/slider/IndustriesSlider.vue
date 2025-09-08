@@ -15,15 +15,15 @@ import { Dialog, DialogPanel, DialogOverlay, TransitionChild, TransitionRoot } f
 
 interface CardItem {
   image: string;
-  title: string;
-  text: string;
+  name: string;
+  description: string;
   price: string;
   reviews: number;
   inStock: boolean;
 }
 
 interface Props {
-  items: CardItem[];
+  items: {data:CardItem[]};
 }
 const props = defineProps<Props>();
 
@@ -63,7 +63,7 @@ const closeModal = () => {
     class="leadsSwiper w-full"
   >
     <SwiperSlide
-      v-for="(item, index) in props.items"
+      v-for="(item, index) in props.items?.data"
       :key="index"
       class="flex justify-center items-center cursor-pointer"
       @click="openModal(item)"
@@ -73,19 +73,19 @@ const closeModal = () => {
       >
         <NuxtImg
           :src="item.image"
-          :alt="item.title"
-          class="w-full h-full max-w-[351px] max-h-[251px] rounded-xl"
+          :alt="item.name"
+          class="w-full max-w-[351px] h-[251px] rounded-xl"
         />
         <div class="flex flex-col items-start gap-4 mt-4">
           <TextField
             textStyle="Body3XlBold"
-            :value="item.title"
-            class="text-primary"
+            :value="item.name"
+            class="text-primary truncate w-[289px]"
           />
           <TextField
             textStyle="BodyBaseNormal"
-            :value="item.text"
-            class="text-primary"
+            :value="item.description"
+            class="text-primary truncate w-[289px]"
           />
         </div>
       </div>
@@ -107,7 +107,7 @@ const closeModal = () => {
       <DialogOverlay class="fixed inset-0 bg-black/50 transition-opacity" />
     </TransitionChild>
 
-    <div class="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="fixed inset-0 z-50 flex items-center justify-center p-12 md:px-[120px] lg:p-4">
       <TransitionChild
         as="template"
         enter="ease-out duration-300"
@@ -118,7 +118,7 @@ const closeModal = () => {
         leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
       >
         <DialogPanel
-          class="relative w-full max-w-[1327px] transform rounded-xl bg-white p-8 md:p-12 text-left shadow-xl transition-all"
+          class="relative w-full lg:max-w-[1327px] transform rounded-xl bg-white p-8 md:p-12 text-left shadow-xl transition-all"
         >
           <button
             type="button"
@@ -135,12 +135,12 @@ const closeModal = () => {
            <div class="flex flex-col gap-6 order-2 lg:order-1">
             <TextField
               textStyle="Body6xlBold"
-              :value="selectedItem.title"
+              :value="selectedItem.name"
               class="text-primary"
             />
             <TextField
               textStyle="BodyXLNormal"
-              :value="selectedItem.text"
+              :value="selectedItem.description"
               class="text-primary"
             />
 
@@ -149,7 +149,7 @@ const closeModal = () => {
                 <div class="flex items-baseline gap-2">
                   <TextField
                     textStyle="Body6xlBold"
-                    value="$1.00"
+                    :value="`$`+ selectedItem.price"
                     class="text-primary"
                   />
                   <TextField
@@ -174,9 +174,9 @@ const closeModal = () => {
                   Min Order 10 Leads
                 </span>
                 <div>
-                  <span class="text-[#F9F3E1]">⭐</span>
-                  <span class="text-base text-[#4B5563] text-nowrap"
-                    >(1,588 reviews)</span
+                  <span v-for="n in 3" class="text-[#F9F3E1]">⭐</span>
+                  <span class="text-base text-[#4B5563] text-nowrap ml-2"
+                    >({{ selectedItem.total_reviews }} reviews)</span
                   >
                 </div>
               </div>
@@ -186,7 +186,7 @@ const closeModal = () => {
               variant="primary"
               class="w-full px-6 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90"
             >
-               Login to Purchase 
+               Login to Purchase
             </Button>
           </div>
 
@@ -194,7 +194,7 @@ const closeModal = () => {
             <NuxtImg
               :src="selectedItem.image"
               :alt="selectedItem.title"
-              class="w-full h-full rounded-xl"
+              class="w-full h-full rounded-xl max-h-[450px]"
             />
           </div>
           </div>

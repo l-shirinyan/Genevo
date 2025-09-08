@@ -10,13 +10,18 @@ import Button from "~/components/reusable/button/CustomButton.vue";
 import Accordion from "~/components/reusable/accordion/Accordion.vue";
 import ProductSlider from "~/components/reusable/slider/ProductSlider.vue";
 import LeadsSwiper from "~/components/reusable/slider/IndustriesSlider.vue";
+import { getProducts } from "~/composables/api/products";
+
+const { data: products} = await useAsyncData("products", () =>
+  getProducts()
+);
 </script>
 
 <template>
 
-    <div class="flex flex-col items-center xl:flex-row xl:justify-center px-5 py-25 md:px-20 mb-24 gap-12 xl:gap-0 bg-[url('/images/product-mobile-bg.png')] 
-         md:bg-[url('/images/product-tablet-bg.png')] 
-         lg:bg-[url('/images/product-desktop-bg.png')] 
+    <div class="flex flex-col items-center xl:flex-row xl:justify-center px-5 py-25 md:px-20 mb-24 gap-12 xl:gap-0 bg-[url('/images/product-mobile-bg.png')]
+         md:bg-[url('/images/product-tablet-bg.png')]
+         lg:bg-[url('/images/product-desktop-bg.png')]
          bg-cover bg-center">
         <div class="flex flex-col items-start gap-16">
             <div class="flex flex-col items-center text-center xl:text-start xl:items-start gap-6">
@@ -64,18 +69,18 @@ import LeadsSwiper from "~/components/reusable/slider/IndustriesSlider.vue";
                 value="From solar to healthcare to legal — we offer targeted leads across 12+ verticals. Pick what fits your business and start closing."
                 class="text-primary w-full max-w-[716px]" />
         </div>
-        <LeadsSwiper :items="leadData" />
+        <LeadsSwiper v-if="products" :items="products" />
     </div>
 
-    <VerificationBlock 
-        title="Every Lead Is Verified and Scored" 
+    <VerificationBlock
+        title="Every Lead Is Verified and Scored"
         titleClassName="max-w-[630px] w-full"
-        backgroundImage="/images/verification-bg.png" 
-        imageSrc="/images/iPhone.png" 
+        backgroundImage="/images/verification-bg.png"
+        imageSrc="/images/iPhone.png"
         imageAlt="Iphone"
         description="From contact verification to intent scoring, we ensure every lead is worth your time."
-        verifiedIcon='/icons/verified.svg' 
-        :showButton="false" 
+        verifiedIcon='/icons/verified.svg'
+        :showButton="false"
         :useList="false" />
 
     <div class="flex flex-col items-center gap-12 px-5 md:px-20 mb-24">
