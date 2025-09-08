@@ -56,7 +56,7 @@
   height: 54px !important;
 }
 
-.swiper-button-prev ::after{
+.swiper-button-prev::after{
   width: 11px !important;
   height: 28px !important;
   font-size: 28px !important;
