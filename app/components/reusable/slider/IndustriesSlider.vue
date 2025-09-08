@@ -13,20 +13,19 @@ import TextField from "../typography/TextField.vue";
 import Button from "../button/CustomButton.vue";
 import { Dialog, DialogPanel, DialogOverlay, TransitionChild, TransitionRoot } from "@headlessui/vue";
 
-interface CardItem {
+export type CardItem = {
   image: string;
   name: string;
   description: string;
   price: string;
-  reviews: number;
+  total_reviews: number;
   inStock: boolean;
 }
 
 interface Props {
-  items: {data:CardItem[]};
+  items:CardItem[];
 }
 const props = defineProps<Props>();
-
 // Modal state
 const isModalOpen = ref(false);
 const selectedItem = ref<CardItem | null>(null);
@@ -63,7 +62,7 @@ const closeModal = () => {
     class="leadsSwiper w-full"
   >
     <SwiperSlide
-      v-for="(item, index) in props.items?.data"
+      v-for="(item, index) in props.items"
       :key="index"
       class="flex justify-center items-center cursor-pointer"
       @click="openModal(item)"
@@ -193,7 +192,7 @@ const closeModal = () => {
           <div class="w-full h-full order-1 lg:order-2">
             <NuxtImg
               :src="selectedItem.image"
-              :alt="selectedItem.title"
+              :alt="selectedItem.name"
               class="w-full h-full rounded-xl max-h-[450px]"
             />
           </div>

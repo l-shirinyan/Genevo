@@ -1,3 +1,4 @@
+import type { CardItem } from "~/components/reusable/slider/IndustriesSlider.vue";
 import { getCsrfCookie } from "./csrf";
 
 export async function getProducts() {
@@ -12,7 +13,7 @@ export async function getProducts() {
 
     const response = await $fetch(`${runtimeConfig.public.apiBase}/api/products`);
 
-    return { success: true, data: response };
+    return { success: true, data: response as CardItem[]};
   } catch (error: any) {
     console.error("Register API error:", error);
     return { success: false, message: error?.data?.message || error.message };

@@ -11,10 +11,10 @@ import Accordion from "~/components/reusable/accordion/Accordion.vue";
 import ProductSlider from "~/components/reusable/slider/ProductSlider.vue";
 import LeadsSwiper from "~/components/reusable/slider/IndustriesSlider.vue";
 import { getProducts } from "~/composables/api/products";
+const showSwiper = ref(false);
 
-const { data: products} = await useAsyncData("products", () =>
-  getProducts()
-);
+const { data: products } = await getProducts();
+
 </script>
 
 <template>
@@ -69,7 +69,7 @@ const { data: products} = await useAsyncData("products", () =>
                 value="From solar to healthcare to legal — we offer targeted leads across 12+ verticals. Pick what fits your business and start closing."
                 class="text-primary w-full max-w-[716px]" />
         </div>
-        <LeadsSwiper v-if="products" :items="products" />
+        <LeadsSwiper v-if="products && products.length" :items="products" />
     </div>
 
     <VerificationBlock
