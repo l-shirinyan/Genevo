@@ -1,4 +1,5 @@
 import tailwindcss from "@tailwindcss/vite";
+
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
@@ -8,15 +9,13 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   runtimeConfig: {
-    cognitoLiveKey: "live_key_10c5d65bfe439498eb593cdfd53b0b62",
-    cognitoSecretKey:
-      "f152a6df494896f4e699ed29df4163b3b5dab641115b2236822c6e03586aae82",
-    cognitoBaseUrl: "https://api.cognitohq.com",
+    cognitoLiveKey: process.env.COGNITO_LIVE_KEY,
+    cognitoSecretKey: process.env.COGNITO_SECRET_KEY,
+    cognitoBaseUrl: process.env.COGNITO_BASE_URL || "https://api.cognitohq.com",
     public: {
-      apiBase: "https://indexed-proceedings-accordingly-legends.trycloudflare.com",
-      cognitoPublishableKey:
-        "live_publishable_key_88ec4da92855501b3fed834bbbde5a79",
-      cognitoBaseUrl: "https://api.cognitohq.com",
+      apiBase: process.env.API_BASE || "https://indexed-proceedings-accordingly-legends.trycloudflare.com",
+      cognitoPublishableKey: process.env.COGNITO_PUBLISHABLE_KEY,
+      cognitoBaseUrl: process.env.COGNITO_BASE_URL || "https://api.cognitohq.com",
     },
-  }
+  },
 });
