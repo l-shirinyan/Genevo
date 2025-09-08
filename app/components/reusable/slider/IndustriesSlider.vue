@@ -73,7 +73,7 @@ const closeModal = () => {
         <NuxtImg
           :src="item.image"
           :alt="item.name"
-          class="w-full max-w-[351px] h-[251px] rounded-xl"
+          class="w-full max-w-[351px] h-[251px] rounded-xl object-cover"
         />
         <div class="flex flex-col items-start gap-4 mt-4">
           <TextField
@@ -193,7 +193,7 @@ const closeModal = () => {
             <NuxtImg
               :src="selectedItem.image"
               :alt="selectedItem.name"
-              class="w-full h-full rounded-xl max-h-[450px]"
+              class="w-full h-full rounded-xl max-h-[450px] object-cover"
             />
           </div>
           </div>
