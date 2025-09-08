@@ -75,16 +75,16 @@ const closeModal = () => {
           :alt="item.name"
           class="w-full max-w-[351px] h-[251px] rounded-xl object-cover"
         />
-        <div class="flex flex-col items-start gap-4 mt-4">
+        <div class="flex flex-col items-start gap-4 mt-4 max-w-full">
           <TextField
             textStyle="Body3XlBold"
             :value="item.name"
-            class="text-primary truncate w-[289px]"
+            class="text-primary truncate max-w-full"
           />
           <TextField
             textStyle="BodyBaseNormal"
             :value="item.description"
-            class="text-primary truncate w-[289px]"
+            class="text-primary truncate max-w-full"
           />
         </div>
       </div>
@@ -106,7 +106,7 @@ const closeModal = () => {
       <DialogOverlay class="fixed inset-0 bg-black/50 transition-opacity" />
     </TransitionChild>
 
-    <div class="fixed inset-0 z-50 flex items-center justify-center p-12 md:px-[120px] lg:p-4">
+    <div class="fixed inset-0 z-50 flex items-center justify-center p-6 md:px-[120px] lg:p-4">
       <TransitionChild
         as="template"
         enter="ease-out duration-300"
@@ -117,21 +117,21 @@ const closeModal = () => {
         leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
       >
         <DialogPanel
-          class="relative w-full lg:max-w-[1327px] transform rounded-xl bg-white p-8 md:p-12 text-left shadow-xl transition-all"
+          class="relative w-full lg:max-w-[1327px] max-h-full transform rounded-xl bg-white p-8 md:p-12 text-left shadow-xl transition-all"
         >
           <button
             type="button"
             @click="closeModal"
-            class="absolute right-3 top-3 rounded-full p-1 text-gray-400 hover:text-gray-600"
+            class="absolute right-2 top-2 rounded-full p-1 text-gray-400 hover:text-gray-600"
           >
             <XMarkIcon class="w-6 h-6" />
           </button>
 
           <div
             v-if="selectedItem"
-            class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center"
+            class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-center"
           >
-           <div class="flex flex-col gap-6 order-2 lg:order-1">
+           <div class="flex flex-col gap-2 lg:gap-6 order-2 lg:order-1">
             <TextField
               textStyle="Body6xlBold"
               :value="selectedItem.name"
@@ -143,7 +143,7 @@ const closeModal = () => {
               class="text-primary"
             />
 
-            <div class="flex flex-col items- justify-center gap-6">
+            <div class="flex flex-col items- justify-center gap-2 md:gap-4 lg:gap-6">
               <div class="flex flex-row items-center justify-between">
                 <div class="flex items-baseline gap-2">
                   <TextField
@@ -183,7 +183,7 @@ const closeModal = () => {
             <NuxtImg
               :src="selectedItem.image"
               :alt="selectedItem.name"
-              class="w-full h-full rounded-xl max-h-[450px] object-cover"
+              class="w-full h-full rounded-xl max-h-[350px] lg:max-h-[450px] object-cover"
             />
           </div>
           </div>
