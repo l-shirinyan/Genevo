@@ -5,6 +5,7 @@
     <vue-tel-input
       v-model="defaultValue"
       defaultCountry="us"
+      :class="error ? '!border-red-500' : ''"
       :input-options="{
         placeholder: 'Enter your phone number',
         styleClasses:
