@@ -56,7 +56,13 @@
   height: 54px !important;
 }
 
-.swiper-button-next::after, .swiper-button-prev ::after{
+.swiper-button-prev ::after{
   width: 16px !important;
   height: 32px !important;
+}
+
+.swiper-button-next::after{
+  width: 16px !important;
+  height: 32px !important;
+  line-height:0.8;
 }
