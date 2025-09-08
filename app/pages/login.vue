@@ -13,14 +13,18 @@ definePageMeta({
 });
 
 const rememberMe = ref(false);
+  const toast = useToast();
 
 const { handleSubmit, errors } = useForm({
   validationSchema: toTypedSchema(contactFormSchema),
 });
 
-watch(() => errors.value, ()=> {
-  console.log(errors.value)
-})
+watch(
+  () => errors.value,
+  () => {
+    console.log(errors.value);
+  }
+);
 
 const {
   value: email,
@@ -33,7 +37,7 @@ const {
   handleBlur: passwordBlur,
 } = useField<string>("password");
 
-const onSubmit =handleSubmit(async (values) => {
+const onSubmit = handleSubmit(async (values) => {
   console.log("[FORM] onSubmit called with values:", values);
 
   try {
@@ -49,10 +53,13 @@ const onSubmit =handleSubmit(async (values) => {
 
     console.log("[FORM] API response received:", response);
   } catch (error: any) {
+    toast.error({
+      title: "Login Failed",
+      message: "Please try again.",
+    });
     console.error("[FORM] Login failed:", error);
-    alert(error?.data?.message || "Login failed");
   }
-})
+});
 </script>
 
 <template>
@@ -95,7 +102,7 @@ const onSubmit =handleSubmit(async (values) => {
             placeholder="Enter your Password"
           />
 
-          <div class="flex items-center justify-between w-full">
+          <!-- <div class="flex items-center justify-between w-full">
             <label
               class="flex items-center gap-2 cursor-pointer text-base text-secondary"
             >
@@ -110,7 +117,7 @@ const onSubmit =handleSubmit(async (values) => {
             <NuxtLink to="/forgot-password" class="text-sm text-primary">
               Forgot password?
             </NuxtLink>
-          </div>
+          </div> -->
 
           <div class="w-full flex flex-col gap-4 items-center">
             <Button variant="primary" class="w-full" type="submit">

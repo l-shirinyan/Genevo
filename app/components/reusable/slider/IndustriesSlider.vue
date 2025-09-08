@@ -151,11 +151,6 @@ const closeModal = () => {
                     :value="`$`+ selectedItem.price"
                     class="text-primary"
                   />
-                  <TextField
-                    textStyle="BodyLgNormal"
-                    value="/ Per Lead"
-                    class="text-secondary"
-                  />
                 </div>
                 <span
                   v-if="true"
@@ -166,12 +161,7 @@ const closeModal = () => {
                 </span>
               </div>
 
-              <div class="flex flex-row items-center justify-between">
-                <span
-                  class="px-3 py-1 text-sm font-medium text-yellow text-nowrap bg-[#F9F3E1] rounded-full"
-                >
-                  Min Order 10 Leads
-                </span>
+              <div class="flex flex-row items-center justify-end">
                 <div>
                   <span v-for="n in 3" class="text-[#F9F3E1]">⭐</span>
                   <span class="text-base text-[#4B5563] text-nowrap ml-2"

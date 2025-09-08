@@ -1,4 +1,5 @@
 import { getCsrfCookie } from "./csrf";
+
 export interface LoginPayload {
   email: string;
   password: string;
@@ -11,7 +12,10 @@ export interface LoginResponse {
 }
 
 export async function loginUser(payload: LoginPayload): Promise<LoginResponse> {
-  const runtimeConfig = useRuntimeConfig()
+  const runtimeConfig = useRuntimeConfig();
+  const router = useRouter();
+  const tokenCookie = useCookie("token");
+
   try {
     await getCsrfCookie();
 
@@ -28,6 +32,11 @@ export async function loginUser(payload: LoginPayload): Promise<LoginResponse> {
         "Content-Type": "application/json",
       },
     });
+
+    if (response.token) {
+      tokenCookie.value = response.token;
+      router.push("/");
+    }
 
     return response;
   } catch (error: any) {
