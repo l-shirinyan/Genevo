@@ -56,8 +56,11 @@
   height: 54px !important;
 }
 
+.swiper-button-prev{
+  left: var(--swiper-navigation-sides-offset,18px) !important;
+}
 .swiper-button-prev::after{
-  width: 11px !important;
+  width: 15px !important;
   height: 28px !important;
   font-size: 28px !important;
 }
