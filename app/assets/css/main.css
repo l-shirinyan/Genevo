@@ -28,12 +28,12 @@
 }
 
 .scrollbar-hidden {
-  -ms-overflow-style: none;  
-  scrollbar-width: none;    
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .scrollbar-hidden::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 @media (max-width:490px){
@@ -41,7 +41,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  } 
+  }
 }
 @media (max-width: 499px) {
   .xs-display {
@@ -49,4 +49,9 @@
     flex-direction: column;
     align-items: center;
   }
+}
+
+.swiper-button-next, .swiper-button-prev{
+  width: 44px !important;
+  height: 44px !important;
 }
