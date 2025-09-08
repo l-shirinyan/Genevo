@@ -4,7 +4,7 @@ import Input from "~/components/reusable/input/InputField.vue";
 import PhoneField from "~/components/reusable/input/PhoneField.vue";
 import Button from "~/components/reusable/button/CustomButton.vue";
 import { signupFormSchema } from "~/composables/signupvalidation";
-import { useField, useForm } from "vee-validate";
+import { useField, useForm, Field } from "vee-validate";
 import { toTypedSchema } from "@vee-validate/yup";
 import { ref, watch } from "vue";
 import { registerUser, type RegisterPayload } from "~/composables/api/register";
@@ -16,6 +16,12 @@ definePageMeta({
 
 const { handleSubmit, errors, resetForm } = useForm({
   validationSchema: toTypedSchema(signupFormSchema),
+  validateOnMount: false,
+  initialValues: {
+    phoneNumber: "",
+    smsOptIn: false,
+    termsAccepted: false,
+  },
 });
 
 watch(
@@ -45,9 +51,17 @@ const {
   errorMessage: confirmPasswordError,
   handleBlur: confirmPasswordBlur,
 } = useField<string>("confirmPassword");
-const phone = ref("");
-const smsOptIn = ref(true);
-const termsAccepted = ref(false);
+const {
+  value: phoneNumber,
+  errorMessage: phoneError,
+  handleBlur: phoneBlur,
+} = useField<string>("phoneNumber",  undefined, {
+  initialValue: "",
+});
+
+const { value: smsOptIn, errorMessage: smsOptInError} = useField<boolean>("smsOptIn");
+
+const { value: termsAccepted,errorMessage: termsAcceptedError } = useField<boolean>("termsAccepted");
 const referralCode = ref<string | null>(null);
 const loading = ref(false);
 const error = ref("");
@@ -61,9 +75,9 @@ const onSubmit = handleSubmit(async (values) => {
     email: values.email,
     password: values.password,
     password_confirmation: values.confirmPassword,
-    terms: termsAccepted.value,
-    sms_opt_in: smsOptIn.value,
-    phone: phone.value,
+    terms: values.termsAccepted,
+    sms_opt_in: values.smsOptIn,
+    phone: values.phoneNumber,
     referral_code: referralCode.value,
   };
 
@@ -157,13 +171,19 @@ const onSubmit = handleSubmit(async (values) => {
             type="password"
             placeholder="Confirm Password"
           />
-          <PhoneField v-model="phone" />
+            <PhoneField
+              v-model="phoneNumber"
+              :error="phoneError"
+              @blur="phoneBlur"
+            />
 
           <div class="w-full">
             <label
-              class="flex items-center gap-2 cursor-pointer text-base text-secondary"
+              class="flex items-center gap-2 cursor-pointer text-base"
+              :class="!smsOptInError ? 'text-secondary' : 'text-red-500'"
             >
               <input
+                id="smsOptIn"
                 type="checkbox"
                 class="w-5 h-5 text-primary border-secondary rounded focus:ring-primary hover:cursor-pointer checked:bg-primary checked:border-primary"
                 v-model="smsOptIn"
@@ -174,9 +194,11 @@ const onSubmit = handleSubmit(async (values) => {
 
           <div class="w-full">
             <label
-              class="flex items-center gap-2 cursor-pointer text-base text-secondary"
+              class="flex items-center gap-2 cursor-pointer text-base"
+              :class="!termsAcceptedError ? 'text-secondary' : 'text-red-500'"
             >
               <input
+                id="termsAccepted"
                 type="checkbox"
                 class="w-5 h-5 text-primary border-secondary rounded focus:ring-primary hover:cursor-pointer checked:bg-primary checked:border-primary"
                 v-model="termsAccepted"
@@ -218,4 +240,3 @@ const onSubmit = handleSubmit(async (values) => {
     </div>
   </div>
 </template>
-

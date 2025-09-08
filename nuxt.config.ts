@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     cognitoSecretKey: process.env.COGNITO_SECRET_KEY,
     cognitoBaseUrl: process.env.COGNITO_BASE_URL || "https://api.cognitohq.com",
     public: {
-      apiBase: process.env.API_BASE || "https://indexed-proceedings-accordingly-legends.trycloudflare.com",
+      apiBase: process.env.API_BASE || "https://beta-discover-pi-falls.trycloudflare.com",
       cognitoPublishableKey: process.env.COGNITO_PUBLISHABLE_KEY,
       cognitoBaseUrl: process.env.COGNITO_BASE_URL || "https://api.cognitohq.com",
     },

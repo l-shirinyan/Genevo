@@ -9,7 +9,9 @@ export const signupFormSchema = Yup.object({
     .email("Invalid email address")
     .required("Email is required"),
 
-  phone: Yup.string(),
+  phoneNumber: Yup.string()
+    .max(15, "Phone number must be at most 15 characters")
+    .required("Phone is required"),
 
   password: Yup.string()
     .min(8, "Password must be at least 8 characters")
@@ -18,4 +20,12 @@ export const signupFormSchema = Yup.object({
   confirmPassword: Yup.string()
     .oneOf([Yup.ref("password")], "Passwords must match")
     .required("Confirm password is required"),
+
+  smsOptIn: Yup.boolean()
+    .oneOf([true], "You must agree to receive SMS notifications")
+    .required("This field is required"),
+
+  termsAccepted: Yup.boolean()
+    .oneOf([true], "You must accept the terms and conditions")
+    .required("This field is required"),
 });

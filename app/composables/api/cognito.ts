@@ -1,6 +1,5 @@
 import type { FormState, ResetFormOpts } from "vee-validate";
 import { getCsrfCookie } from "./csrf";
-import type { RegisterPayload } from "./register";
 
 export interface RegisterResponse {
   success: boolean;
@@ -34,6 +33,8 @@ export async function cognitoStartVerification(
   userData: userDataForm,
   resetForm: resetFormFunc
 ): Promise<RegisterResponse> {
+  resetForm()
+  return
   const runtimeConfig = useRuntimeConfig();
   const toast = useToast();
   const router = useRouter();
@@ -64,7 +65,7 @@ export async function cognitoStartVerification(
     const isSafari =
         /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
-      
+
     if (data.session_url) {
       if (popup) {
         popup.location.href = data.session_url;
