@@ -5,7 +5,12 @@ import heroBg from "/images/hero-bg.png";
 import bg from "/images/background.png";
 import teamImg from "/images/team.png";
 import companyImg from "/images/company.png";
-import { infoCards, features, tiers, slides, toolsImages } from "@/constants/data";
+import {
+  infoCards,
+  features,
+  slides,
+  toolsImages,
+} from "@/constants/data";
 import InfoCard from "@/components/reusable/card/InfoCard.vue";
 import FeatureCard from "@/components/reusable/card/FeatureCard.vue";
 import ToolsSwiper from "@/components/reusable/slider/ToolsSlide.vue";
@@ -111,7 +116,9 @@ import TestimonialsSlider from "@/components/reusable/slider/TestimonialsSlider.
       value="Why Teams Choose YMT"
       class="text-primary text-center mb-12"
     />
-    <div class="w-full flex flex-wrap justify-center gap-y-20 gap-6 px-10 md:px-0">
+    <div
+      class="w-full flex flex-wrap justify-center gap-y-20 gap-6 px-10 md:px-0"
+    >
       <FeatureCard
         v-for="(feature, index) in features"
         :key="index"
@@ -130,7 +137,7 @@ import TestimonialsSlider from "@/components/reusable/slider/TestimonialsSlider.
       class="text-primary text-center"
     />
     <div class="w-full">
-      <ToolsSwiper :images="toolsImages"/>
+      <ToolsSwiper :images="toolsImages" />
     </div>
   </div>
 
@@ -150,16 +157,8 @@ import TestimonialsSlider from "@/components/reusable/slider/TestimonialsSlider.
       />
     </div>
 
-    <div class="hidden max-w-fit w-full xl:grid xl:grid-cols-3 xl:gap-14">
-      <PricingCard
-        v-for="tier in tiers"
-        :key="tier.id"
-        :tiers="[tier]"
-        buttonText="Choose Plan"
-      />
-    </div>
 
-    <div class="block xl:hidden w-full">
+    <div class="block w-full">
       <CardSlider />
     </div>
   </div>

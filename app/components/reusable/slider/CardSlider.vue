@@ -38,8 +38,8 @@ onBeforeUnmount(() => {
     :observe-parents="true"
     :observe-slide-children="true"
     :breakpoints="{
-      360: { slidesPerView: 1.2 },
-      530: { slidesPerView: 1.2 },
+      360: { slidesPerView: 1 },
+      530: { slidesPerView: 1 },
       650: { slidesPerView: 1.7 },
       768: { slidesPerView: 2 },
       992: { slidesPerView: 2.3 },
@@ -60,21 +60,21 @@ onBeforeUnmount(() => {
 <style scoped>
 .swiper{
   padding-block: 24px;
-} 
+}
 .pricingSwiper .swiper-slide {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   height: 100%;
 }
 
 .pricingSwiper .swiper-slide > * {
-  flex: none; 
+  flex: none;
   width: 100%;
 }
 @media (max-width:1330px){
   .swiper{
   padding-top: 24px;
   padding-bottom: 80px;
-} 
+}
 }
 </style>

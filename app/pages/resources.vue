@@ -70,7 +70,7 @@ import ResourcesSlider from "~/components/reusable/slider/ResourcesSlider.vue";
       />
     </div>
     <div class="w-full">
-      <ToolsSwiper :images="resourcesImages" />
+      <ToolsSwiper :images="resourcesImages" :is-original-images="true"/>
     </div>
   </div>
 

@@ -15,10 +15,18 @@ import CubeLogo from "/icons/cube.svg";
 import FilterLogo from "/icons/filter.svg";
 import DeliveryLogo from "/icons/delivery.svg";
 import GoalLogo from "/icons/goal.svg";
-import ToolsFirstImage from "/images/tools1.png";
+import ToolsFirstImage from "/images/tools1.svg";
 import ToolsSecongImage from "/images/tools2.png";
 import ToolsThirdImage from "/images/tools3.png";
-import ToolsLastImage from "/images/tools4.png";
+import ToolsFourthImage from "/images/tools4.png";
+import ToolsFifthImage from "/images/tools5.png";
+import ToolsSixthImage from "/images/tools6.png";
+import ToolsSeventhImage from "/images/tools7.png";
+import ToolsEighthImage from "/images/tools8.png";
+import ToolsNinthImage from "/images/tools9.png";
+import ToolsTenthImage from "/images/tools10.png";
+import ToolsEleventhImage from "/images/tools11.png";
+import ToolsTwelfthImage from "/images/tools12.png";
 import ResourcesToolsFirstImage from "/images/semrush.png";
 import ResourcesToolsSecondImage from "/images/marketer.png";
 import ResourcesToolsThirdImage from "/images/hootsuite.png";
@@ -153,11 +161,11 @@ export const tiers = [
     name: "Solar Leads",
     price: "$1",
     description:
-      "High-intent homeowners ready to install or switch to solar energy",
+      "High-intent homeowners interested in installing or switching to solar energy.",
     features: [
-      "Geo-targeted leads for local installers",
-      "Location-based targeting for local installers",
-      "Region-specific leads for local installers",
+      "Geo-targeted prospects for local installers",
+      "Verified inquiries from energy-conscious households",
+      "Perfect for solar companies, resellers, and green tech providers",
     ],
     featured: false,
   },
@@ -166,24 +174,141 @@ export const tiers = [
     name: "Healthcare Leads",
     price: "$6",
     description:
-      "Active home buyers, sellers, and property investors by zip code.",
+      "Connect with patients and healthcare decision-makers actively seeking medical solutions.",
     features: [
-      "Residential & commercial segmentation",
-      "Residential & commercial segmentation",
-      "Ideal for agents, lenders, or closing services",
+      "Verified patient inquiries for clinics and providers",
+      "Segmentation by specialty (dental, vision, primary care, wellness, etc.)",
+      "Ideal for healthcare providers, insurance companies, and telehealth services",
     ],
     featured: true,
   },
   {
     id: 3,
+    name: "Retail Leads",
+    price: "$5",
+    description:
+      "Shoppers and decision-makers ready to purchase products across multiple categories.",
+    features: [
+      "Segmentation by demographics and buying habits",
+      "Insights from online and offline consumer activity",
+      "Ideal for retail stores, e-commerce, and brand campaigns",
+    ],
+    featured: false,
+  },
+  {
+    id: 4,
+    name: "Automotive Leads",
+    price: "$1",
+    description:
+      "Car buyers actively searching for new or used vehicles and related services.",
+    features: [
+      "Segmentation by vehicle type, budget, and location",
+      "Leads for dealerships, service centers, and financing offers",
+      "Great for auto sales, leasing, and aftermarket services",
+    ],
+    featured: false,
+  },
+  {
+    id: 5,
     name: "Real Estate Leads",
     price: "$5",
     description:
-      "Active home buyers, sellers, and property investors by zip code",
+      "Active home buyers, sellers, and property investors segmented by zip code.",
     features: [
-      "Residential & commercial segmentation",
-      "Residential & commercial segmentation",
-      "Ideal for agents, lenders, or closing services",
+      "Residential and commercial segmentation",
+      "Region-specific targeting for realtors and brokers",
+      "Perfect for agents, lenders, and closing services",
+    ],
+    featured: false,
+  },
+  {
+    id: 6,
+    name: "Landscaping & Gardening Leads",
+    price: "$7",
+    description:
+      "Homeowners and businesses seeking outdoor improvement services.",
+    features: [
+      "Segmentation by property type and region",
+      "Verified requests for landscaping, lawn care, and gardening",
+      "Ideal for contractors, designers, and local service providers",
+    ],
+    featured: false,
+  },
+  {
+    id: 7,
+    name: "Legal Leads",
+    price: "$4",
+    description:
+      "Individuals actively seeking legal help in specific practice areas.",
+    features: [
+      "Segmentation by case type (injury, family, business, etc.)",
+      "Verified inquiries ready for consultation",
+      "Ideal for law firms and independent attorneys",
+    ],
+    featured: false,
+  },
+  {
+    id: 8,
+    name: "Accounting & Tax Prep Leads",
+    price: "$2",
+    description:
+      "Businesses and individuals in need of financial reporting or tax filing.",
+    features: [
+      "Segmentation by business size or individual income level",
+      "Verified leads for tax season and year-round accounting",
+      "Perfect for CPAs, bookkeepers, and financial advisors",
+    ],
+    featured: false,
+  },
+  {
+    id: 9,
+    name: "Marketing & Advertising Leads",
+    price: "$9",
+    description:
+      "Businesses looking for branding, advertising, and digital growth support.",
+    features: [
+      "Segmentation by industry, budget, and campaign type",
+      "Verified demand for digital, print, and media solutions",
+      "Great for agencies, consultants, and media buyers",
+    ],
+    featured: false,
+  },
+  {
+    id: 10,
+    name: "Healthcare Leads",
+    price: "$6",
+    description:
+      "Patients and healthcare decision-makers searching for services and solutions.",
+    features: [
+      "Verified inquiries for clinics, practices, and telehealth",
+      "Segmentation by specialty (dental, wellness, vision, etc.)",
+      "Perfect for providers, insurers, and healthcare platforms",
+    ],
+    featured: false,
+  },
+  {
+    id: 11,
+    name: "Financial Leads",
+    price: "$8",
+    description:
+      "Individuals and businesses looking for loans, credit, and investment products.",
+    features: [
+      "Segmentation by product (mortgage, credit, business loan, etc.)",
+      "Verified prospects with financial intent",
+      "Ideal for banks, lenders, and investment firms",
+    ],
+    featured: false,
+  },
+  {
+    id: 12,
+    name: "Technology Leads",
+    price: "$5",
+    description:
+      "Companies and professionals seeking IT solutions and digital products.",
+    features: [
+      "Segmentation by industry, company size, and need",
+      "Verified demand for SaaS, cloud, and cybersecurity solutions",
+      "Perfect for software vendors, resellers, and IT providers",
     ],
     featured: false,
   },
@@ -362,11 +487,15 @@ export const toolsImages = [
   ToolsFirstImage,
   ToolsSecongImage,
   ToolsThirdImage,
-  ToolsLastImage,
-  ToolsFirstImage,
-  ToolsSecongImage,
-  ToolsThirdImage,
-  ToolsLastImage,
+  ToolsFourthImage,
+  ToolsFifthImage,
+  ToolsSixthImage,
+  ToolsSeventhImage,
+  ToolsEighthImage,
+  ToolsNinthImage,
+  ToolsTenthImage,
+  ToolsEleventhImage,
+  ToolsTwelfthImage,
 ];
 
 export const resourcesImages = [
@@ -449,66 +578,42 @@ export const tags = [
 ];
 
 export const aboutSlider = [
-{
-    iconSrc: SnowballIcon,
-    title: "Industry-Focused Fit",
-    description:
-      "We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.",
-  },
   {
     iconSrc: SnowballIcon,
     title: "Industry-Focused Fit",
     description:
-      "We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.",
+      "We design tailored lead generation strategies that adapt to your specific vertical — ensuring scalability, efficiency, and meaningful results for your business.",
   },
   {
     iconSrc: SnowballIcon,
-    title: "Industry-Focused Fit",
+    title: "Data-Driven Insights",
     description:
-      "We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.",
+      "Our platform leverages verified data and advanced analytics to deliver leads that aren’t just numbers, but real opportunities aligned with your goals.",
   },
   {
     iconSrc: SnowballIcon,
-    title: "Industry-Focused Fit",
+    title: "Scalable Growth",
     description:
-      "We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.",
+      "Whether you need 100 or 10,000 leads, our solutions scale with you. We focus on building a steady, predictable pipeline that fuels long-term success.",
   },
   {
     iconSrc: SnowballIcon,
-    title: "Industry-Focused Fit",
+    title: "Verified Quality",
     description:
-      "We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.",
+      "Every lead we deliver is phone-verified or opt-in compliant — prioritizing quality over volume so your team spends less time chasing and more time closing.",
   },
   {
     iconSrc: SnowballIcon,
-    title: "Industry-Focused Fit",
+    title: "Flexible Targeting",
     description:
-      "We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.",
+      "From geo-targeting to industry-specific filters, our leads are segmented to match your exact audience, ensuring higher conversion rates and better ROI.",
   },
   {
     iconSrc: SnowballIcon,
-    title: "Industry-Focused Fit",
+    title: "Measurable Impact",
     description:
-      "We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.",
+      "We don’t just deliver leads — we track performance, optimize continuously, and provide transparent reporting so you can see the results in real time.",
   },
-  {
-    iconSrc: SnowballIcon,
-    title: "Industry-Focused Fit",
-    description:
-      "We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.",
-  },
-  {
-    iconSrc: SnowballIcon,
-    title: "Industry-Focused Fit",
-    description:
-      "We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.",
-  },
-  {
-    iconSrc: SnowballIcon,
-    title: "Industry-Focused Fit",
-    description:
-      "We deliver tailored solutions built to fit your unique vertical, your team’s structure, and your organizational goals—ensuring that every strategy we design is practical, scalable, and aligned with how you operate, so you can achieve meaningful and lasting results.",
-  }
 ];
 
 export const productData = [
@@ -536,38 +641,38 @@ export const faqData = [
   {
     title: "AI-Generated Lead Sets",
     description:
-      "Leads generated using AI models trained on ideal customer criteria, tailored by vertical and intent.",
+      "Leads generated using Al models trained on ideal customer criteria, tailored by vertical and intent.",
     price: "$1.00 – $9.00",
   },
   {
     title: "Phone Verified Leads",
     description:
-      "Leads generated using AI models trained on ideal customer criteria, tailored by vertical and intent.",
-    price: "$1.00 – $9.00",
+      "Human-verified contact info for higher accuracy.",
+    price: "$2.00 – $15.00",
   },
   {
     title: "Industry-Specific Lead Packs",
     description:
-      "Leads generated using AI models trained on ideal customer criteria, tailored by vertical and intent.",
-    price: "$1.00 – $9.00",
+      "Pre-packaged lead lists by vertica.",
+    price: "$199.00 – $999.00",
   },
   {
     title: "Lead Exclusivity Upgrade",
     description:
-      "Leads generated using AI models trained on ideal customer criteria, tailored by vertical and intent.",
-    price: "$1.00 – $9.00",
+      "Get exclusive access to leads that won't be shared with other buyers in your vertical or territory for X days.",
+    price: "+25% over base lead price",
   },
   {
     title: "Custom Lead Campaign Deployment",
     description:
-      "Leads generated using AI models trained on ideal customer criteria, tailored by vertical and intent.",
-    price: "$1.00 – $9.00",
+      "End-to-end lead capture funnel with targeting and delivery setup.",
+    price: "Starts at $1,000.00",
   },
   {
     title: "CRM / API Integration Support",
     description:
-      "Leads generated using AI models trained on ideal customer criteria, tailored by vertical and intent.",
-    price: "$1.00 – $9.00",
+      "One-time setup or on-going support to route leads into your CRM.",
+    price: "$100.00 – $525.00",
   },
 ];
 
