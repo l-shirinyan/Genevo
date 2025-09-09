@@ -28,7 +28,7 @@ const { data: products } = await getProducts();
                 <TextField textStyle="Body6xlBold" value="Everything You Need to Find, Nurture & Close More Leads"
                     class="text-primary w-full max-w-[912px]" />
                 <TextField textStyle="BodyxlMedium"
-                    value="YMT automates prospecting, enriches contacts, scores leads, and syncs it all into your CRM — so your team focuses on closing, not chasing."
+                    value="VIP BUSINESS SERVICES automates prospecting, enriches contacts, scores leads, and syncs it all into your CRM — so your team focuses on closing, not chasing."
                     class="text-primary w-full max-w-[716px]" />
             </div>
 
@@ -52,7 +52,7 @@ const { data: products } = await getProducts();
         <div class="flex flex-col items-center text-center gap-6 mb-12">
             <TextField textStyle="Body6xlBold" value="Who Is This Built For?" class="text-primary" />
             <TextField textStyle="BodyxlMedium"
-                value="Whether you sell, scale, or recruit — YMT helps you reach the people who matter."
+                value="Whether you sell, scale, or recruit — VIP BUSINESS SERVICES helps you reach the people who matter."
                 class="text-primary w-full max-w-[628px]" />
 
         </div>
@@ -119,7 +119,7 @@ const { data: products } = await getProducts();
 
     <div class="flex flex-col items-center gap-8 lg:gap-16 mb-24">
         <TextField textStyle="Body6xlBold" value="Compatible with Your Tools" class="text-primary text-center" />
-        <div class="w-full">
+        <div class="w-full px-6">
             <ToolsSwiper :images="toolsImages" />
         </div>
     </div>
