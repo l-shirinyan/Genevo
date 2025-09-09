@@ -17,8 +17,6 @@ import DeliveryLogo from "/icons/delivery.svg";
 import GoalLogo from "/icons/goal.svg";
 import ToolsFirstImage from "/images/tools1.svg";
 import ToolsSecongImage from "/images/tools2.png";
-import ToolsThirdImage from "/images/tools3.png";
-import ToolsFourthImage from "/images/tools4.png";
 import ToolsFifthImage from "/images/tools5.png";
 import ToolsSixthImage from "/images/tools6.png";
 import ToolsSeventhImage from "/images/tools7.png";
@@ -185,7 +183,7 @@ export const tiers = [
   {
     id: 3,
     name: "Retail Leads",
-    price: "$5",
+    price: "$1",
     description:
       "Shoppers and decision-makers ready to purchase products across multiple categories.",
     features: [
@@ -486,8 +484,6 @@ export const tools = [
 export const toolsImages = [
   ToolsFirstImage,
   ToolsSecongImage,
-  ToolsThirdImage,
-  ToolsFourthImage,
   ToolsFifthImage,
   ToolsSixthImage,
   ToolsSeventhImage,
@@ -654,7 +650,7 @@ export const faqData = [
     title: "Industry-Specific Lead Packs",
     description:
       "Pre-packaged lead lists by vertica.",
-    price: "$199.00 – $999.00",
+    price: "$199.00 – $999.00 / pack",
   },
   {
     title: "Lead Exclusivity Upgrade",

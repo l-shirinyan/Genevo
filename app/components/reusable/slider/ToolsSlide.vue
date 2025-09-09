@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { Autoplay, FreeMode, Pagination } from "swiper/modules";
+import { Autoplay, FreeMode, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
@@ -15,11 +15,13 @@ const props = defineProps<{
 <template>
   <Swiper
     class="!px-2"
-    :modules="[Autoplay, FreeMode, Pagination]"
+    :modules="[Autoplay, FreeMode, Pagination, Navigation]"
     :slides-per-view="1.2"
+    :auto-height="true"
     :space-between="20"
     :free-mode="true"
     :pagination="{ clickable: true }"
+    :navigation="true"
     :breakpoints="{
       320: { slidesPerView: 1, spaceBetween: 16 },
       400: { slidesPerView: 1, spaceBetween: 16 },
