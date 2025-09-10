@@ -25,7 +25,9 @@ const closeModal = () => {
   isModalOpen.value = false;
 };
 const modalTitle = ref("Email Sent");
-const modalSubTitle = ref("If an account exists with this email, we’ve sent a reset link.")
+const modalSubTitle = ref(
+  "If an account exists with this email, we’ve sent a reset link."
+);
 
 const openModal = () => {
   isModalOpen.value = true;
@@ -52,7 +54,8 @@ const onSubmit = handleSubmit(async (values) => {
     }
   } catch (error: any) {
     modalTitle.value = "No Account Found";
-    modalSubTitle.value = "We couldn’t find an account registered with this email address.";
+    modalSubTitle.value =
+      "We couldn’t find an account registered with this email address.";
     openModal();
   }
 });
@@ -154,12 +157,23 @@ const onSubmit = handleSubmit(async (values) => {
                 <p class="text-center text-[#2B2B2B] font-bold text-4xl">
                   {{ modalTitle }}
                 </p>
-                <p class="text-secondary text-center font-semibold text-xl mt-7">
+                <p
+                  class="text-secondary text-center font-semibold text-xl mt-7"
+                >
                   {{ modalSubTitle }}
                 </p>
-                <NuxtLink to="/login" class="text-[#7C7C7C] text-center w-full mt-12 font-medium text-lg">
-                  Back to Log In
-                </NuxtLink>
+                <Button
+                  variant="primary"
+                  class="w-full mt-10 !p-0 flex"
+                  type="submit"
+                >
+                  <NuxtLink
+                    to="/login"
+                    class="text-white text-center w-full font-medium text-xl p-2"
+                  >
+                    Back to Log In
+                  </NuxtLink>
+                </Button>
               </div>
             </DialogPanel>
           </TransitionChild>

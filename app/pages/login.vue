@@ -91,7 +91,7 @@ const onSubmit = handleSubmit(async (values) => {
           />
 
           <div class="flex items-center justify-between w-full">
-            <label
+            <!-- <label
               class="flex items-center gap-2 cursor-pointer text-base text-secondary"
             >
               <input
@@ -100,9 +100,9 @@ const onSubmit = handleSubmit(async (values) => {
                 v-model="rememberMe"
               />
               Save login
-            </label>
+            </label> -->
 
-            <NuxtLink to="/forgot-password" class="text-sm text-primary">
+            <NuxtLink to="/forgot-password" class="text-sm text-primary ml-auto">
               Forgot password?
             </NuxtLink>
           </div>
