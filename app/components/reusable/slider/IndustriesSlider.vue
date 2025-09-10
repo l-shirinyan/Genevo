@@ -43,13 +43,12 @@ const closeModal = () => {
 <template>
   <!-- Slider -->
   <Swiper
-    :modules="[Autoplay, FreeMode, Pagination, Navigation]"
+    :modules="[Autoplay, FreeMode, Pagination]"
     :slides-per-view="1.2"
     :space-between="20"
     :free-mode="true"
     :auto-height="true"
     :pagination="{ clickable: true }"
-    :navigation="true"
     :breakpoints="{
       400: { slidesPerView: 1.7 },
       768: { slidesPerView: 2.8, spaceBetween: 24 },

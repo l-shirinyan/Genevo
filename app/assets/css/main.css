@@ -54,6 +54,7 @@
 .swiper-button-next, .swiper-button-prev{
   width: 54px !important;
   height: 54px !important;
+  top:35% !important;
 }
 
 .swiper-button-prev{
