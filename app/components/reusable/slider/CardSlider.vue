@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Autoplay, FreeMode, Pagination } from "swiper/modules";
+import { Autoplay, FreeMode, Navigation, Pagination } from "swiper/modules";
 import PricingCard from "@/components/reusable/card/PricingCard.vue";
 
 
@@ -29,10 +29,11 @@ onBeforeUnmount(() => {
 <template>
   <Swiper
     ref="swiperRef"
-    :modules="[Autoplay, FreeMode, Pagination]"
+    :modules="[Autoplay, FreeMode, Pagination, Navigation]"
     :slides-per-view="1.2"
     :free-mode="true"
     :pagination="{ clickable: true }"
+    :navigation="true"
     :auto-height="true"
     :observer="true"
     :observe-parents="true"

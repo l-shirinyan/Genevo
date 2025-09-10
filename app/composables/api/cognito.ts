@@ -1,5 +1,6 @@
 import type { FormState, ResetFormOpts } from "vee-validate";
 import { getCsrfCookie } from "./csrf";
+import { useRouter } from "vue-router";
 
 export interface RegisterResponse {
   success: boolean;
@@ -31,7 +32,8 @@ type resetFormFunc = (
 export async function cognitoStartVerification(
   token: string,
   userData: userDataForm,
-  resetForm: resetFormFunc
+  resetForm: resetFormFunc,
+  goHome:() => void
 ): Promise<RegisterResponse> {
   const runtimeConfig = useRuntimeConfig();
   const toast = useToast();
@@ -90,7 +92,7 @@ export async function cognitoStartVerification(
             message: "Your account has been successfully verified.",
           });
           if (popup && !popup.closed) popup.close();
-          router.push("/");
+          goHome();
         } else if (status?.failed || status?.data?.status === "failed") {
           appToken.value = null;
           if (popup && !popup.closed) popup.close();

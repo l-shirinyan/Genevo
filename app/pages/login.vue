@@ -19,13 +19,6 @@ const { handleSubmit, errors } = useForm({
   validationSchema: toTypedSchema(contactFormSchema),
 });
 
-watch(
-  () => errors.value,
-  () => {
-    console.log(errors.value);
-  }
-);
-
 const {
   value: email,
   errorMessage: emailError,
@@ -38,8 +31,6 @@ const {
 } = useField<string>("password");
 
 const onSubmit = handleSubmit(async (values) => {
-  console.log("[FORM] onSubmit called with values:", values);
-
   try {
     const payload = {
       email: values.email,
@@ -47,11 +38,8 @@ const onSubmit = handleSubmit(async (values) => {
       remember: rememberMe.value ? "on" : "off",
     };
 
-    console.log("[FORM] Sending payload to API:", payload);
-
     const response = await loginUser(payload);
 
-    console.log("[FORM] API response received:", response);
   } catch (error: any) {
     toast.error({
       title: "Login Failed",
@@ -102,7 +90,7 @@ const onSubmit = handleSubmit(async (values) => {
             placeholder="Enter your Password"
           />
 
-          <!-- <div class="flex items-center justify-between w-full">
+          <div class="flex items-center justify-between w-full">
             <label
               class="flex items-center gap-2 cursor-pointer text-base text-secondary"
             >
@@ -117,7 +105,7 @@ const onSubmit = handleSubmit(async (values) => {
             <NuxtLink to="/forgot-password" class="text-sm text-primary">
               Forgot password?
             </NuxtLink>
-          </div> -->
+          </div>
 
           <div class="w-full flex flex-col gap-4 items-center">
             <Button variant="primary" class="w-full" type="submit">

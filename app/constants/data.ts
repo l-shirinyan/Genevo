@@ -15,8 +15,6 @@ import CubeLogo from "/icons/cube.svg";
 import FilterLogo from "/icons/filter.svg";
 import DeliveryLogo from "/icons/delivery.svg";
 import GoalLogo from "/icons/goal.svg";
-import ToolsFirstImage from "/images/tools1.svg";
-import ToolsSecongImage from "/images/tools2.png";
 import ToolsFifthImage from "/images/tools5.png";
 import ToolsSixthImage from "/images/tools6.png";
 import ToolsSeventhImage from "/images/tools7.png";
@@ -482,8 +480,6 @@ export const tools = [
 ];
 
 export const toolsImages = [
-  ToolsFirstImage,
-  ToolsSecongImage,
   ToolsFifthImage,
   ToolsSixthImage,
   ToolsSeventhImage,

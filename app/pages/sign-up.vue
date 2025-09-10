@@ -9,6 +9,7 @@ import { toTypedSchema } from "@vee-validate/yup";
 import { ref, watch } from "vue";
 import { registerUser, type RegisterPayload } from "~/composables/api/register";
 import { cognitoStartVerification } from "~/composables/api/cognito";
+import { useRouter } from "vue-router";
 
 definePageMeta({
   layout: "auth",
@@ -24,12 +25,6 @@ const { handleSubmit, errors, resetForm } = useForm({
   },
 });
 
-watch(
-  () => errors.value,
-  () => {
-    console.log(errors.value);
-  }
-);
 
 const {
   value: fullName,
@@ -55,17 +50,22 @@ const {
   value: phoneNumber,
   errorMessage: phoneError,
   handleBlur: phoneBlur,
-} = useField<string>("phoneNumber",  undefined, {
+} = useField<string>("phoneNumber", undefined, {
   initialValue: "",
 });
 
-const { value: smsOptIn, errorMessage: smsOptInError} = useField<boolean>("smsOptIn");
+const { value: smsOptIn, errorMessage: smsOptInError } =
+  useField<boolean>("smsOptIn");
 
-const { value: termsAccepted,errorMessage: termsAcceptedError } = useField<boolean>("termsAccepted");
+const { value: termsAccepted, errorMessage: termsAcceptedError } =
+  useField<boolean>("termsAccepted");
 const referralCode = ref<string | null>(null);
 const loading = ref(false);
 const error = ref("");
-
+const router = useRouter()
+const goHome = () => {
+  router.push('/')
+}
 const onSubmit = handleSubmit(async (values) => {
   error.value = "";
   loading.value = true;
@@ -82,7 +82,6 @@ const onSubmit = handleSubmit(async (values) => {
   };
 
   try {
-    console.log("[SIGNUP] Sending payload:", payload);
     const response = await registerUser(payload);
     const cognitoReqData = {
       first_name: payload.name,
@@ -95,9 +94,9 @@ const onSubmit = handleSubmit(async (values) => {
       await cognitoStartVerification(
         response.data.token,
         cognitoReqData,
-        resetForm
+        resetForm,
+        goHome
       );
-      console.log("[SIGNUP] Registration successful:", response.data);
     } else {
       error.value = response.message || "Registration failed";
       console.error("[SIGNUP] Registration error:", response.message);
@@ -171,11 +170,11 @@ const onSubmit = handleSubmit(async (values) => {
             type="password"
             placeholder="Confirm Password"
           />
-            <PhoneField
-              v-model="phoneNumber"
-              :error="phoneError"
-              @blur="phoneBlur"
-            />
+          <PhoneField
+            v-model="phoneNumber"
+            :error="phoneError"
+            @blur="phoneBlur"
+          />
 
           <div class="w-full">
             <label
