@@ -85,7 +85,7 @@ export async function cognitoStartVerification(
           }
         );
         const status = await check.json();
-        if (status?.verified || status?.data?.status === "verified") {
+        if (status?.verified || status?.data?.status === "success") {
           clearInterval(interval);
           toast.success({
             title: "Verification Complete",
